@@ -31,7 +31,7 @@ if device == 1:
         fb_h = int(h)
 
     print("REAL FRAMEBUFFER SIZE:", fb_w, fb_h)
-    screen = pygame.display.set_mode((fb_w, fb_h), pygame.FULLSCREEN)
+    screen = pygame.display.set_mode((fb_w, fb_h))
 else:
     screen = pygame.display.set_mode(SCREEN_RES)
 
