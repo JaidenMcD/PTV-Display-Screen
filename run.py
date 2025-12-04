@@ -8,19 +8,13 @@ load_dotenv()
 device = int(os.getenv("DEVICE"))
 print(f"device = {device}")
 
-if device == 1: 
-    print('setting enviroment variables') 
-    os.environ["DISPLAY"] = ":0" 
-    os.environ["SDL_FBDEV"] = "/dev/fb1" 
-    os.environ["SDL_VIDEODRIVER"] = "fbcon" 
-    os.environ["SDL_NOMOUSE"] = "1"
 
 import pygame
 
 
 
 pygame.init()
-pygame.mouse.set_visible(False)
+screen = pygame.display.set_mode((480, 320), pygame.FULLSCREEN | pygame.NOFRAME)
 
 if device == 1:
     screen = pygame.display.set_mode((480, 320), pygame.FULLSCREEN | pygame.NOFRAME)
