@@ -14,9 +14,13 @@ import pygame
 
 
 pygame.init()
-screen = pygame.display.set_mode((480, 320), pygame.FULLSCREEN | pygame.NOFRAME)
 
 if device == 1:
+    os.environ["DISPLAY"] = ":0"
+    os.environ['XAUTHORITY']="/home/admin/.Xauthority"
+    #os.environ["SDL_FBDEV"] = "/dev/fb1"
+    #os.environ["SDL_VIDEODRIVER"] = "fbcon"
+    #os.environ["SDL_NOMOUSE"] = "1" 
     screen = pygame.display.set_mode((480, 320), pygame.FULLSCREEN | pygame.NOFRAME)
 else:
     screen = pygame.display.set_mode(SCREEN_RES)
