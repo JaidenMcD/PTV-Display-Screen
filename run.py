@@ -5,12 +5,10 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-print("env file loaded")
 device = int(os.getenv("DEVICE"))
 print(f"device = {device}")
 
 if device == 1:
-    print('setting enviroment variables')
     os.environ["SDL_FBDEV"] = "/dev/fb0"
     os.environ["SDL_VIDEODRIVER"] = "fbcon"
     os.environ["SDL_NOMOUSE"] = "1" 
@@ -29,8 +27,6 @@ if device == 1:
         w, h = f.read().strip().split(",")
         fb_w = int(w)
         fb_h = int(h)
-
-    print("REAL FRAMEBUFFER SIZE:", fb_w, fb_h)
     screen = pygame.display.set_mode((fb_w, fb_h))
 else:
     screen = pygame.display.set_mode(SCREEN_RES)
@@ -53,8 +49,11 @@ screen.fill(BACKGROUND_COLOR)
 
 
 while running:
-    screen.fill((0, 120, 255))
-    pygame.draw.rect(screen, (0, 0, 0), (0, 0, fb_w, fb_h), 8)
+    screen.fill(LIGHT_WARM_GREY)
+
+    # Top Accent Bar
+    pygame.draw.rect(screen, FRANKSTON, (0, 0, fb_w, 10))
+
     pygame.display.flip()
     clock.tick(FPS)
 

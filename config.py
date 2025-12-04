@@ -6,6 +6,8 @@ FPS = 1
 
 BLACK = (0, 0, 0)
 NETWORK_GREY = (51, 52, 52)
+LIGHT_WARM_GREY = (215, 210, 203)
+
 SANDRINGHAM = (245,126,182)
 FRANKSTON = (0, 150, 57) # werribee and williamston
 CRANBOURNE = (0, 163, 225) # pakenham and cranbourne
