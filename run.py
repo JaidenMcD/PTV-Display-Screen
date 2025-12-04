@@ -1,6 +1,7 @@
 import os
 from config import *
 import time 
+from datetime import datetime
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -68,10 +69,14 @@ while running:
     pygame.draw.rect(screen, FRANKSTON, (283, 243, 18, 18))
 
     # Current time
-    pygame.draw.rect(screen, BLACK, (358, 213, 113, 48))
+    time_rect = pygame.draw.rect(screen, BLACK, (358, 213, 113, 48))
     pygame.draw.rect(screen, LIGHT_WARM_GREY, (360, 215, 109, 44))
-    text = px12_font.render("12:42:08 pm", True, BLACK) # Text, antialias, color (white)
-    screen.blit(text, (373, 231)) # Blit at a specific position
+    time_font = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 15)
+    current_time = datetime.now().strftime("%I:%M:%S %p").lower()
+    text = time_font.render(current_time, True, BLACK) # Text, antialias, color 
+    text_rect = text.get_rect()
+    text_rect.center = time_rect.center
+    screen.blit(text, text_rect.topleft)
 
     pygame.display.flip()
     clock.tick(FPS)
