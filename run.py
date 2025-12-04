@@ -46,7 +46,7 @@ while running:
     screen.fill(LIGHT_WARM_GREY)
 
     # Top Accent Bar
-    pygame.draw.rect(screen, FRANKSTON, (0, 0, fb_w, 10))
+    pygame.draw.rect(screen, FRANKSTON, (0, 0, SCREEN_RES[0], 10))
 
     # Platform Number Box
     pygame.draw.rect(screen, FRANKSTON, (345, 15, 33, 33))
