@@ -45,6 +45,7 @@ screen.fill(BACKGROUND_COLOR)
 px12_font = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 9)
 
 while running:
+    print('main loop')
     screen.fill(LIGHT_WARM_GREY)
 
     # Top Accent Bar
