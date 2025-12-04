@@ -46,7 +46,7 @@ screen.fill(BACKGROUND_COLOR)
 
 while running:
     screen.fill(BACKGROUND_COLOR)
-    pygame.draw.rect(screen, (255, 255, 255), (0, 0, SCREEN_RES[1], SCREEN_RES[0]), 5)
+    pygame.draw.rect(screen, (255, 255, 255), (0, 0, SCREEN_RES[0], SCREEN_RES[1]), 5)
     pygame.display.flip()
     clock.tick(FPS)
 
