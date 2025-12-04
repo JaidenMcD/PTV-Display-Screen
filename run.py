@@ -54,6 +54,12 @@ while running:
     # Top Accent Bar
     pygame.draw.rect(screen, FRANKSTON, (0, 0, fb_w, 10))
 
+    # Platform Number Box
+    pygame.draw.rect(screen, FRANKSTON, (345, 15, 33, 33))
+
+    # Time to next train Box
+    pygame.draw.rect(screen, BLACK, (379, 15, 91, 33))
+
     pygame.display.flip()
     clock.tick(FPS)
 
