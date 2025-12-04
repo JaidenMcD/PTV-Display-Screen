@@ -22,7 +22,7 @@ pygame.init()
 pygame.mouse.set_visible(False)
 
 if device == 1:
-    screen = pygame.display.set_mode(SCREEN_RES, pygame.FULLSCREEN | pygame.NOFRAME)
+    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  
 else:
     screen = pygame.display.set_mode(SCREEN_RES)
 
