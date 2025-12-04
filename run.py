@@ -1,4 +1,4 @@
-import pygame, os
+import os
 from config import *
 import time 
 from dotenv import load_dotenv
@@ -15,6 +15,8 @@ if device == 1:
     os.environ["SDL_FBDEV"] = "/dev/fb1"
     os.environ["SDL_VIDEODRIVER"] = "fbcon"
     os.environ["SDL_NOMOUSE"] = "1" 
+
+import pygame
 
 pygame.init()
 pygame.mouse.set_visible(False)
