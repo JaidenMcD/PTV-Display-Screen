@@ -8,11 +8,12 @@ load_dotenv()
 device = int(os.getenv("DEVICE"))
 print(f"device = {device}")
 
-if device == 1:
-    os.environ["SDL_FBDEV"] = "/dev/fb1"
-    os.environ["SDL_VIDEODRIVER"] = "fbcon"
-    os.environ["SDL_NOMOUSE"] = "1" 
-    os.environ.pop("DISPLAY", None)   # REMOVE X11 DISPLAY
+if device == 1: 
+    print('setting enviroment variables') 
+    os.environ["DISPLAY"] = ":0" 
+    os.environ["SDL_FBDEV"] = "/dev/fb1" 
+    os.environ["SDL_VIDEODRIVER"] = "fbcon" 
+    os.environ["SDL_NOMOUSE"] = "1"
 
 import pygame
 
