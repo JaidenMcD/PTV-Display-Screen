@@ -3,31 +3,26 @@ from config import *
 import time 
 from dotenv import load_dotenv
 
-
 load_dotenv()
 device = int(os.getenv("DEVICE"))
 print(f"device = {device}")
 
+if device == 1:
+    # Must set these BEFORE pygame imports SDL
+    os.environ["DISPLAY"] = ":0"
+    os.environ["XAUTHORITY"] = "/home/admin/.Xauthority"
 
 import pygame
-
-
 
 pygame.init()
 
 if device == 1:
-    os.environ["DISPLAY"] = ":0"
-    os.environ['XAUTHORITY']="/home/admin/.Xauthority"
-    #os.environ["SDL_FBDEV"] = "/dev/fb1"
-    #os.environ["SDL_VIDEODRIVER"] = "fbcon"
-    #os.environ["SDL_NOMOUSE"] = "1" 
     screen = pygame.display.set_mode((480, 320), pygame.FULLSCREEN | pygame.NOFRAME)
 else:
     screen = pygame.display.set_mode(SCREEN_RES)
 
 info = pygame.display.Info()
 print("Pygame display info:", info.current_w, info.current_h)
-
 
 
 clock = pygame.time.Clock()
@@ -43,7 +38,6 @@ screen.fill(BACKGROUND_COLOR)
 px12_font = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 9)
 
 while running:
-    print('main loop')
     screen.fill(LIGHT_WARM_GREY)
 
     # Top Accent Bar
