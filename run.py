@@ -18,16 +18,24 @@ if device == 1:
 
 import pygame
 
+
+
 pygame.init()
 pygame.mouse.set_visible(False)
 
 if device == 1:
-    screen = pygame.display.set_mode(SCREEN_RES, pygame.FULLSCREEN | pygame.NOFRAME)
+    # --- Read actual framebuffer resolution ---
+    with open("/sys/class/graphics/fb0/virtual_size", "r") as f:
+        w, h = f.read().strip().split(",")
+        fb_w = int(w)
+        fb_h = int(h)
+
+    print("REAL FRAMEBUFFER SIZE:", fb_w, fb_h)
+    screen = pygame.display.set_mode((fb_w, fb_h), pygame.FULLSCREEN)
 else:
     screen = pygame.display.set_mode(SCREEN_RES)
 
-info = pygame.display.Info()
-print("Reported resolution:", info.current_w, info.current_h)
+
 
 update_interval = 5 # seconds
 last_update = 0
@@ -45,8 +53,8 @@ screen.fill(BACKGROUND_COLOR)
 
 
 while running:
-    screen.fill(BACKGROUND_COLOR)
-    pygame.draw.rect(screen, (255, 255, 255), (0, 0, SCREEN_RES[0], SCREEN_RES[1]), 5)
+    screen.fill((0, 120, 255))
+    pygame.draw.rect(screen, (0, 0, 0), (0, 0, fb_w, fb_h), 8)
     pygame.display.flip()
     clock.tick(FPS)
 
