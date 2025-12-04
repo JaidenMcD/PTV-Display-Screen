@@ -26,6 +26,9 @@ if device == 1:
 else:
     screen = pygame.display.set_mode(SCREEN_RES)
 
+info = pygame.display.Info()
+print("Reported resolution:", info.current_w, info.current_h)
+
 update_interval = 5 # seconds
 last_update = 0
 
