@@ -85,9 +85,48 @@ while running:
     tr.center = r.center
     screen.blit(t, tr.topleft)
 
-    """ SUBSEQUENT DEPARTURES """
 
-    
+    """ SUBSEQUENT DEPARTURES """
+    gap = 26
+    for i in range(1, 3):
+        offset = (i-1) * gap
+        container = pygame.Rect(11, 212 + offset, 342,26)
+        # Bottom line indicators
+        r = pygame.Rect(0,0,4,17)
+        r.midleft = container.midleft
+        pygame.draw.rect(screen, FRANKSTON, r)
+        # Platform Number Box
+        r = pygame.Rect(283,0,18,18)
+        r.centery = container.centery
+        r = pygame.draw.rect(screen, FRANKSTON, r)
+        f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 13)
+        t = f.render(departures[i]['platform'] if len(departures) > i else "-", True, WHITE) # Text, antialias, color
+        tr = t.get_rect()
+        tr.center = r.center
+        screen.blit(t, tr.topleft)
+        # Time to Departure Box
+        r = pygame.Rect(303,0,50,18)
+        r.centery = container.centery
+        r = pygame.draw.rect(screen, BLACK, r)
+        f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 13)
+        t = f.render(departures[i]['time_to_departure'] if len(departures) > i else "-", True, WHITE) # Text, antialias, color
+        tr = t.get_rect()
+        tr.center = r.center
+        screen.blit(t, tr.topleft)
+        # Time of Departure
+        f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 14)
+        t = f.render(departures[i]['departure_time'] if len(departures) > i else "--:--", True, BLACK) # Text, antialias, color
+        tr = t.get_rect()
+        tr.centery = container.centery
+        screen.blit(t, (16, tr.top))
+        # Destination
+        f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-BOLD.TTF', 14)
+        t = f.render(departures[i]['destination'] if len(departures) > i else "-", True, BLACK) # Text, antialias, color
+        tr = t.get_rect()
+        tr.centery = container.centery
+        screen.blit(t, (75, tr.top))
+        
+
 
     # Top hline
     pygame.draw.line(screen, BLACK, (11, 70), (SCREEN_RES[0] - 11, 70), 2)
@@ -100,13 +139,6 @@ while running:
     pygame.draw.rect(screen, FRANKSTON, (11, 218, 4, 17))
     pygame.draw.rect(screen, FRANKSTON, (11, 243, 4, 17))
 
-    # Bottom train countdowns
-    pygame.draw.rect(screen, BLACK, (303, 217, 51, 18))
-    pygame.draw.rect(screen, BLACK, (303, 243, 51, 18))
-    # Bottom train platforms
-    pygame.draw.rect(screen, FRANKSTON, (283, 217, 18, 18))
-    pygame.draw.rect(screen, FRANKSTON, (283, 243, 18, 18))
-
     # Current time
     time_rect = pygame.draw.rect(screen, BLACK, (358, 213, 113, 48))
     pygame.draw.rect(screen, LIGHT_WARM_GREY, (360, 215, 109, 44))
@@ -116,6 +148,7 @@ while running:
     text_rect = text.get_rect()
     text_rect.center = time_rect.center
     screen.blit(text, text_rect.topleft)
+
 
     pygame.display.flip()
     clock.tick(FPS)

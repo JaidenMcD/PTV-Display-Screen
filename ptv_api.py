@@ -75,7 +75,7 @@ def get_departures(route_type: int, stop_id: int, max_results: int = 5):
             departure_time_utc = departure_time_utc.replace(tzinfo=utc)
             departure_time_local = departure_time_utc.astimezone(tz)
             diff = (departure_time_local - now).total_seconds()
-            if diff < 30:
+            if diff < 60:
                 time_to_departure = "now"
             else:
                 mins = int(diff // 60)
