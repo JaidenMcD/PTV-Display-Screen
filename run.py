@@ -60,7 +60,7 @@ while running:
 
     """ NEXT DEPARTURE """
     # Platform Number Box
-    platform_rect = pygame.draw.rect(screen, FRANKSTON, (344, 14, 33, 33))
+    platform_rect = pygame.draw.rect(screen, FRANKSTON, (344, 14, 31, 31))
     platform_font = pygame.font.Font('assets/fonts/NETWORKSANS-2019-BOLD.TTF', 25)
     platform_text = departures[0]['platform'] if departures else "-"
     text = platform_font.render(platform_text, True, WHITE) # Text, antialias, color    
@@ -77,13 +77,17 @@ while running:
     departure_time_text = departure['departure_time'] if departure else "--:--"
     text = departure_time_font.render(departure_time_text, True, BLACK) # Text, antialias, color
     screen.blit(text, (11, 21))
+    # Time to Departure
+    r = pygame.draw.rect(screen, BLACK, (379, 15, 91, 31))
+    f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 24)
+    t = f.render(departure['time_to_departure'] if departure else "-", True, WHITE) # Text, antialias, color
+    tr = t.get_rect()
+    tr.center = r.center
+    screen.blit(t, tr.topleft)
+
+    """ SUBSEQUENT DEPARTURES """
+
     
-
-
-    
-
-    # Time to next train Box
-    pygame.draw.rect(screen, BLACK, (379, 15, 91, 33))
 
     # Top hline
     pygame.draw.line(screen, BLACK, (11, 70), (SCREEN_RES[0] - 11, 70), 2)

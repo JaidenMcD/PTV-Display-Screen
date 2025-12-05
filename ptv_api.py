@@ -58,18 +58,29 @@ def get_departures(route_type: int, stop_id: int, max_results: int = 5):
     result = send_ptv_request(endpoint)
     # Parse Results
     departures_list = []
+    now = datetime.now(tz)  # current local time
     for departure in result.get('departures', []):
         # Departure Time
-        departure_time_utc = departure.get('estimated_departure_utc', None)
-        if not departure_time_utc:
-            departure_time_utc = departure.get('scheduled_departure_utc', None)
-        if departure_time_utc:
+        scheduled_time_utc = departure.get('scheduled_departure_utc', None)
+        estimated_time_utc = departure.get('estimated_departure_utc', None)
+        if not scheduled_time_utc and not estimated_time_utc:
+            departure_time = "--:--"
+            time_to_departure = "-"
+        else:
+            if estimated_time_utc:
+                departure_time_utc = estimated_time_utc
+            else:
+                departure_time_utc = scheduled_time_utc
             departure_time_utc = datetime.fromisoformat(departure_time_utc.replace("Z", "+00:00"))
             departure_time_utc = departure_time_utc.replace(tzinfo=utc)
             departure_time_local = departure_time_utc.astimezone(tz)
+            diff = (departure_time_local - now).total_seconds()
+            if diff < 30:
+                time_to_departure = "now"
+            else:
+                mins = int(diff // 60)
+                time_to_departure = f"{mins} min"
             departure_time = departure_time_local.strftime("%I:%M%p").lower()
-        else:
-            departure_time = "--:--"
 
         # Destination Logic
         run_id = departure.get('run_id')
@@ -81,6 +92,7 @@ def get_departures(route_type: int, stop_id: int, max_results: int = 5):
             "platform": departure.get("platform_number", "0"),
             "destination": destination,
             "departure_time": departure_time,
+            "time_to_departure": time_to_departure,
         })
     return departures_list
         
