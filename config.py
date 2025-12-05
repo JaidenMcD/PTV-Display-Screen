@@ -5,6 +5,7 @@ FPS = 1
 
 
 BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
 NETWORK_GREY = (51, 52, 52)
 LIGHT_WARM_GREY = (215, 210, 203)
 
