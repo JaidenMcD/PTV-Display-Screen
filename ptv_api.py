@@ -60,11 +60,16 @@ def get_departures(route_type: int, stop_id: int, max_results: int = 5):
     departures_list = []
     for departure in result.get('departures', []):
         # Departure Time
-        departure_time_utc = departure.get('estimated_departure_utc')
-        departure_time_utc = datetime.fromisoformat(departure_time_utc.replace("Z", "+00:00"))
-        departure_time_utc = departure_time_utc.replace(tzinfo=utc)
-        departure_time_local = departure_time_utc.astimezone(tz)
-        departure_time = departure_time_local.strftime("%I:%M%p").lower()
+        departure_time_utc = departure.get('estimated_departure_utc', None)
+        if not departure_time_utc:
+            departure_time_utc = departure.get('scheduled_departure_utc', None)
+        if departure_time_utc:
+            departure_time_utc = datetime.fromisoformat(departure_time_utc.replace("Z", "+00:00"))
+            departure_time_utc = departure_time_utc.replace(tzinfo=utc)
+            departure_time_local = departure_time_utc.astimezone(tz)
+            departure_time = departure_time_local.strftime("%I:%M%p").lower()
+        else:
+            departure_time = "--:--"
 
         # Destination Logic
         run_id = departure.get('run_id')
