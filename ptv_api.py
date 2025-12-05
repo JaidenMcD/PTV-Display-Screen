@@ -6,6 +6,7 @@ import requests
 from datetime import datetime, timezone
 import pytz
 
+
 load_dotenv()
 
 devId = os.getenv("USER_ID")
@@ -16,7 +17,6 @@ tram_stop_id = os.getenv("TRAM_STOP_ID")
 train_stop_id = os.getenv("TRAIN_STOP_ID")
 tz = pytz.timezone(os.getenv("TIMEZONE"))
 utc = pytz.utc
-
 
 
 def getUrl(endpoint: str) -> str:
@@ -70,6 +70,8 @@ def get_stops_for_run(run_id: int, route_type: int):
     def is_invalid_stop(stop_name):
         if route_id == 11 and stop_name.lower() == "darling station":
             return True
+        elif route_id == 6 and stop_name.lower() == "burnley station":
+            return True
     # Sort departures by correct order
     departures = sorted(departures, key=lambda d: d["departure_sequence"])
     # Determine first + last actual stops (termini for this run)
@@ -119,6 +121,7 @@ def get_departures(route_type: int, stop_id: int, max_results: int = 5):
     result = send_ptv_request(endpoint)
     # Parse Results
     departures_list = []
+    print(result)
     now = datetime.now(tz)  # current local time
     for departure in result.get('departures', []):
         # Departure Time

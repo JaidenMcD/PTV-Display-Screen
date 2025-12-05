@@ -3,8 +3,9 @@ from config import *
 import time 
 from datetime import datetime
 from dotenv import load_dotenv
-from ptv_api import get_departures, get_stops_for_run
-from data.data_util import GTFS_HEADSIGNS
+from ptv_api import *
+from data.data_util import load_route_data
+
 
 load_dotenv()
 device = int(os.getenv("DEVICE"))
@@ -44,6 +45,24 @@ px12_font = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 9)
 update_interval = 10  # seconds
 last_update = 0
 departures = [] 
+
+
+# Load colours in config
+routeinfo = load_route_data("data/routes.txt")
+newRouteInfo = []
+for route in routeinfo:
+    route_id = route['route_id'].split('02-')[1]
+    # Remove bus replacements
+    if '-R' in route_id:
+        continue
+    route_id = route_id.split(':')[0]
+    output = {
+        'route_id': route_id,
+        'colour': route['color'],
+        'text_colour': route['text_color']
+    }
+    newRouteInfo.append(output)
+
 
 while running:
     now = time.time()
