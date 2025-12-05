@@ -3,7 +3,8 @@ from config import *
 import time 
 from datetime import datetime
 from dotenv import load_dotenv
-from ptv_api import get_departures
+from ptv_api import get_departures, get_stops_for_run
+from data.data_util import GTFS_HEADSIGNS
 
 load_dotenv()
 device = int(os.getenv("DEVICE"))
@@ -85,6 +86,82 @@ while running:
     tr.center = r.center
     screen.blit(t, tr.topleft)
 
+    """ STOPS LIST """
+    stops = get_stops_for_run(departures[0]['run_id'], 0)
+    for c_idx, stop_chunk in enumerate(stops):
+        for r_idx, stop in enumerate(stop_chunk):
+            container = pygame.Rect(0, 0 ,116, 14)
+            container.x = 11 + 116 * c_idx
+            container.y = 78 + 14 * r_idx
+            if c_idx == 0 and r_idx == 0:
+                # Box Surrounding current station, in white
+                f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 12)
+                t = f.render(stop[0], True, WHITE) # Text, antialias, color
+                tr = t.get_rect()
+                tr.centery = container.centery
+                tr.x = container.x + 12
+
+                r = pygame.Rect(0, 0, tr.size[0] + 4,16)
+                r.centery = container.centery
+                r.x = container.x + 10
+
+                pygame.draw.rect(screen, FRANKSTON, r)
+                screen.blit(t, tr.topleft)
+            else:
+                f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 12)
+                t = f.render(stop[0], True, BLACK) # Text, antialias, color
+                tr = t.get_rect()
+                tr.centery = container.centery
+                tr.x = container.x + 12
+                screen.blit(t, tr)
+            # Ticks
+            r = pygame.Rect(0,0,3,4)
+            r.midleft = (container.x + 4, container.centery)
+            pygame.draw.rect(screen, FRANKSTON, r)
+            # Rick Lines
+            if r_idx == 0 and stop[2]:
+                # First stop, terminus
+                r = pygame.Rect(0,0,9,4)
+                r.centery = container.centery
+                r.x = container.x -2
+                pygame.draw.rect(screen, FRANKSTON, r)
+                r = pygame.Rect(0,0,4,5)
+                r.bottomleft = container.bottomleft
+                pygame.draw.rect(screen, FRANKSTON, r)
+            elif r_idx == len(stop_chunk) -1 and stop[2]:
+                # Last stop, terminus
+                r = pygame.Rect(0,0,9,4)
+                r.centery = container.centery
+                r.x = container.x -2
+                pygame.draw.rect(screen, FRANKSTON, r)
+                pygame.draw.rect(screen, FRANKSTON, (container.x, container.y,4,5))
+            else:
+                r = pygame.Rect(0,0,4,14)
+                r.midleft = (container.x, container.centery)
+                pygame.draw.rect(screen, FRANKSTON, r)
+            if r_idx == 0 and not stop[2]:
+                # First stop, not terminus
+                r = pygame.Rect(0,0,4,3)
+                r.bottomleft = (container.x, container.y)
+                pygame.draw.rect(screen, FRANKSTON, r)
+                r = pygame.Rect(0,0,4,1)
+                r.bottomleft = (container.x, container.y -4)
+                pygame.draw.rect(screen, FRANKSTON, r)
+                r = pygame.Rect(0,0,4,2)
+                r.bottomleft = (container.x, container.y -7)
+                pygame.draw.rect(screen, FRANKSTON, r)
+            if r_idx == len(stop_chunk) -1 and not stop[2]:
+                # Last stop, not terminus
+                r = pygame.Rect(0,0,4,2)
+                r.topleft = (container.x, container.y + container.height)
+                pygame.draw.rect(screen, FRANKSTON, r)
+                r = pygame.Rect(0,0,4,1)
+                r.topleft = (container.x, container.y + container.height +4)
+                pygame.draw.rect(screen, FRANKSTON, r)
+                r = pygame.Rect(0,0,4,3)
+                r.topleft = (container.x, container.y + container.height +7)
+                pygame.draw.rect(screen, FRANKSTON, r)
+                
 
     """ SUBSEQUENT DEPARTURES """
     gap = 26
@@ -126,6 +203,7 @@ while running:
         tr.centery = container.centery
         screen.blit(t, (75, tr.top))
         
+   
 
 
     # Top hline
