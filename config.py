@@ -17,5 +17,6 @@ SUNBURY = (249, 190, 22) #craigiburn and upfield
 MERNDA = (200, 16,46) #hurtsbridge and mernda
 SHOWGROUNDS = (149,151,154)
 
-# --- YOU CAN CHANGE THESE VALUES ---
 SCREEN_RES = (480, 320)   # display resolution
+
+DEBUG = True

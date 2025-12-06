@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 from ptv_api import *
 from data.data_util import load_route_data
 
-
 load_dotenv()
 device = int(os.getenv("DEVICE"))
 train_stop_id = os.getenv("TRAIN_STOP_ID")
@@ -245,6 +244,7 @@ while running:
     text_rect = text.get_rect()
     text_rect.center = time_rect.center
     screen.blit(text, text_rect.topleft)
+
 
 
     pygame.display.flip()

@@ -6,7 +6,6 @@ import requests
 from datetime import datetime, timezone
 import pytz
 
-
 load_dotenv()
 
 devId = os.getenv("USER_ID")
