@@ -3,7 +3,7 @@ from config import *
 import time 
 from datetime import datetime
 from dotenv import load_dotenv
-from ptv_api import *
+from api.ptv_api import *
 from data.gtfs_loader import load_route_data
 
 load_dotenv()
