@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 from dotenv import load_dotenv
 from ptv_api import *
-from data.data_util import load_route_data
+from data.gtfs_loader import load_route_data
 
 load_dotenv()
 device = int(os.getenv("DEVICE"))
