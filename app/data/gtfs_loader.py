@@ -1,13 +1,5 @@
 import csv
 
-def load_gtfs_headsigns(trips_path='data/trips.txt'):
-    gtfs_headsigns = {}
-    with open(trips_path, newline="") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            gtfs_headsigns[row["trip_id"]] = row["trip_headsign"]
-    return gtfs_headsigns
-
 def load_route_data(filename):
     routes = []
 
@@ -29,19 +21,6 @@ def load_route_data(filename):
             })
 
     return routes
-
-def get_GTFS_stop_ids(station_name):
-    result = []
-    with open('data/gtfs_static/stops.txt', "r", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            # case-insensitive match
-            if row["stop_name"].lower() == station_name.lower():
-                result.append({
-                    'platform': row['platform_code'],
-                    'gtfs_stop_id': row['\ufeffstop_id']
-                })
-    return result
 
 def build_colour_map(routes_path):
     routeinfo = load_route_data(routes_path)
