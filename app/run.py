@@ -24,8 +24,11 @@ pygame.init()
 
 if device == 1:
     screen = pygame.display.set_mode((480, 320), pygame.FULLSCREEN | pygame.NOFRAME)
+    # Hide the mouse cursor
+    pygame.mouse.set_visible(False)
 else:
     screen = pygame.display.set_mode(config.SCREEN_RES)
+
 
 info = pygame.display.Info()
 print("Pygame display info:", info.current_w, info.current_h)
