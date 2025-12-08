@@ -12,7 +12,6 @@ devId = os.getenv("USER_ID")
 key = os.getenv("API_KEY")
 BASE_URL = "https://timetableapi.ptv.vic.gov.au"
 
-tram_stop_id = os.getenv("TRAM_STOP_ID")
 train_stop_id = os.getenv("TRAIN_STOP_ID")
 tz = pytz.timezone(os.getenv("TIMEZONE"))
 utc = pytz.utc
