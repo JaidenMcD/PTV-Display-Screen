@@ -34,7 +34,6 @@ running = True
 print('starting up')
 screen.fill(config.BACKGROUND_COLOR)
 
-px12_font = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 9)
 
 # Departure data
 update_interval = 10  # seconds
@@ -69,7 +68,17 @@ for route in routeinfo:
     route_id = route_id.split(':')[0]
     colourMap[route_id] = "#" + route['color']
 
-
+""" Setup Fonts """
+f_platformNumber_large = pygame.font.Font('assets/fonts/NETWORKSANS-2019-BOLD.TTF', 25)
+f_platformNumber_small = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 13)
+f_destination_large = pygame.font.Font('assets/fonts/NETWORKSANS-2019-BOLD.TTF', 27)
+f_destination_small =  pygame.font.Font('assets/fonts/NETWORKSANS-2019-BOLD.TTF', 14)
+f_depTime_large = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 24)
+f_depTime_small = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 14)
+f_timeToDep_large = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 24)
+f_timeToDep_small = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 13)
+f_stopsList = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 12)
+f_currentTime = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 15)
 
 
 while running:
@@ -90,7 +99,7 @@ while running:
     pygame.draw.rect(screen, colour, (0, 0, config.SCREEN_RES[0], 10))
     # Platform Number Box
     platform_rect = pygame.draw.rect(screen, colour, (344, 14, 31, 31))
-    platform_font = pygame.font.Font('assets/fonts/NETWORKSANS-2019-BOLD.TTF', 25)
+    platform_font = f_platformNumber_large
     platform_text = departures[0]['platform'] if departures else "-"
     text = platform_font.render(platform_text, True, config.WHITE) # Text, antialias, color    
     text_rect = text.get_rect()
@@ -98,17 +107,17 @@ while running:
     screen.blit(text, text_rect.topleft)
     # Destination
     departure = departures[0] if departures else None
-    dest_font = pygame.font.Font('assets/fonts/NETWORKSANS-2019-BOLD.TTF', 27)
+    dest_font = f_destination_large
     text = dest_font.render(departure['destination'], True, config.BLACK) # Text, antialias, color 
     screen.blit(text, (113,19))
     # Departure Time
-    departure_time_font = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 24)
+    departure_time_font = f_depTime_large
     departure_time_text = departure['departure_time'] if departure else "--:--"
     text = departure_time_font.render(departure_time_text, True, config.BLACK) # Text, antialias, color
     screen.blit(text, (11, 21))
     # Time to Departure
     r = pygame.draw.rect(screen, config.BLACK, (379, 15, 91, 31))
-    f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 24)
+    f = f_timeToDep_large
     t = f.render(departure['time_to_departure'] if departure else "-", True, config.WHITE) # Text, antialias, color
     tr = t.get_rect()
     tr.center = r.center
@@ -123,7 +132,7 @@ while running:
             container.y = 78 + 14 * r_idx
             if c_idx == 0 and r_idx == 0:
                 # Box Surrounding current station, in white
-                f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 12)
+                f = f_stopsList
                 t = f.render(stop[0], True, config.WHITE) # Text, antialias, color
                 tr = t.get_rect()
                 tr.centery = container.centery
@@ -136,7 +145,7 @@ while running:
                 pygame.draw.rect(screen, colour, r)
                 screen.blit(t, tr.topleft)
             else:
-                f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 12)
+                f = f_stopsList
                 t = f.render(stop[0], True, config.BLACK) # Text, antialias, color
                 tr = t.get_rect()
                 tr.centery = container.centery
@@ -205,7 +214,7 @@ while running:
         r = pygame.Rect(283,0,18,18)
         r.centery = container.centery
         r = pygame.draw.rect(screen, colour, r)
-        f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 13)
+        f = f_platformNumber_small
         t = f.render(departures[i]['platform'] if len(departures) > i else "-", True, config.WHITE) # Text, antialias, color
         tr = t.get_rect()
         tr.center = r.center
@@ -214,19 +223,19 @@ while running:
         r = pygame.Rect(303,0,50,18)
         r.centery = container.centery
         r = pygame.draw.rect(screen, config.BLACK, r)
-        f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-REGULAR.TTF', 13)
+        f = f_timeToDep_small
         t = f.render(departures[i]['time_to_departure'] if len(departures) > i else "-", True, config.WHITE) # Text, antialias, color
         tr = t.get_rect()
         tr.center = r.center
         screen.blit(t, tr.topleft)
         # Time of Departure
-        f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 14)
+        f = f_depTime_small
         t = f.render(departures[i]['departure_time'] if len(departures) > i else "--:--", True, config.BLACK) # Text, antialias, color
         tr = t.get_rect()
         tr.centery = container.centery
         screen.blit(t, (16, tr.top))
         # Destination
-        f = pygame.font.Font('assets/fonts/NETWORKSANS-2019-BOLD.TTF', 14)
+        f = f_destination_small
         t = f.render(departures[i]['destination'] if len(departures) > i else "-", True, config.BLACK) # Text, antialias, color
         tr = t.get_rect()
         tr.centery = container.centery
@@ -245,7 +254,7 @@ while running:
     # Current time
     time_rect = pygame.draw.rect(screen, config.BLACK, (358, 213, 113, 48))
     pygame.draw.rect(screen, config.LIGHT_WARM_GREY, (360, 215, 109, 44))
-    time_font = pygame.font.Font('assets/fonts/NETWORKSANS-2019-MEDIUM.TTF', 15)
+    time_font = f_currentTime
     current_time = datetime.now().strftime("%I:%M:%S %p").lower()
     text = time_font.render(current_time, True, config.BLACK) # Text, antialias, color 
     text_rect = text.get_rect()
