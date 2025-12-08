@@ -3,6 +3,7 @@ import hmac
 from dotenv import load_dotenv
 import os
 import requests
+import requests_cache
 from datetime import datetime, timezone
 import pytz
 
@@ -15,6 +16,24 @@ BASE_URL = "https://timetableapi.ptv.vic.gov.au"
 train_stop_id = os.getenv("TRAIN_STOP_ID")
 tz = pytz.timezone(os.getenv("TIMEZONE"))
 utc = pytz.utc
+# Cache PTV GET requests to reduce API calls; disable via PTV_CACHE_DISABLED=1
+cache_name = os.getenv("PTV_CACHE_NAME", "ptv_cache")
+try:
+    cache_expire_seconds = int(os.getenv("PTV_CACHE_SECONDS", "30"))
+except ValueError:
+    cache_expire_seconds = 30
+cache_disabled = os.getenv("PTV_CACHE_DISABLED", "false").lower() in ("1", "true", "yes")
+session = (
+    requests.Session()
+    if cache_disabled
+    else requests_cache.CachedSession(
+        cache_name=cache_name,
+        backend="sqlite",
+        expire_after=cache_expire_seconds,
+        allowable_methods=("GET",),
+        allowable_codes=(200,),
+    )
+)
 
 
 def getUrl(endpoint: str) -> str:
@@ -26,7 +45,7 @@ def getUrl(endpoint: str) -> str:
 def send_ptv_request(endpoint: str):
     """Send a GET request to the PTV API and return the JSON response."""
     url = getUrl(endpoint)
-    response = requests.get(url)
+    response = session.get(url)
     if response.status_code == 200:
         return response.json()
     else:

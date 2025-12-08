@@ -3,3 +3,4 @@ python-dotenv
 requests
 pytz
 gtfs-realtime-bindings
+requests-cache
