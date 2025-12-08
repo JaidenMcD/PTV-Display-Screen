@@ -34,6 +34,10 @@ def send_ptv_request(endpoint: str):
         print(f"Error {response.status_code}: {response.text}")
         return None
 
+def get_GTFS_route_id(route_id):
+    endpoint = f"/v3/routes/{route_id}"
+    result = send_ptv_request(endpoint)
+    return result['route']['route_gtfs_id']
 
 def get_pid_destination(run: dict) -> str:
     """
@@ -71,6 +75,7 @@ def get_stops_for_run(run_id: int, route_type: int):
             return True
         elif route_id == 6 and stop_name.lower() == "burnley station":
             return True
+        return False
     # Sort departures by correct order
     departures = sorted(departures, key=lambda d: d["departure_sequence"])
     # Determine first + last actual stops (termini for this run)
@@ -149,6 +154,9 @@ def get_departures(route_type: int, stop_id: int, max_results: int = 5):
         run_info = result["runs"].get(str(run_id))
         destination = get_pid_destination(run_info)
 
+        # GTFS id
+        gtfs_id = get_GTFS_route_id(departure['route_id'])
+
         # Append to list
         departures_list.append({
             "platform": departure.get("platform_number", "0"),
@@ -156,6 +164,8 @@ def get_departures(route_type: int, stop_id: int, max_results: int = 5):
             "departure_time": departure_time,
             "time_to_departure": time_to_departure,
             "run_id": run_id,
+            "route_id": departure['route_id'],
+            "GTFS_id": gtfs_id
         })
     return departures_list
         
