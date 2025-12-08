@@ -1,11 +1,12 @@
 import csv
 
-GTFS_HEADSIGNS = {}
-
-with open("data/trips.txt", newline="") as f:
-    reader = csv.DictReader(f)
-    for row in reader:
-        GTFS_HEADSIGNS[row["trip_id"]] = row["trip_headsign"]
+def load_gtfs_headsigns(trips_path='data/trips.txt'):
+    gtfs_headsigns = {}
+    with open(trips_path, newline="") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            gtfs_headsigns[row["trip_id"]] = row["trip_headsign"]
+    return gtfs_headsigns
 
 def load_route_data(filename):
     routes = []
