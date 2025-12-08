@@ -4,11 +4,10 @@ import time
 from datetime import datetime
 from dotenv import load_dotenv
 from api.ptv_api import *
-from data.gtfs_loader import load_route_data
+from data.gtfs_loader import load_route_data, get_GTFS_stop_ids
 
 load_dotenv()
 device = int(os.getenv("DEVICE"))
-train_stop_id = os.getenv("TRAIN_STOP_ID")
 
 if device == 1:
     # Must set these BEFORE pygame imports SDL
@@ -45,7 +44,28 @@ update_interval = 10  # seconds
 last_update = 0
 departures = [] 
 
+""" LOADING STATION DATA """
+train_stop_id = os.getenv("TRAIN_STOP_ID")
+train_stop = os.getenv('TRAIN_STOP')
+print(f'Searching for {train_stop}...')
+res = searchPTVAPI(train_stop)
+stop = []
+for stopOption in res['stops']:
+    if train_stop in stopOption['stop_name']:
+        stop = stopOption
+        break
+    else:
+        stop = res['stops'][0]
+print(f'Selected {stop["stop_name"]}')
+gtfs = get_GTFS_stop_ids(stop['stop_name'])
+stop["gtfs_stops"] = gtfs
+print(stop)
+""" Colours """
+colourMap = []
+for route in stop['routes']:
+    col = {}
 
+exit()
 # Load colours in config
 routeinfo = load_route_data("data/routes.txt")
 newRouteInfo = []

@@ -28,3 +28,16 @@ def load_route_data(filename):
             })
 
     return routes
+
+def get_GTFS_stop_ids(station_name):
+    result = []
+    with open('data/gtfs_static/stops.txt', "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            # case-insensitive match
+            if row["stop_name"].lower() == station_name.lower():
+                result.append({
+                    'platform': row['platform_code'],
+                    'gtfs_stop_id': row['\ufeffstop_id']
+                })
+    return result

@@ -120,7 +120,6 @@ def get_departures(route_type: int, stop_id: int, max_results: int = 5):
     result = send_ptv_request(endpoint)
     # Parse Results
     departures_list = []
-    print(result)
     now = datetime.now(tz)  # current local time
     for departure in result.get('departures', []):
         # Departure Time
@@ -160,3 +159,7 @@ def get_departures(route_type: int, stop_id: int, max_results: int = 5):
         })
     return departures_list
         
+def searchPTVAPI(term):
+    endpoint = f"/v3/search/{term}?route_types=0"
+    result = send_ptv_request(endpoint)
+    return result
