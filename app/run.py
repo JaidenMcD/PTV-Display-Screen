@@ -56,17 +56,8 @@ gtfs = get_GTFS_stop_ids(stop['stop_name'])
 stop["gtfs_stops"] = gtfs
 print(stop) """
 
-""" Colours """
-# Load colours in config
-routeinfo = gtfs_loader.load_route_data("data/gtfs_static/routes.txt")
-colourMap = {}
-for route in routeinfo:
-    route_id = route['route_id'].split('-0')[1]
-    # Remove bus replacements
-    if '-R' in route_id:
-        continue
-    route_id = route_id.split(':')[0]
-    colourMap[route_id] = "#" + route['color']
+""" Route Colour Map """
+colourMap = gtfs_loader.build_colour_map('data/gtfs_static/routes.txt')
 
 """ Setup Fonts """
 f_platformNumber_large = pygame.font.Font('assets/fonts/NETWORKSANS-2019-BOLD.TTF', 25)

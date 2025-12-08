@@ -41,3 +41,16 @@ def get_GTFS_stop_ids(station_name):
                     'gtfs_stop_id': row['\ufeffstop_id']
                 })
     return result
+
+def build_colour_map(routes_path):
+    routeinfo = load_route_data(routes_path)
+    colourMap = {}
+    for route in routeinfo:
+        route_id = route['route_id'].split('-0')[1]
+        # Remove bus replacements
+        if '-R' in route_id:
+            continue
+        route_id = route_id.split(':')[0]
+        colourMap[route_id] = "#" + route['color']
+    return colourMap
+        
