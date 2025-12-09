@@ -19,7 +19,7 @@ class PlatformDisplay(Display):
     def update(self, now):
         if now - self.last_update >= 10 or not self.departures:
             self.departures = self.ctx["ptv_api"].get_departures(
-                0, self.ctx["train_stop_id"], max_results=5
+                self.ctx["train_stop_id"], max_results=5
             )
             self.last_update = now
 

@@ -6,6 +6,10 @@ import requests
 import requests_cache
 from datetime import datetime, timezone
 import pytz
+import logging
+from typing import Any, Dict, List, Optional
+
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 
@@ -137,55 +141,125 @@ def get_stops_for_run(run_id: int, route_type: int):
 
     return chunks
 
-def get_departures(route_type: int, stop_id: int, max_results: int = 5):
-    """Fetch departures for a given route type and stop ID."""
-    endpoint = f"/v3/departures/route_type/{route_type}/stop/{stop_id}?max_results={max_results}&expand=0&include_skipped_stops=true"
+def get_departures(stop_id: int, max_results: int = 5) -> List[Dict[str, Any]]:
+    """
+    Fetch and parse upcoming departures for a given metro train stop ID
+
+    This function requests departure data from the PTV API, converts the 
+    scheduled/estimated UTC times to local time, derives a countdown label 
+    (e.g., "now", "3 min"), determines the PID-frienly destination, and
+    attaches the GTFS route ID for styling or downstream logic.
+
+    Args:
+        stop_id: PTV stop ID to fetch departures for.
+        max_results: Maximum number of departures to request
+    
+    Returns:
+        A list of dictionaries, each containing:
+            - platform: Platform number as a string (default "0").
+            - destination: PID destination string
+            - departure_time: Local time formatted like "07:35pm" or "--:--"
+            - time_to_departure: Countdown string like "now", "5 min", or "-".
+            - run_id: Run ID integer or None.
+            - route_id: Route ID integer.
+            - GTFS_id: GTFS route ID string.
+    
+    Notes:
+        - Uses `estimated_departure_utc` when available; otherwise falls back 
+          to `scheduled_departure_utc`.
+        - If the API request fails or returns no usable data, returns an empty list.
+        - Relies on global `tz`, `utc`, and helper functions:
+          `send_ptv_request`, `get_pid_destination`, `get_GTFS_route_id`.
+    
+    """
+    endpoint = (
+        f"/v3/departures/route_type/0/stop/{stop_id}"
+        f"?max_results={max_results}&expand=0&include_skipped_stops=true"
+    )
+
+    logger.debug(f"Fetching next {max_results} departures for stop_id={stop_id}")
     result = send_ptv_request(endpoint)
+
+    if not result:
+        return []
+
+    departures = result.get("departures", [])
+    runs = result.get("runs", {}) or {}
+
     # Parse Results
-    departures_list = []
-    now = datetime.now(tz)  # current local time
-    for departure in result.get('departures', []):
-        # Departure Time
-        scheduled_time_utc = departure.get('scheduled_departure_utc', None)
-        estimated_time_utc = departure.get('estimated_departure_utc', None)
-        if not scheduled_time_utc and not estimated_time_utc:
-            departure_time = "--:--"
-            time_to_departure = "-"
-        else:
-            if estimated_time_utc:
-                departure_time_utc = estimated_time_utc
-            else:
-                departure_time_utc = scheduled_time_utc
-            departure_time_utc = datetime.fromisoformat(departure_time_utc.replace("Z", "+00:00"))
-            departure_time_utc = departure_time_utc.replace(tzinfo=utc)
-            departure_time_local = departure_time_utc.astimezone(tz)
-            diff = (departure_time_local - now).total_seconds()
-            if diff < 60:
-                time_to_departure = "now"
-            else:
-                mins = int(diff // 60)
-                time_to_departure = f"{mins} min"
-            departure_time = departure_time_local.strftime("%I:%M%p").lower()
+    departures_list: List[Dict[str, Any]] = []
+    now_local = datetime.now(tz)
 
-        # Destination Logic
-        run_id = departure.get('run_id')
-        run_info = result["runs"].get(str(run_id))
-        destination = get_pid_destination(run_info)
+    for departure in departures:
+        departure_time, time_to_departure = _parse_departure_time(
+            departure=departure,
+            now_local=now_local,
+        )
 
-        # GTFS id
-        gtfs_id = get_GTFS_route_id(departure['route_id'])
+        run_id = departure.get("run_id")
+        run_info = runs.get(str(run_id)) if run_id is not None else None
+        destination = get_pid_destination(run_info or {})
 
-        # Append to list
-        departures_list.append({
-            "platform": departure.get("platform_number", "0"),
-            "destination": destination,
-            "departure_time": departure_time,
-            "time_to_departure": time_to_departure,
-            "run_id": run_id,
-            "route_id": departure['route_id'],
-            "GTFS_id": gtfs_id
-        })
+        route_id = departure.get("route_id")
+        gtfs_id = get_GTFS_route_id(route_id) if route_id is not None else None
+
+        departures_list.append(
+            {
+                "platform": departure.get("platform_number", "0") or "0",
+                "destination": destination,
+                "departure_time": departure_time,
+                "time_to_departure": time_to_departure,
+                "run_id": run_id,
+                "route_id": route_id,
+                "GTFS_id": gtfs_id,
+            }
+        )
+
     return departures_list
+
+
+def _parse_departure_time(
+    departure: Dict[str, Any],
+    now_local: datetime,
+) -> (str, str):
+    """
+    Convert a departure's UTC time fields into local display strings.
+
+    Args:
+        departure: A single departure dict from the PTV API.
+        now_local: The current local time for countdown calculations.
+
+    Returns:
+        A tuple of:
+            (departure_time_str, time_to_departure_str)
+    """
+    scheduled_utc_str: Optional[str] = departure.get("scheduled_departure_utc")
+    estimated_utc_str: Optional[str] = departure.get("estimated_departure_utc")
+
+    if not scheduled_utc_str and not estimated_utc_str:
+        return "--:--", "-"
+
+    # Prefer estimated time when present.
+    departure_utc_str = estimated_utc_str or scheduled_utc_str
+
+    # Parse ISO string and normalize to UTC tz-aware datetime.
+    departure_utc = datetime.fromisoformat(departure_utc_str.replace("Z", "+00:00"))
+    departure_utc = departure_utc.replace(tzinfo=utc)
+
+    # Convert to local timezone.
+    departure_local = departure_utc.astimezone(tz)
+
+    # Compute countdown label.
+    diff_seconds = (departure_local - now_local).total_seconds()
+
+    if diff_seconds < 60:
+        time_to_departure = "now"
+    else:
+        mins = int(diff_seconds // 60)
+        time_to_departure = f"{mins} min"
+
+    departure_time = departure_local.strftime("%I:%M%p").lower()
+    return departure_time, time_to_departure
         
 def searchPTVAPI(term):
     endpoint = f"/v3/search/{term}?route_types=0"
