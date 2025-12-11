@@ -18,9 +18,7 @@ class PlatformDisplay(Display):
 
     def update(self, now):
         if now - self.last_update >= 10 or not self.departures:
-            self.departures = self.ctx["ptv_api"].get_departures(
-                self.ctx["train_stop_id"], max_results=5
-            )
+            self.departures = self.ctx['stop'].get_next_departures(5)
             self.last_update = now
 
     def draw(self, screen):
@@ -33,7 +31,7 @@ class PlatformDisplay(Display):
             return
 
         departure = self.departures[0]
-        colour = self._to_rgb(colourMap.get(departure["GTFS_id"]))
+        colour = self._to_rgb(colourMap.get(departure["route_gtfs_id"]))
 
         pygame.draw.rect(screen, colour, (0, 0, config.SCREEN_RES[0], 10))
         platform_rect = pygame.draw.rect(screen, colour, (344, 14, 31, 31))
@@ -102,7 +100,7 @@ class PlatformDisplay(Display):
             if len(self.departures) <= i:
                 continue
             dep = self.departures[i]
-            colour = self._to_rgb(colourMap.get(dep["GTFS_id"]))
+            colour = self._to_rgb(colourMap.get(dep["route_gtfs_id"]))
             offset = (i - 1) * gap
             container = pygame.Rect(11, 212 + offset, 342, 26)
 

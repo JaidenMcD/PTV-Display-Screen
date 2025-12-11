@@ -9,10 +9,16 @@ from api import ptv_api
 from data import gtfs_loader
 from displays.platform import PlatformDisplay  # keep filename as-is; rename when convenient
 from displays.altdisplay import AltDisplay
+from models.stop import Stop
 
 load_dotenv()
 device = int(os.getenv("DEVICE", "0"))
-train_stop_id = int(os.getenv("TRAIN_STOP_ID", "0"))
+search_term = os.getenv("STOP_SEARCH_TERM")
+
+# Register Stop
+stop = Stop(search_term)
+print(stop.stop_id)
+
 
 if device == 1:
     # Must set these BEFORE pygame imports SDL
@@ -54,9 +60,10 @@ f_stopsList = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 12)
 f_currentTime = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 15)
 
 ctx = {
+    "stop": stop,
     "ptv_api": ptv_api,
     "config": config,
-    "train_stop_id": train_stop_id,
+    "train_stop_id": stop.stop_id,
     "colourMap": colourMap,
     "fonts": {
         "platform_large": f_platformNumber_large,

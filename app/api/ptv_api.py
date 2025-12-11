@@ -212,6 +212,7 @@ def get_departures(stop_id: int, max_results: int = 5) -> List[Dict[str, Any]]:
                 "run_id": run_id,
                 "route_id": route_id,
                 "GTFS_id": gtfs_id,
+                "departure_note": departure["departure_note"]
             }
         )
 
