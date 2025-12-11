@@ -52,7 +52,7 @@ class PlatformDisplay(Display):
         tr = t.get_rect(); tr.center = r.center
         screen.blit(t, tr.topleft)
 
-        formatted = f'{departure['express_note']} {departure['departure_note']}'
+        formatted = f"{departure['express_note']} {departure['departure_note']}"
         t = fonts["f_reg_15"].render(formatted, True, config.BLACK)
         screen.blit(t, (10,51))
 
