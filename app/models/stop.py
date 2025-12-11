@@ -57,7 +57,7 @@ class Stop:
         self.stop_sequence = stop['stop_sequence']
         self.stop_landmark = stop['stop_landmark']
     
-    def get_next_departures(self, n_departures):
+    def get_next_departures(self, n_departures, return_next_run = False):
         endpoint = (
             f"/v3/departures/route_type/0/stop/{self.stop_id}"
             f"?max_results={n_departures}&expand=0&include_skipped_stops=true"
@@ -105,7 +105,11 @@ class Stop:
                     "run_id": departure['run_id']
                 }
             )
-        return departures_list
+        if return_next_run:
+            next_run = result['runs'][str(departures[0]['run_id'])]
+            return departures_list, next_run
+        else:
+            return departures_list
 
     def _get_pid_destination(self, run: dict) -> str:
         """

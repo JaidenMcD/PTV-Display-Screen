@@ -19,8 +19,8 @@ class PlatformDisplay(Display):
 
     def update(self, now):
         if now - self.last_update >= 10 or not self.departures:
-            self.departures = self.ctx['stop'].get_next_departures(5)
-            self.stops = self.ctx["ptv_api"].get_stops_for_run(self.departures[0]["run_id"], 0)
+            self.departures, next_run = self.ctx['stop'].get_next_departures(5, return_next_run = True)
+            self.stops = self.ctx["ptv_api"].get_pid_stops(next_run, self.ctx['stop'].stop_id)
             self.last_update = now
 
     def draw(self, screen):
