@@ -50,6 +50,10 @@ class PlatformDisplay(Display):
         tr = t.get_rect(); tr.center = r.center
         screen.blit(t, tr.topleft)
 
+        formatted = f'{departure['express_note']} {departure['departure_note']}'
+        t = fonts["f_reg_15"].render(formatted, True, config.BLACK)
+        screen.blit(t, (10,51))
+
         stops = self.ctx["ptv_api"].get_stops_for_run(departure["run_id"], 0)
         for c_idx, stop_chunk in enumerate(stops):
             for r_idx, stop in enumerate(stop_chunk):
@@ -111,6 +115,12 @@ class PlatformDisplay(Display):
             r = pygame.draw.rect(screen, colour, r)
             t = fonts["platform_small"].render(dep.get("platform", "-"), True, config.WHITE)
             tr = t.get_rect(); tr.center = r.center
+            screen.blit(t, tr.topleft)
+
+            t = fonts["f_reg_10"].render(dep['express_note'], True, config.BLACK)
+            tr = t.get_rect()
+            tr.centery = container.centery
+            tr.right = 275
             screen.blit(t, tr.topleft)
 
             r = pygame.Rect(303, 0, 50, 18); r.centery = container.centery

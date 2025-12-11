@@ -88,9 +88,11 @@ class Stop:
             
             run_info = runs[str(run_id)]
             if run_info['express_stop_count'] == 0:
-                express_note = 'stops all'
+                express_note = 'Stops all'
+            elif run_info['express_stop_count'] > 0:
+                express_note = 'Express'
             else:
-                express_note = None
+                express_note = ''
             departures_list.append(
                 {
                     "platform": departure.get("platform_number", "0") or "0",

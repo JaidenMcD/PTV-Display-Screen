@@ -58,6 +58,8 @@ f_timeToDep_large = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF",
 f_timeToDep_small = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 13)
 f_stopsList = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 12)
 f_currentTime = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 15)
+f_reg_15 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 15)
+f_reg_10 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 10)
 
 ctx = {
     "stop": stop,
@@ -76,6 +78,8 @@ ctx = {
         "ttd_small": f_timeToDep_small,
         "stops": f_stopsList,
         "clock": f_currentTime,
+        "f_reg_15": f_reg_15,
+        "f_reg_10": f_reg_10,
     },
 }
 
