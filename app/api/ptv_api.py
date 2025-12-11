@@ -59,9 +59,8 @@ def get_pid_destination(run: dict) -> str:
     return run.get("destination_name", "Unknown")
 
 
-def chunk_stops(stops):
+def chunk_stops(stops, chunk_size):
     # --------- Chunk into groups of 8 ----------
-    chunk_size = 8
     chunks = []
 
     for i in range(0, len(stops), chunk_size):
@@ -141,7 +140,7 @@ def get_pid_stops(run, start_stop_id):
     stops = unique_stops
 
     stops[-1][2] = True
-    stops = chunk_stops(stops)
+    stops = chunk_stops(stops, 7)
     return stops
         
 def searchPTVAPI(term):
