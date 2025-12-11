@@ -85,6 +85,12 @@ class Stop:
             for route in self.routes:
                 if route['route_id'] == departure['route_id']:
                     route_gtfs_id = route['route_gtfs_id']
+            
+            run_info = runs[str(run_id)]
+            if run_info['express_stop_count'] == 0:
+                express_note = 'stops all'
+            else:
+                express_note = None
             departures_list.append(
                 {
                     "platform": departure.get("platform_number", "0") or "0",
@@ -92,6 +98,7 @@ class Stop:
                     "departure_time": departure_time,
                     "time_to_departure": time_to_departure,
                     "departure_note": departure["departure_note"],
+                    "express_note": express_note,
                     "route_gtfs_id": route_gtfs_id,
                     "run_id": departure['run_id']
                 }
