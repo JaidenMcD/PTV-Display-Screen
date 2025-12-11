@@ -85,7 +85,7 @@ ctx = {
 
 # Register displays here
 displays = [
-    PlatformDisplay(ctx),
+    PlatformDisplay(ctx, 1),
     AltDisplay(ctx)
     # Add more displays later, e.g., AltDisplay(ctx)
 ]

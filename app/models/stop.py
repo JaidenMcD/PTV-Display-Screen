@@ -57,10 +57,18 @@ class Stop:
         self.stop_sequence = stop['stop_sequence']
         self.stop_landmark = stop['stop_landmark']
     
-    def get_next_departures(self, n_departures, return_next_run = False):
+    def get_next_departures(self, n_departures, return_next_run = False, platform = None):
+        platform_str = ''
+        if type(platform) == type([]):
+            for platform_no in platform:
+                platform_str = platform_str + f'&platform_numbers={platform_no}'
+        elif platform is not None:
+            platform_str = f'&platform_numbers={platform}'
+
         endpoint = (
             f"/v3/departures/route_type/0/stop/{self.stop_id}"
             f"?max_results={n_departures}&expand=0&include_skipped_stops=true"
+            f"{platform_str}"
         )
         result = send_ptv_request(endpoint)
         if not result:
