@@ -59,16 +59,24 @@ def get_pid_destination(run: dict) -> str:
     return run.get("destination_name", "Unknown")
 
 
-def chunk_stops(stops, chunk_size):
-    # --------- Chunk into groups of 8 ----------
+def chunk_stops(stops, chunk_size=8):
+    """
+    Split stops into chunks of `chunk_size`.
+    Pads with empty entries to ensure all chunks have exactly `chunk_size` elements.
+    """
     chunks = []
 
     for i in range(0, len(stops), chunk_size):
-        chunks.append(stops[i:i + chunk_size])
+        chunk = stops[i:i + chunk_size]
+        # Pad with empty stops if needed
+        while len(chunk) < chunk_size:
+            chunk.append(["", False, False, None])
+        chunks.append(chunk)
+
     return chunks
 
 def get_stops_for_run(run_id):
-    """Return ordered list: [[name, is_skipped], ...] including express stops."""
+    """Return ordered list: [[name, is_skipped], terminus?, stop id ...] including express stops."""
     endpoint = (
         f"/v3/pattern/run/{run_id}/route_type/0"
         f"?expand=0&include_skipped_stops=true"
@@ -110,9 +118,6 @@ def get_stops_for_run(run_id):
             if not is_invalid_stop(stop_name):
                 output.append([stop_name, True, False, skipped["stop_id"]])
 
-
-        
-        
 
     return output
 
