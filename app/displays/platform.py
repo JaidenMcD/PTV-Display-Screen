@@ -56,51 +56,7 @@ class PlatformDisplay(Display):
         formatted = f"{departure['express_note']} {departure['departure_note']}"
         t = fonts["f_reg_15"].render(formatted, True, config.BLACK)
         screen.blit(t, (10,51))
-
-        for c_idx, stop_chunk in enumerate(self.stops):
-            for r_idx, stop in enumerate(stop_chunk):
-                container = pygame.Rect(0, 0, 116, 14)
-                container.x = 11 + 116 * c_idx
-                container.y = 78 + 14 * r_idx
-
-                if c_idx == 0 and r_idx == 0:
-                    t = fonts["stops"].render(stop[0], True, config.WHITE)
-                    tr = t.get_rect(); tr.centery = container.centery; tr.x = container.x + 12
-                    r_box = pygame.Rect(0, 0, tr.size[0] + 4, 16)
-                    r_box.centery = container.centery; r_box.x = container.x + 10
-                    pygame.draw.rect(screen, colour, r_box)
-                    screen.blit(t, tr.topleft)
-                else:
-                    textcol = config.MID_GREY if stop[1] else config.BLACK
-                    t = fonts["stops"].render(stop[0], True, textcol)
-                    tr = t.get_rect(); tr.centery = container.centery; tr.x = container.x + 12
-                    screen.blit(t, tr)
-
-                r = pygame.Rect(0, 0, 3, 4); r.midleft = (container.x + 4, container.centery)
-                pygame.draw.rect(screen, colour, r)
-
-                if r_idx == 0 and stop[2]:
-                    r = pygame.Rect(0, 0, 9, 4); r.centery = container.centery; r.x = container.x - 2
-                    pygame.draw.rect(screen, colour, r)
-                    r = pygame.Rect(0, 0, 4, 5); r.bottomleft = container.bottomleft
-                    pygame.draw.rect(screen, colour, r)
-                elif r_idx == len(stop_chunk) - 1 and stop[2]:
-                    r = pygame.Rect(0, 0, 9, 4); r.centery = container.centery; r.x = container.x - 2
-                    pygame.draw.rect(screen, colour, r)
-                    pygame.draw.rect(screen, colour, (container.x, container.y, 4, 5))
-                else:
-                    r = pygame.Rect(0, 0, 4, 14); r.midleft = (container.x, container.centery)
-                    pygame.draw.rect(screen, colour, r)
-
-                if r_idx == 0 and not stop[2]:
-                    for h, y_off in [(3, 0), (1, -4), (2, -7)]:
-                        r = pygame.Rect(0, 0, 4, h); r.bottomleft = (container.x, container.y + y_off)
-                        pygame.draw.rect(screen, colour, r)
-                if r_idx == len(stop_chunk) - 1 and not stop[2]:
-                    for h, y_off in [(2, container.height), (1, container.height + 4), (3, container.height + 7)]:
-                        r = pygame.Rect(0, 0, 4, h)
-                        r.topleft = (container.x, container.y + y_off)
-                        pygame.draw.rect(screen, colour, r)
+        self.draw_stop_list(screen, config, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=5, v_padding=7, font=fonts["stops"], tick=(2,3), text_offset=9)
 
         gap = 26
         for i in range(1, 3):
@@ -150,3 +106,59 @@ class PlatformDisplay(Display):
         text = fonts["clock"].render(current_time, True, config.BLACK)
         text_rect = text.get_rect(); text_rect.center = time_rect.center
         screen.blit(text, text_rect.topleft)
+
+    def draw_stop_list(self, screen, config, colour, x, y, stop_h, stop_w, bar_width, v_padding, font, tick, text_offset):
+        pygame.draw.rect(screen, colour, (x, y, bar_width, v_padding))
+        # Divide the height up into chunk
+        for c_idx, stop_chunk in enumerate(self.stops):
+            for r_idx, stop in enumerate(stop_chunk):
+                container = pygame.Rect(0,0, stop_w, stop_h)
+                container.x = x + stop_w * c_idx
+                container.y = y + v_padding + stop_h * r_idx
+                if stop[3] is not None: # actual stop
+                    if stop[2]: # terminus
+                        # Cap
+                        r_temp = pygame.Rect(container.x,container.y,bar_width,stop_h)
+                        r = pygame.Rect(0,0, 9, 3)
+                        r.centerx = r_temp.centerx
+                        r.centery = container.centery
+                        pygame.draw.rect(screen, colour, r)
+                        # Main bar
+                        pygame.draw.rect(screen, colour, (container.x,container.y,bar_width,round(stop_h / 2)))
+                    else:    
+                        # Main Bar
+                        r = pygame.draw.rect(screen, colour, (container.x,container.y,bar_width,stop_h))
+                        # Tick
+                        r = pygame.Rect(0,0, tick[0], tick[1])
+                        r.centery = container.centery
+                        r.x = container.x + bar_width
+                        pygame.draw.rect(screen, colour, r)
+                    # Station name
+                    if c_idx == 0 and r_idx == 0:
+                        t = font.render(stop[0], True, (255, 255, 255))
+                        tr = t.get_rect(); tr.centery = container.centery; tr.x = container.x + text_offset
+                        r_box = pygame.Rect(0, 0, tr.size[0] + 4, tr.size[1]+2)
+                        r_box.centery = container.centery; r_box.x = container.x + text_offset - 2
+                        pygame.draw.rect(screen, colour, r_box)
+                        screen.blit(t, tr.topleft)
+                    else:
+                        textcol = config.MID_GREY if stop[1] else config.BLACK
+                        t = font.render(stop[0], True, textcol)
+                        tr = t.get_rect(); tr.centery = container.centery; tr.x = container.x + text_offset
+                        screen.blit(t, tr)
+                        if (r_idx == 0 or r_idx == len(stop_chunk) - 1) and not stop[2]:
+                            if r_idx == 0:
+                                pygame.draw.rect(screen, colour, (container.x, y, bar_width, 2))
+                                pygame.draw.rect(screen, colour, (container.x, y+3, bar_width, 2))
+                                pygame.draw.rect(screen, colour, (container.x, y+6, bar_width, v_padding-6))
+                            if r_idx == len(stop_chunk) - 1:
+                                # --- BOTTOM DOT-DOT LINES ---
+                                # Bottom starts at bottom of container
+                                base_y = container.y + container.height
+
+                                pygame.draw.rect(screen, colour, (container.x, base_y, bar_width, v_padding-6))
+                                pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 5, bar_width, 2))
+                                pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 2, bar_width, 2))
+
+
+
