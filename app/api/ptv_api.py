@@ -83,9 +83,9 @@ def get_stops_for_run(run_id):
     departures = result.get("departures", [])
     route_id = departures[0]["route_id"] if departures else None
     def is_invalid_stop(stop_name):
-        if route_id == 11 and stop_name.lower() == "darling station":
+        if route_id == 11 and stop_name.lower() == "darling":
             return True
-        elif route_id == 6 and stop_name.lower() == "burnley station":
+        elif route_id == 6 and stop_name.lower() == "burnley":
             return True
         return False
     # Sort departures by correct order
@@ -96,22 +96,24 @@ def get_stops_for_run(run_id):
     output = []
     for dep in departures:
         stop_id = str(dep["stop_id"])
-
-        skipped_list = dep.get("skipped_stops", [])
-        for skipped in skipped_list:
-            stop_name = skipped["stop_name"]
-            stop_name = stop_name.replace(" Station", "")
-            # Apply the Darling filter
-            if not is_invalid_stop(stop_name):
-                output.append([stop_name, True, False, skipped["stop_id"]])
-
-
         stop_info = stops_dict.get(stop_id)
+
         if stop_info:
             name = stop_info["stop_name"]
             name = name.replace(" Station", "")
             if not is_invalid_stop(name):
                 output.append([name, False, False, stop_id])
+
+        skipped_list = dep.get("skipped_stops", [])
+        for skipped in skipped_list:
+            stop_name = skipped["stop_name"]
+            stop_name = stop_name.replace(" Station", "")
+            if not is_invalid_stop(stop_name):
+                output.append([stop_name, True, False, skipped["stop_id"]])
+
+
+        
+        
 
     return output
 
@@ -124,10 +126,20 @@ def get_pid_stops(run, start_stop_id):
     if distributor and distributor.get("advertised"):
         second_leg = get_stops_for_run(distributor['run_ref'])
         stops.extend(second_leg)
-    
+
     # Find the index of the start_stop_id
     start_index = next((i for i, stop in enumerate(stops) if stop[3] == str(start_stop_id)), None)
     stops = stops[start_index:]
+    # remove duplicates
+    seen_ids = set()
+    unique_stops = []
+    for stop in stops:
+        stop_id = stop[3]
+        if stop_id not in seen_ids:
+            unique_stops.append(stop)
+            seen_ids.add(stop_id)
+    stops = unique_stops
+
     stops[-1][2] = True
     stops = chunk_stops(stops)
     return stops

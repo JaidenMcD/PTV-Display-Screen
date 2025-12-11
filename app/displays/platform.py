@@ -71,7 +71,8 @@ class PlatformDisplay(Display):
                     pygame.draw.rect(screen, colour, r_box)
                     screen.blit(t, tr.topleft)
                 else:
-                    t = fonts["stops"].render(stop[0], True, config.BLACK)
+                    textcol = config.MID_GREY if stop[1] else config.BLACK
+                    t = fonts["stops"].render(stop[0], True, textcol)
                     tr = t.get_rect(); tr.centery = container.centery; tr.x = container.x + 12
                     screen.blit(t, tr)
 
