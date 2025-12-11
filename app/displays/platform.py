@@ -56,7 +56,7 @@ class PlatformDisplay(Display):
         formatted = f"{departure['express_note']} {departure['departure_note']}"
         t = fonts["f_reg_15"].render(formatted, True, config.BLACK)
         screen.blit(t, (10,51))
-        self.draw_stop_list(screen, config, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=5, v_padding=7, font=fonts["stops"], tick=(2,3), text_offset=9)
+        self.draw_stop_list(screen, config, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=3, v_padding=7, font=fonts["stops"], tick=(3,2), text_offset=9)
 
         gap = 26
         for i in range(1, 3):
