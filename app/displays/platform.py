@@ -6,6 +6,7 @@ class PlatformDisplay(Display):
     def __init__(self, ctx):
         super().__init__(ctx)
         self.departures = []
+        self.stops = []
         self.last_update = 0
 
     def on_show(self):
@@ -19,6 +20,7 @@ class PlatformDisplay(Display):
     def update(self, now):
         if now - self.last_update >= 10 or not self.departures:
             self.departures = self.ctx['stop'].get_next_departures(5)
+            self.stops = self.ctx["ptv_api"].get_stops_for_run(self.departures[0]["run_id"], 0)
             self.last_update = now
 
     def draw(self, screen):
@@ -54,8 +56,7 @@ class PlatformDisplay(Display):
         t = fonts["f_reg_15"].render(formatted, True, config.BLACK)
         screen.blit(t, (10,51))
 
-        stops = self.ctx["ptv_api"].get_stops_for_run(departure["run_id"], 0)
-        for c_idx, stop_chunk in enumerate(stops):
+        for c_idx, stop_chunk in enumerate(self.stops):
             for r_idx, stop in enumerate(stop_chunk):
                 container = pygame.Rect(0, 0, 116, 14)
                 container.x = 11 + 116 * c_idx
