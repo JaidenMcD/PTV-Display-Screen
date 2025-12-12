@@ -160,5 +160,40 @@ class PlatformDisplay(Display):
                                 pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 5, bar_width, 2))
                                 pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 2, bar_width, 2))
 
+        def draw_subsequent_departure(screen, colour, x, y, w, bar_thickness, departure_time, departure_time_font, departure_dest, departure_dest_font, note, note_font):
+            h = 24
+            container = pygame.Rect(x,y,w,h)
+            inner_container = pygame.Rect(x, y + bar_thickness, w, h-bar_thickness)
+            # Top Bar
+            pygame.draw.rect(screen, colour, (x, y, w, bar_thickness))
+            # Colour Bar
+            r = pygame.Rect(0,0, 18, 4)
+            r.centery = inner_container.centery
+            pygame.draw.rect(screen, colour, r)
+            # Text (departure time)
+            t = departure_time_font.render(f'{departure_time}', True, (0,0,0))
+            tr = t.get_rect()
+            tr.centery = inner_container.centery
+            tr.x = x + 9
+            screen.blit(t, tr.topleft)
+            # Text (departure destination)
+            t = departure_dest_font.render(f'{departure_dest}', True, (0,0,0))
+            tr = t.get_rect()
+            tr.centery = inner_container.centery
+            tr.x = x + 66
+            screen.blit(t, tr.topleft)
+            # Text (departure note)
+            t = note_font.render(f'{note}', True, (0,0,0))
+            tr = t.get_rect()
+            tr.centery = inner_container.centery
+            tr.x = x + 161
+            screen.blit(t, tr.topleft)
+
+
+
+
+        def express_stop():
+            return
+
 
 
