@@ -13,9 +13,9 @@ from models.stop import Stop
 
 load_dotenv()
 device = int(os.getenv("DEVICE", "0"))
-search_term = os.getenv("STOP_SEARCH_TERM")
 
 # Register Stop
+search_term = input("Enter station: ")
 stop = Stop(search_term)
 
 
