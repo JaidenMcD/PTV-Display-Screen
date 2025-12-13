@@ -146,16 +146,18 @@ class PlatformDisplay(Display):
         r.x = inner_container.x
         pygame.draw.rect(screen, colour, r)
         # Text (departure time)
+        departure_time = departure_time.lstrip('0')
         t = departure_time_font.render(f'{departure_time}', True, (0,0,0))
         tr = t.get_rect()
         tr.centery = inner_container.centery
         tr.x = x + 9
         screen.blit(t, tr.topleft)
         # Text (departure destination)
+        xpos = tr.right + 14
         t = departure_dest_font.render(f'{departure_dest}', True, (0,0,0))
         tr = t.get_rect()
         tr.centery = inner_container.centery
-        tr.x = x + 66
+        tr.x = xpos
         screen.blit(t, tr.topleft)
         # Text (departure note)
         t = note_font.render(f'{note}', True, (0,0,0))
