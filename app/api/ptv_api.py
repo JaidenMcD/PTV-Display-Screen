@@ -90,7 +90,7 @@ def get_stops_for_run(run_id):
     departures = result.get("departures", [])
     route_id = departures[0]["route_id"] if departures else None
     def is_invalid_stop(stop_name):
-        if route_id == 11 and stop_name.lower() == "darling":
+        if (route_id == 11 or route_id==4) and stop_name.lower() == "darling":
             return True
         elif route_id == 6 and stop_name.lower() == "burnley":
             return True
