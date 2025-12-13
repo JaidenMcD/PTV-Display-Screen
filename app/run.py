@@ -27,7 +27,6 @@ if device == 1:
     # Must set these BEFORE pygame imports SDL
     os.environ["DISPLAY"] = ":0"
     os.environ["XAUTHORITY"] = "/home/admin/.Xauthority"
-    os.environ["PYGAME_DETECT_AVX2"] = 1 
 
 pygame.init()
 
