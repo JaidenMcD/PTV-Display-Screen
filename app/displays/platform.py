@@ -37,23 +37,23 @@ class PlatformDisplay(Display):
 
         pygame.draw.rect(screen, colour, (0, 0, config.SCREEN_RES[0], 10))
         platform_rect = pygame.draw.rect(screen, colour, (344, 14, 31, 31))
-        text = fonts["platform_large"].render(departure.get("platform", "-"), True, config.WHITE)
+        text = fonts["f_bold_25"].render(departure.get("platform", "-"), True, config.WHITE)
         text_rect = text.get_rect(); text_rect.center = platform_rect.center
         screen.blit(text, text_rect.topleft)
 
-        text = fonts["dest_large"].render(departure["destination"], True, config.BLACK)
+        text = fonts["f_bold_27"].render(departure["destination"], True, config.BLACK)
         screen.blit(text, (113, 19))
 
-        text = fonts["dep_large"].render(departure.get("departure_time", "--:--"), True, config.BLACK)
+        text = fonts["f_reg_21"].render(departure.get("departure_time", "--:--"), True, config.BLACK)
         screen.blit(text, (11, 21))
 
         r = pygame.draw.rect(screen, config.BLACK, (379, 15, 91, 31))
-        t = fonts["ttd_large"].render(departure.get("time_to_departure", "-"), True, config.WHITE)
+        t = fonts["f_reg_23"].render(departure.get("time_to_departure", "-"), True, config.WHITE)
         tr = t.get_rect(); tr.center = r.center
         screen.blit(t, tr.topleft)
 
         formatted = f"{departure['express_note']} {departure['departure_note']}"
-        t = fonts["f_reg_15"].render(formatted, True, config.BLACK)
+        t = fonts["f_reg_12"].render(formatted, True, config.BLACK)
         screen.blit(t, (10,51))
 
         pygame.draw.rect(screen, config.BLACK, (11,76, config.SCREEN_RES[0] - 11, 2))

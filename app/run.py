@@ -59,10 +59,15 @@ f_timeToDep_large = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF",
 f_timeToDep_small = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 13)
 f_stopsList = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 12)
 f_currentTime = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 15)
-f_med_14 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 12)
+f_bold_27 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-BOLD.TTF", 27)
+f_bold_25 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-BOLD.TTF", 25)
+f_med_14 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 14)
 f_med_12 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 12)
+f_reg_23 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 23)
+f_reg_21 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 21)
 f_reg_15 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 15)
 f_reg_13 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 13)
+f_reg_12 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 13)
 f_reg_10 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 10)
 f_reg_9 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 9)
 
@@ -83,10 +88,15 @@ ctx = {
         "ttd_small": f_timeToDep_small,
         "stops": f_stopsList,
         "clock": f_currentTime,
+        "f_bold_27": f_bold_27,
+        "f_bold_25": f_bold_25,
         "f_med_14": f_med_14,
         "f_med_12": f_med_12,
         "f_reg_15": f_reg_15,
+        "f_reg_23": f_reg_23,
+        "f_reg_21": f_reg_21,
         "f_reg_13": f_reg_13,
+        "f_reg_12": f_reg_12,
         "f_reg_10": f_reg_10,
         "f_reg_9": f_reg_9
     },
