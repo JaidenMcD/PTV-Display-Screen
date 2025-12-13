@@ -6,6 +6,7 @@ from utils import parse_departure_time
 from datetime import datetime
 import pytz
 import os
+import re
 
 tz = pytz.timezone(os.getenv("TIMEZONE"))
 
@@ -33,19 +34,28 @@ class Stop:
 
     # Resolve stop ID using provided name
     def __post_init__(self):
-        endpoint = f"/v3/search/{self._input_name}?route_types=0"
+        print(f'Regestering stop for input name: {self._input_name}...')
+        # Format input
+        raw_name = self._input_name.strip()
+        query_name = raw_name.replace(' ', '%20')
+        endpoint = f"/v3/search/{query_name}?route_types=0"
         result = send_ptv_request(endpoint)
-        stop = None
-        for stop_candidate in result['stops']:
-            if self._input_name in stop_candidate['stop_name']:
-                stop = stop_candidate
-                break
-                
-        if stop is None:
-            print("NO STOP FOUND --------------------------")
+
+        target = self.normalise(raw_name)
+        scored = [
+            (self.score_stop(c,target), c)
+            for c in result["stops"]
+        ]
+        scored.sort(key=lambda x: x[0], reverse=True)
+        best_score, stop = scored[0] if scored else (0, None)
+        if best_score == 0:
+            print("NO GOOD STOP FOUND --------------------------")
             exit()
+
         self._input_name = None  # discard after use
         
+        print(f"Found stop {stop['stop_name']} [{stop['stop_id']}] with a score of {best_score}")
+
         # Filling metadata
         self.name = stop['stop_name']
         self.stop_id = stop['stop_id']
@@ -134,5 +144,31 @@ class Stop:
 
         # 2. If no distributor advertised, fallback to run destination
         return run.get("destination_name", "Unknown")
-    def get_gtfs_id(self):
-        return
+    
+
+    def normalise(self, s: str) -> str:
+        s = s.lower()
+        s = re.sub(r"[^\w\s]", "", s)  # remove punctuation
+        s = re.sub(r"\s+", " ", s)     # collapse spaces
+        return s.strip()
+    
+
+    """ Stop Matching Funct """
+    def score_stop(self, stop, target_name, target_suburb=None):
+        name = self.normalise(stop["stop_name"])
+        score = 0
+
+        if name == target_name:
+            score += 100
+        elif name.startswith(target_name):
+            score += 70
+        elif target_name in name:
+            score += 40
+        
+        if target_suburb and stop["stop_suburb"]:
+            if stop["stop_suburb"].lower() == target_suburb.lower():
+                score += 20
+        
+        return score
+
+    

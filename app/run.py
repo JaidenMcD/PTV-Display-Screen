@@ -17,7 +17,6 @@ search_term = os.getenv("STOP_SEARCH_TERM")
 
 # Register Stop
 stop = Stop(search_term)
-print(stop.stop_id)
 
 
 if device == 1:
@@ -36,12 +35,10 @@ else:
 
 
 info = pygame.display.Info()
-print("Pygame display info:", info.current_w, info.current_h)
 
 clock = pygame.time.Clock()
 running = True
 
-print("starting up")
 screen.fill(config.BACKGROUND_COLOR)
 
 # Route Colour Map (hex strings)
@@ -85,7 +82,7 @@ ctx = {
 
 # Register displays here
 displays = [
-    PlatformDisplay(ctx, 1),
+    PlatformDisplay(ctx),
     AltDisplay(ctx)
     # Add more displays later, e.g., AltDisplay(ctx)
 ]
