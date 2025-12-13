@@ -68,6 +68,7 @@ class PlatformDisplay(Display):
         y = 216
         for i in range(1,3): 
             dep = self.departures[i]
+            colour = self._to_rgb(colourMap.get(dep["route_gtfs_id"]))
             y = self.draw_subsequent_departure(screen, colour, y, departure_time=dep["departure_time"], 
                                                departure_time_font = fonts["f_reg_13"], departure_dest = dep["destination"], 
                                                departure_dest_font=fonts["f_med_12"], note = dep["express_note"], note_font=fonts["f_reg_9"], 
