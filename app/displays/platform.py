@@ -123,11 +123,12 @@ class PlatformDisplay(Display):
                         tr = t.get_rect(); tr.centery = container.centery; tr.x = container.x + text_offset
                         screen.blit(t, tr)
                         # Top dot dot lones
-                        if r_idx == 0 and stop != self.stops[0]:
+                        all_stops = [s for chunk in self.stops for s in chunk]
+                        if r_idx == 0 and stop != all_stops[0]:
                             pygame.draw.rect(screen, colour, (container.x, y, bar_width, 2))
                             pygame.draw.rect(screen, colour, (container.x, y+3, bar_width, 2))
                             pygame.draw.rect(screen, colour, (container.x, y+6, bar_width, v_padding-6))
-                        if r_idx == len(stop_chunk) - 1 and stop != self.stops[-1]:
+                        if r_idx == len(stop_chunk) - 1 and stop != all_stops[-1]:
                             base_y = container.y + container.height
                             pygame.draw.rect(screen, colour, (container.x, base_y, bar_width, v_padding-6))
                             pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 5, bar_width, 2))
