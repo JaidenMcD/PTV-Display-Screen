@@ -86,12 +86,17 @@ class PlatformDisplay(Display):
     def draw_stop_list(self, screen, config, colour, x, y, stop_h, stop_w, bar_width, v_padding, font, tick, text_offset):
         pygame.draw.rect(screen, colour, (x, y, bar_width, v_padding))
         # Divide the height up into chunk
+        all_stops = [s for chunk in self.stops for s in chunk]
+        skip_block_active = False
+        stop_index = 0
         for c_idx, stop_chunk in enumerate(self.stops):
             for r_idx, stop in enumerate(stop_chunk):
                 container = pygame.Rect(0,0, stop_w, stop_h)
                 container.x = x + stop_w * c_idx
                 container.y = y + v_padding + stop_h * r_idx
+
                 if stop[3] is not None: # actual stop
+                    # Determine s
                     if stop[2]: # terminus
                         # Cap
                         r_temp = pygame.Rect(container.x,container.y,bar_width,stop_h)
@@ -101,14 +106,31 @@ class PlatformDisplay(Display):
                         pygame.draw.rect(screen, colour, r)
                         # Main bar
                         pygame.draw.rect(screen, colour, (container.x,container.y,bar_width,round(stop_h / 2)))
-                    else:    
-                        # Main Bar
-                        r = pygame.draw.rect(screen, colour, (container.x,container.y,bar_width,stop_h))
-                        # Tick
-                        r = pygame.Rect(0,0, tick[0], tick[1])
-                        r.centery = container.centery
-                        r.x = container.x + bar_width
-                        pygame.draw.rect(screen, colour, r)
+                    else:
+                        # if skipped and the next station is not skipped
+                        if stop[1] and not all_stops[stop_index+1][1]:
+                            self.draw_express_arrow(screen, colour, container, bar_width)
+                            skip_block_active = False
+                        # If skipped and already inside skip block:
+                        elif stop[1] and skip_block_active:
+                            # Main Bar
+                            r = pygame.draw.rect(screen, colour, (container.x,container.y,bar_width,stop_h))
+                        # if skipped and not yet inside a skip block:
+                        elif stop[1] and not skip_block_active:
+                            skip_block_active = True
+                            self.draw_express_arrow(screen, colour, container, bar_width)
+                        # if not skipped and not inside a skip block
+                        elif not stop[1] and not skip_block_active:
+                            skip_block_active = False
+                            # Main Bar
+                            r = pygame.draw.rect(screen, colour, (container.x,container.y,bar_width,stop_h))
+                            # Tick
+                            r = pygame.Rect(0,0, tick[0], tick[1])
+                            r.centery = container.centery
+                            r.x = container.x + bar_width
+                            pygame.draw.rect(screen, colour, r)
+        
+
                     # Station name
                     if c_idx == 0 and r_idx == 0:
                         t = font.render(stop[0], True, (255, 255, 255))
@@ -123,7 +145,6 @@ class PlatformDisplay(Display):
                         tr = t.get_rect(); tr.centery = container.centery; tr.x = container.x + text_offset
                         screen.blit(t, tr)
                         # Top dot dot lones
-                        all_stops = [s for chunk in self.stops for s in chunk]
                         if r_idx == 0 and stop != all_stops[0]:
                             pygame.draw.rect(screen, colour, (container.x, y, bar_width, 2))
                             pygame.draw.rect(screen, colour, (container.x, y+3, bar_width, 2))
@@ -133,6 +154,18 @@ class PlatformDisplay(Display):
                             pygame.draw.rect(screen, colour, (container.x, base_y, bar_width, v_padding-6))
                             pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 5, bar_width, 2))
                             pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 2, bar_width, 2))
+                stop_index = stop_index + 1
+    def draw_express_arrow(self, screen, colour, container, bar_width):
+        """
+        Draws a simple arrow.
+        (x, y) is the top-left corner of the bounding box of the arrow.
+        """
+        # Bar part
+        x = container.x
+        y = container.y
+        bot = container.bottom
+        points = [(x, y), (x, y+4), (x-2, y + 4), (x-3, y+5), (x+2, bot - 5), (x+bar_width+3, y+5),(x+bar_width+2, y+4), (x+bar_width, y+4), (x+bar_width, y)]
+        pygame.draw.polygon(screen, colour, points)
 
     def draw_subsequent_departure(self, screen, colour, y, departure_time, departure_time_font, departure_dest, departure_dest_font, note, note_font, time_until_departure, platform, w=351, bar_thickness=2, x=9):
         h = 24
