@@ -2,7 +2,7 @@ import os
 import time
 from dotenv import load_dotenv
 
-
+import pygame
 
 import config
 from api import ptv_api
@@ -24,7 +24,6 @@ if device == 1:
     os.environ["DISPLAY"] = ":0"
     os.environ["XAUTHORITY"] = "/home/admin/.Xauthority"
     os.environ["PYGAME_DETECT_AVX2"] = 1 
-import pygame
 
 pygame.init()
 
