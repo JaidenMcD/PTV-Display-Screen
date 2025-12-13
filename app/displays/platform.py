@@ -55,8 +55,15 @@ class PlatformDisplay(Display):
         formatted = f"{departure['express_note']} {departure['departure_note']}"
         t = fonts["f_reg_15"].render(formatted, True, config.BLACK)
         screen.blit(t, (10,51))
+
+        pygame.draw.rect(screen, config.BLACK, (11,76, config.SCREEN_RES[0] - 11, 2))
+
         self.draw_stop_list(screen, config, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=3, v_padding=7, font=fonts["stops"], tick=(3,2), text_offset=9)
-        
+
+        current_time = datetime.now().strftime("%I:%M:%S %p").lower()
+        self.draw_clock(screen, config, 369, 216, 102, 46, 2, fonts["f_med_14"], current_time)
+
+
         gap = 3
         y = 216
         for i in range(1,3): 
@@ -67,17 +74,13 @@ class PlatformDisplay(Display):
                                                time_until_departure = dep["time_to_departure"], 
                                                platform=dep["platform"], w=351, bar_thickness=2, x=9)
             y = y + gap
-    
-        #pygame.draw.line(screen, config.BLACK, (11, 70), (config.SCREEN_RES[0] - 11, 70), 2)
+        
+        
         #pygame.draw.line(screen, config.BLACK, (11, 213), (353, 213), 2)
         #pygame.draw.line(screen, config.BLACK, (11, 238), (353, 238), 2)
 
-        time_rect = pygame.draw.rect(screen, config.BLACK, (358, 213, 113, 48))
-        pygame.draw.rect(screen, config.LIGHT_WARM_GREY, (360, 215, 109, 44))
-        current_time = datetime.now().strftime("%I:%M:%S %p").lower()
-        text = fonts["clock"].render(current_time, True, config.BLACK)
-        text_rect = text.get_rect(); text_rect.center = time_rect.center
-        screen.blit(text, text_rect.topleft)
+        
+        
 
     def draw_stop_list(self, screen, config, colour, x, y, stop_h, stop_w, bar_width, v_padding, font, tick, text_offset):
         pygame.draw.rect(screen, colour, (x, y, bar_width, v_padding))
@@ -185,7 +188,12 @@ class PlatformDisplay(Display):
         return inner_container.bottom
 
 
-
+    def draw_clock(self, screen, config, x, y, w, h, border_width, font, time):
+        pygame.draw.rect(screen, config.BLACK, (x,y,w,h))
+        r = pygame.draw.rect(screen, config.LIGHT_WARM_GREY, (x+border_width, y+border_width, w-border_width*2, h-border_width*2))
+        t = font.render(time, True, config.BLACK)
+        tr = t.get_rect(); tr.center = r.center
+        screen.blit(t, tr.topleft)
 
         def express_stop():
             return
