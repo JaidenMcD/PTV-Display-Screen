@@ -11,30 +11,32 @@ import re
 tz = pytz.timezone(os.getenv("TIMEZONE"))
 
 
-@dataclass
 class Stop:
-    # Temp unstored input arg
-    _input_name: str = field(default=None, repr=False)
+    def __init__(self, name: str, platforms: List[str]):
+        self.platforms = platforms
+        self._input_name = name
 
-    # Core stop metadata (important)
-    stop_id: int = field(init=False)
-    name: Optional[str] = None
-    routes: list = field(default_factory=list)
+        # Core stop metadata (important)
+        self.stop_id = None
+        self.name = None
+        self.routes = []
 
-    # Core stop metadata (unimportant)
-    stop_suburb: Optional[str] = None
-    route_type: Optional[int] = None
-    stop_latitude: Optional[str] = None
-    stop_longitude: Optional[str] = None
-    stop_sequence: Optional[int] = None
-    stop_landmark: Optional[str] = None
+        # Core stop metadata (unimportant)
+        self.stop_suburb = None
+        self.route_type = None
+        self.stop_latitude = None
+        self.stop_longitude = None
+        self.stop_sequence = None
+        self.stop_landmark = None
 
-    # Non-metadata
-    stop_id_gtfs: Optional[int] = None
+        # Non-metadata
+        self.stop_id_gtfs = None
+
+        self.resolve_stop()
 
     # Resolve stop ID using provided name
-    def __post_init__(self):
-        print(f'Regestering stop for input name: {self._input_name}...')
+    def resolve_stop(self):
+        print(f'Resolving stop for input name: {self._input_name}...')
         # Format input
         raw_name = self._input_name.strip()
         query_name = raw_name.replace(' ', '%20')
@@ -66,14 +68,12 @@ class Stop:
         self.stop_longitude = stop['stop_longitude']
         self.stop_sequence = stop['stop_sequence']
         self.stop_landmark = stop['stop_landmark']
-    
-    def get_next_departures(self, n_departures, return_next_run = False, platform = None):
+
+    def get_next_departures(self, n_departures, return_next_run = False):
         platform_str = ''
-        if type(platform) == type([]):
-            for platform_no in platform:
+        if self.platforms != ['']:
+            for platform_no in self.platforms:
                 platform_str = platform_str + f'&platform_numbers={platform_no}'
-        elif platform is not None:
-            platform_str = f'&platform_numbers={platform}'
 
         endpoint = (
             f"/v3/departures/route_type/0/stop/{self.stop_id}"

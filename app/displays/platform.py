@@ -7,7 +7,7 @@ class PlatformDisplay(Display):
         super().__init__(ctx)
         self.departures = []
         self.stops = []
-        self.platform_no = platform
+        self.platforms = platform
         self.last_update = 0
 
     def on_show(self):
@@ -20,7 +20,7 @@ class PlatformDisplay(Display):
 
     def update(self, now):
         if now - self.last_update >= 10 or not self.departures:
-            self.departures, next_run = self.ctx['stop'].get_next_departures(5, return_next_run = True, platform = self.platform_no)
+            self.departures, next_run = self.ctx['stop'].get_next_departures(5, return_next_run = True)
             self.stops = self.ctx["ptv_api"].get_pid_stops(next_run, self.ctx['stop'].stop_id)
             self.last_update = now
 

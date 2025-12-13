@@ -16,7 +16,11 @@ device = int(os.getenv("DEVICE", "0"))
 
 # Register Stop
 search_term = input("Enter station: ")
-stop = Stop(search_term)
+platforms = input("Comma seperated platforms to show (skip with 'enter' for all): ")
+platforms = platforms.split(',')
+print(platforms)
+stop = Stop(search_term, platforms)
+
 
 
 if device == 1:
