@@ -105,6 +105,7 @@ class Stop:
                 now_local=now_local,
             )
 
+    
             run_id = departure.get("run_id")
             run_info = runs.get(str(run_id)) if run_id is not None else None
             destination = self._get_pid_destination(run_info or {})
@@ -122,14 +123,15 @@ class Stop:
             
             departures_list.append(
                 {
-                    "platform": departure.get("platform_number", "0") or "0",
+                    "platform": departure.get("platform_number", None) or None,
                     "destination": destination,
                     "departure_time": departure_time,
                     "time_to_departure": time_to_departure,
                     "departure_note": departure["departure_note"],
                     "express_note": express_note,
                     "route_gtfs_id": route_gtfs_id,
-                    "run_id": departure['run_id']
+                    "run_id": departure['run_id'],
+                    "flag": departure['flags']
                 }
             )
         if return_next_run:

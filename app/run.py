@@ -55,6 +55,7 @@ f_depTime_small = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 1
 f_stopsList = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 12)
 f_bold_27 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-BOLD.TTF", 27)
 f_bold_25 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-BOLD.TTF", 25)
+f_med_22 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 22)
 f_med_14 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 14)
 f_med_12 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 12)
 f_reg_23 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 23)
@@ -78,6 +79,7 @@ ctx = {
         "stops": f_stopsList,
         "f_bold_27": f_bold_27,
         "f_bold_25": f_bold_25,
+        "f_med_22": f_med_22,
         "f_med_14": f_med_14,
         "f_med_12": f_med_12,
         "f_reg_15": f_reg_15,
