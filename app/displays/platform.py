@@ -74,7 +74,7 @@ class PlatformDisplay(Display):
         self.draw_stop_list(screen, config, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=4, v_padding=7, font=fonts["stops"], tick=(3,2), text_offset=9)
 
         current_time = datetime.now().strftime("%I:%M:%S %p").lower()
-        self.draw_clock(screen, config, 369, 216, 102, 46, 2, fonts["f_med_14"], current_time)
+        self.draw_clock(screen, config, 369, 216, 102, 46, 1, fonts["f_med_14"], current_time)
 
 
         gap = 3
