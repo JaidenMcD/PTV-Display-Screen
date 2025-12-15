@@ -93,12 +93,12 @@ class Stop:
             return []
 
         departures = result.get("departures", [])
+        departures = departures[:n_departures]
         runs = result.get("runs", {}) or {}
         
         # Parse Results
         departures_list: List[Dict[str, Any]] = []
         now_local = datetime.now(tz)
-
         for departure in departures:
             departure_time, time_to_departure = parse_departure_time(
                 departure=departure,
@@ -119,19 +119,11 @@ class Stop:
                 express_note = 'Express'
             else:
                 express_note = ''
-            # City Loop check
-            endpoint = f"/v3/pattern/run/{departure['run_id']}/route_type/0"
-            runresult = send_ptv_request(endpoint)
-            # 1068 is flagstaff
-            cityloop = any(
-                d.get("stop_id") == 1068 
-                for d in runresult.get("departures", [])
-            )
             
             departures_list.append(
                 {
                     "platform": departure.get("platform_number", "0") or "0",
-                    "destination": "City Loop" if cityloop else destination,
+                    "destination": destination,
                     "departure_time": departure_time,
                     "time_to_departure": time_to_departure,
                     "departure_note": departure["departure_note"],
