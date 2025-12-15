@@ -1,7 +1,6 @@
-from dataclasses import dataclass, field
+
 from typing import Optional, Dict, List, Any
 from api.ptv_api import send_ptv_request
-from models.route import Route
 from utils import parse_departure_time
 from datetime import datetime
 import pytz
