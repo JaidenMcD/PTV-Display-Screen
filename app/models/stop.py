@@ -53,40 +53,21 @@ class Stop:
         best_score, train_stop = scored[0] if scored else (0, None)
         if best_score == 0:
             print("No matching metro station found")
+            exit()
             train_stop = None
         else:
             print(f"Found stop {train_stop['stop_name']} [{train_stop['stop_id']}] with a score of {best_score}")
 
-        # Resolve V-Line
-        endpoint = f"/v3/search/{query_name}?route_types={config.route_type_vline}"
-        result = send_ptv_request(endpoint)
-        target = self.normalise(raw_name)
-        scored = [
-            (self.score_stop(c,target), c)
-            for c in result["stops"]
-        ]
-        scored.sort(key=lambda x: x[0], reverse=True)
-        best_score, vline_stop = scored[0] if scored else (0, None)
-        if best_score == 0:
-            print("No matching VLine stop found")
-            vline_stop = None
-        else:
-            print(f"Found VLine stop {vline_stop['stop_name']} [{vline_stop['stop_id']}] with a score of {best_score}")
 
         self._input_name = None  # discard after use
         
-        if vline_stop is None and train_stop is None:
-            print("[Error] No matching station found")
-            exit()
 
         # Filling metadata
-        self.stop_id = train_stop['stop_id'] if train_stop else None
-        self.vline_stop_id = vline_stop['stop_id'] if vline_stop else None
-        self.route_type = train_stop['route_type'] if train_stop else None
-        self.vline_route_type = vline_stop['route_type'] if vline_stop else None
+        self.stop_id = train_stop['stop_id'] 
+        self.route_type = train_stop['route_type']
 
         # Pick metro over Vline if possible
-        stop = train_stop if train_stop else vline_stop
+        stop = train_stop
         self.name = stop['stop_name']
         self.routes = stop['routes']
         self.stop_suburb = stop['stop_suburb']
