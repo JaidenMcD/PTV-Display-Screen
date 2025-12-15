@@ -41,12 +41,20 @@ class PlatformDisplay(Display):
         text_rect = text.get_rect(); text_rect.center = platform_rect.center
         screen.blit(text, text_rect.topleft)
 
+        
+        """ Top Section """
+        # Destination
+        coords = (100, 12)
         text = fonts["f_bold_27"].render(departure["destination"], True, config.BLACK)
-        screen.blit(text, (113, 19))
+        screen.blit(text, coords)
+        baseline_y = coords[1] + fonts["f_bold_27"].get_ascent()
 
+        # Departure Time
+        time_y = baseline_y - fonts["f_reg_21"].get_ascent()
         text = fonts["f_reg_21"].render(departure.get("departure_time", "--:--"), True, config.BLACK)
-        screen.blit(text, (11, 21))
+        screen.blit(text, (11, time_y))
 
+        # Time to departure
         r = pygame.draw.rect(screen, config.BLACK, (379, 15, 91, 31))
         t = fonts["f_reg_23"].render(departure.get("time_to_departure", "-"), True, config.WHITE)
         tr = t.get_rect(); tr.center = r.center
