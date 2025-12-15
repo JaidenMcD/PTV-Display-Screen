@@ -65,18 +65,24 @@ def chunk_stops(stops, chunk_size=8):
     Pads with empty entries to ensure all chunks have exactly `chunk_size` elements.
     """
     chunks = []
+    empty_stop = {
+        "name": "",
+        "is_skipped": False,
+        "is_terminus": False,
+        "stop_id": None
+    }
 
     for i in range(0, len(stops), chunk_size):
         chunk = stops[i:i + chunk_size]
         # Pad with empty stops if needed
         while len(chunk) < chunk_size:
-            chunk.append(["", False, False, None])
+            chunk.append(empty_stop.copy())
         chunks.append(chunk)
 
     return chunks
 
 def get_stops_for_run(run_id):
-    """Return ordered list: [[name, is_skipped], terminus?, stop id ...] including express stops."""
+    """Return ordered list of stop dicts with keys: name, is_skipped, is_terminus, stop_id"""
     endpoint = (
         f"/v3/pattern/run/{run_id}/route_type/0"
         f"?expand=0&include_skipped_stops=true"
@@ -109,15 +115,24 @@ def get_stops_for_run(run_id):
             name = stop_info["stop_name"]
             name = name.replace(" Station", "")
             if not is_invalid_stop(name):
-                output.append([name, False, False, stop_id])
+                output.append({
+                    "name": name,
+                    "is_skipped": False,
+                    "is_terminus": False,
+                    "stop_id": stop_id
+                })
 
         skipped_list = dep.get("skipped_stops", [])
         for skipped in skipped_list:
             stop_name = skipped["stop_name"]
             stop_name = stop_name.replace(" Station", "")
             if not is_invalid_stop(stop_name):
-                output.append([stop_name, True, False, skipped["stop_id"]])
-
+                output.append({
+                    "name": stop_name,
+                    "is_skipped": True,
+                    "is_terminus": False,
+                    "stop_id": skipped["stop_id"]
+                })
 
     return output
 
@@ -132,19 +147,19 @@ def get_pid_stops(run, start_stop_id):
         stops.extend(second_leg)
 
     # Find the index of the start_stop_id
-    start_index = next((i for i, stop in enumerate(stops) if stop[3] == str(start_stop_id)), None)
+    start_index = next((i for i, stop in enumerate(stops) if stop["stop_id"] == str(start_stop_id)), None)
     stops = stops[start_index:]
     # remove duplicates
     seen_ids = set()
     unique_stops = []
     for stop in stops:
-        stop_id = stop[3]
+        stop_id = stop["stop_id"]
         if stop_id not in seen_ids:
             unique_stops.append(stop)
             seen_ids.add(stop_id)
     stops = unique_stops
 
-    stops[-1][2] = True
+    stops[-1]["is_terminus"] = True
     stops = chunk_stops(stops, 7)
     return stops
         

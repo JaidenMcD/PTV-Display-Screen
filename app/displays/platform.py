@@ -111,9 +111,9 @@ class PlatformDisplay(Display):
                 container.x = x + stop_w * c_idx
                 container.y = y + v_padding + stop_h * r_idx
 
-                if stop[3] is not None: # actual stop
+                if stop["stop_id"] is not None: # actual stop
                     # Determine s
-                    if stop[2]: # terminus
+                    if stop["is_terminus"]: # terminus
                         # Cap
                         r_temp = pygame.Rect(container.x,container.y,bar_width,stop_h)
                         r = pygame.Rect(0,0, 9, 3)
@@ -124,19 +124,19 @@ class PlatformDisplay(Display):
                         pygame.draw.rect(screen, colour, (container.x,container.y,bar_width,round(stop_h / 2)))
                     else:
                         # if skipped and the next station is not skipped
-                        if stop[1] and not all_stops[stop_index+1][1]:
+                        if stop["is_skipped"] and not all_stops[stop_index+1]["is_skipped"]:
                             self.draw_express_arrow(screen, container, colour, arrowtip_y = 10, b_w = 4)
                             skip_block_active = False
                         # If skipped and already inside skip block:
-                        elif stop[1] and skip_block_active:
+                        elif stop["is_skipped"] and skip_block_active:
                             # Main Bar
                             r = pygame.draw.rect(screen, colour, (container.x,container.y,bar_width,stop_h))
                         # if skipped and not yet inside a skip block:
-                        elif stop[1] and not skip_block_active:
+                        elif stop["is_skipped"] and not skip_block_active:
                             skip_block_active = True
                             self.draw_express_arrow(screen, container, colour, arrowtip_y = 10, b_w = 4)
                         # if not skipped and not inside a skip block
-                        elif not stop[1] and not skip_block_active:
+                        elif not stop["is_skipped"] and not skip_block_active:
                             skip_block_active = False
                             # Main Bar
                             r = pygame.draw.rect(screen, colour, (container.x,container.y,bar_width,stop_h))
@@ -149,15 +149,15 @@ class PlatformDisplay(Display):
 
                     # Station name
                     if c_idx == 0 and r_idx == 0:
-                        t = font.render(stop[0], True, (255, 255, 255))
+                        t = font.render(stop["name"], True, (255, 255, 255))
                         tr = t.get_rect(); tr.centery = container.centery; tr.x = container.x + text_offset
                         r_box = pygame.Rect(0, 0, tr.size[0] + 4, tr.size[1]+2)
                         r_box.centery = container.centery; r_box.x = container.x + text_offset - 2
                         pygame.draw.rect(screen, colour, r_box)
                         screen.blit(t, tr.topleft)
                     else:
-                        textcol = config.MID_GREY if stop[1] else config.BLACK
-                        t = font.render(stop[0], True, textcol)
+                        textcol = config.MID_GREY if stop["is_skipped"] else config.BLACK
+                        t = font.render(stop["name"], True, textcol)
                         tr = t.get_rect(); tr.centery = container.centery; tr.x = container.x + text_offset
                         screen.blit(t, tr)
                         # Top dot dot lones
