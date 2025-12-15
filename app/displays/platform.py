@@ -64,7 +64,7 @@ class PlatformDisplay(Display):
         t = fonts["f_reg_12"].render(formatted, True, config.BLACK)
         screen.blit(t, (10,51))
 
-        pygame.draw.rect(screen, config.BLACK, (11,76, config.SCREEN_RES[0] - 11, 2))
+        pygame.draw.rect(screen, config.BLACK, (11,77, config.SCREEN_RES[0] - 11*2, 1))
 
         self.draw_stop_list(screen, config, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=4, v_padding=7, font=fonts["stops"], tick=(3,2), text_offset=9)
 
