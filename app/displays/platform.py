@@ -8,6 +8,7 @@ class PlatformDisplay(Display):
         self.departures = []
         self.stops = []
         self.last_update = 0
+        self.multi_platform = len(self.ctx['stop'].platforms) != 1 or self.ctx['stop'].platforms == ['']
 
     def on_show(self):
         self.last_update = 0  # force refresh on entry
@@ -34,12 +35,9 @@ class PlatformDisplay(Display):
 
         departure = self.departures[0]
         colour = self._to_rgb(colourMap.get(departure["route_gtfs_id"]))
-
         pygame.draw.rect(screen, colour, (0, 0, config.SCREEN_RES[0], 10))
-        platform_rect = pygame.draw.rect(screen, colour, (344, 14, 31, 31))
-        text = fonts["f_bold_25"].render(departure.get("platform", "-"), True, config.WHITE)
-        text_rect = text.get_rect(); text_rect.center = platform_rect.center
-        screen.blit(text, text_rect.topleft)
+
+        
 
         
         """ Top Section """
@@ -59,6 +57,13 @@ class PlatformDisplay(Display):
         t = fonts["f_reg_23"].render(departure.get("time_to_departure", "-"), True, config.WHITE)
         tr = t.get_rect(); tr.center = r.center
         screen.blit(t, tr.topleft)
+
+        # Draw platform number onyl if multiple platforms
+        if self.multi_platform:
+            platform_rect = pygame.draw.rect(screen, colour, (344, 14, 31, 31))
+            text = fonts["f_bold_25"].render(departure.get("platform", "-"), True, config.WHITE)
+            text_rect = text.get_rect(); text_rect.center = platform_rect.center
+            screen.blit(text, text_rect.topleft)
 
         formatted = f"{departure['express_note']} {departure['departure_note']}"
         t = fonts["f_reg_12"].render(formatted, True, config.BLACK)
@@ -81,7 +86,7 @@ class PlatformDisplay(Display):
                                                departure_time_font = fonts["f_reg_13"], departure_dest = dep["destination"], 
                                                departure_dest_font=fonts["f_med_12"], note = dep["express_note"], note_font=fonts["f_reg_9"], 
                                                time_until_departure = dep["time_to_departure"], 
-                                               platform=dep["platform"], w=351, bar_thickness=2, x=9)
+                                               platform=dep["platform"], w=351, bar_thickness=1, x=9, include_platform = self.multi_platform)
             y = y + gap
         
         
@@ -187,7 +192,9 @@ class PlatformDisplay(Display):
 
 
 
-    def draw_subsequent_departure(self, screen, colour, y, departure_time, departure_time_font, departure_dest, departure_dest_font, note, note_font, time_until_departure, platform, w=351, bar_thickness=2, x=9):
+    def draw_subsequent_departure(self, screen, colour, y, departure_time, departure_time_font, departure_dest, departure_dest_font,
+                                note, note_font, time_until_departure, platform,
+                                w=351, bar_thickness=2, x=9, include_platform=True):
         h = 24
         container = pygame.Rect(x,y,w,h)
         inner_container = pygame.Rect(x, y + bar_thickness, w, h-bar_thickness)
@@ -212,16 +219,11 @@ class PlatformDisplay(Display):
         tr.centery = inner_container.centery
         tr.x = xpos
         screen.blit(t, tr.topleft)
-        # Text (departure note)
-        t = note_font.render(f'{note}', True, (0,0,0))
-        tr = t.get_rect()
-        tr.centery = inner_container.centery
-        tr.x = x + 161
-        screen.blit(t, tr.topleft)
         # Time until departure box
         r = pygame.Rect(302,0,49,18)
         r.centery = inner_container.centery
         pygame.draw.rect(screen, (0,0,0), r)
+        info_xlim = r.x
         # time until departure
         t = departure_time_font.render(f'{time_until_departure}', True, (255,255,255))
         tr = t.get_rect()
@@ -229,15 +231,24 @@ class PlatformDisplay(Display):
         tr.centerx = r.centerx
         screen.blit(t, tr.topleft)
         # Platform number box
-        rp = pygame.Rect(0,0,18,18)
-        rp.centery = inner_container.centery
-        rp.right = r.left - 5
-        pygame.draw.rect(screen, colour, rp)
-        # Platform number
-        t = departure_time_font.render(f'{platform}', True, (255,255,255))
+        if include_platform:
+            rp = pygame.Rect(0,0,18,18)
+            rp.centery = inner_container.centery
+            rp.right = r.left - 5
+            pygame.draw.rect(screen, colour, rp)
+            info_xlim = rp.x
+            # Platform number
+            t = departure_time_font.render(f'{platform}', True, (255,255,255))
+            tr = t.get_rect()
+            tr.centery = inner_container.centery
+            tr.centerx = rp.centerx
+            screen.blit(t, tr.topleft)
+            
+        # Text (departure note)
+        t = note_font.render(f'{note}', True, (0,0,0))
         tr = t.get_rect()
         tr.centery = inner_container.centery
-        tr.centerx = rp.centerx
+        tr.right = info_xlim - 10
         screen.blit(t, tr.topleft)
         return inner_container.bottom
 
