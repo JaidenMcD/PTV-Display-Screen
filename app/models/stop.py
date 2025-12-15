@@ -119,10 +119,19 @@ class Stop:
                 express_note = 'Express'
             else:
                 express_note = ''
+            # City Loop check
+            endpoint = f"/v3/pattern/run/{departure['run_id']}/route_type/0"
+            runresult = send_ptv_request(endpoint)
+            # 1068 is flagstaff
+            cityloop = any(
+                d.get("stop_id") == 1068 
+                for d in runresult.get("departures", [])
+            )
+            
             departures_list.append(
                 {
                     "platform": departure.get("platform_number", "0") or "0",
-                    "destination": destination,
+                    "destination": "City Loop" if cityloop else destination,
                     "departure_time": departure_time,
                     "time_to_departure": time_to_departure,
                     "departure_note": departure["departure_note"],
