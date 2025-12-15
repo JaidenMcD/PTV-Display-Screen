@@ -1,6 +1,7 @@
 import pygame
 from datetime import datetime
 from .base import Display
+from .ui_components import UIComponents
 
 class PlatformDisplay(Display):
     def __init__(self, ctx):
@@ -53,10 +54,7 @@ class PlatformDisplay(Display):
         screen.blit(text, (11, time_y))
 
         # Time to departure
-        r = pygame.draw.rect(screen, config.BLACK, (379, 15, 91, 31))
-        t = fonts["f_reg_23"].render(departure.get("time_to_departure", "-"), True, config.WHITE)
-        tr = t.get_rect(); tr.center = r.center
-        screen.blit(t, tr.topleft)
+        UIComponents.time_to_departure(screen, config, 379, 15, 91, 31, fonts["f_reg_23"], departure.get("time_to_departure", "-"), bg_color=config.BLACK)
 
         # Draw platform number onyl if multiple platforms
         if self.multi_platform:
@@ -73,8 +71,8 @@ class PlatformDisplay(Display):
 
         self.draw_stop_list(screen, config, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=4, v_padding=7, font=fonts["stops"], tick=(3,2), text_offset=9)
 
-        current_time = datetime.now().strftime("%I:%M:%S %p").lower()
-        self.draw_clock(screen, config, 369, 216, 102, 46, 1, fonts["f_med_14"], current_time)
+        current_time = UIComponents.get_current_time_string()
+        UIComponents.draw_clock(screen, config, 369, 216, 102, 46, 1, fonts["f_med_14"], current_time)
 
 
         gap = 3
@@ -82,11 +80,19 @@ class PlatformDisplay(Display):
         for i in range(1,3): 
             dep = self.departures[i]
             colour = self._to_rgb(colourMap.get(dep["route_gtfs_id"]))
-            y = self.draw_subsequent_departure(screen, colour, y, departure_time=dep["departure_time"], 
-                                               departure_time_font = fonts["f_reg_13"], departure_dest = dep["destination"], 
-                                               departure_dest_font=fonts["f_med_12"], note = dep["express_note"], note_font=fonts["f_reg_9"], 
-                                               time_until_departure = dep["time_to_departure"], 
-                                               platform=dep["platform"], w=351, bar_thickness=1, x=9, include_platform = self.multi_platform)
+            y = UIComponents.draw_departure_item(
+                screen, config, colour, y, 
+                departure_time=dep["departure_time"],
+                departure_time_font=fonts["f_reg_13"],
+                departure_dest=dep["destination"],
+                departure_dest_font=fonts["f_med_12"],
+                note=dep["express_note"],
+                note_font=fonts["f_reg_9"],
+                time_until_departure=dep["time_to_departure"],
+                platform=dep["platform"],
+                w=351, bar_thickness=1, x=9, 
+                include_platform=self.multi_platform
+            )
             y = y + gap
         
         
@@ -125,7 +131,7 @@ class PlatformDisplay(Display):
                     else:
                         # if skipped and the next station is not skipped
                         if stop["is_skipped"] and not all_stops[stop_index+1]["is_skipped"]:
-                            self.draw_express_arrow(screen, container, colour, arrowtip_y = 10, b_w = 4)
+                            UIComponents.draw_express_arrow(screen, container, colour, bar_width=4, arrowtip_y=10)
                             skip_block_active = False
                         # If skipped and already inside skip block:
                         elif stop["is_skipped"] and skip_block_active:
@@ -134,7 +140,7 @@ class PlatformDisplay(Display):
                         # if skipped and not yet inside a skip block:
                         elif stop["is_skipped"] and not skip_block_active:
                             skip_block_active = True
-                            self.draw_express_arrow(screen, container, colour, arrowtip_y = 10, b_w = 4)
+                            UIComponents.draw_express_arrow(screen, container, colour, bar_width=4, arrowtip_y=10)
                         # if not skipped and not inside a skip block
                         elif not stop["is_skipped"] and not skip_block_active:
                             skip_block_active = False
@@ -171,97 +177,9 @@ class PlatformDisplay(Display):
                             pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 5, bar_width, 2))
                             pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 2, bar_width, 2))
                 stop_index = stop_index + 1
-    def draw_express_arrow(self,screen, container, colour, arrowtip_y, b_w):
-       # arrow
-       x = container.x
-       y = container.y
-       arrowtip_y = y + arrowtip_y
-       
-       r = pygame.Rect(0,arrowtip_y - 0 ,2,1); r.centerx = x + b_w // 2; pygame.draw.rect(screen, colour, r)
-       r = pygame.Rect(0,arrowtip_y - 1 ,4,1); r.centerx = x + b_w // 2; pygame.draw.rect(screen, colour, r)
-       r = pygame.Rect(0,arrowtip_y - 2 ,6,1); r.centerx = x + b_w // 2; pygame.draw.rect(screen, colour, r)
-       r = pygame.Rect(0,arrowtip_y - 3 ,8,1); r.centerx = x + b_w // 2; pygame.draw.rect(screen, colour, r)
-       r = pygame.Rect(0,arrowtip_y - 4 ,10,1); r.centerx = x + b_w // 2; pygame.draw.rect(screen, colour, r)
-       r = pygame.Rect(0,arrowtip_y - 5 ,8,1); r.centerx = x + b_w // 2; pygame.draw.rect(screen, colour, r)
-       pygame.draw.rect(screen, colour, (x, y, b_w, r.top - y))
-
-       r = pygame.Rect(0,arrowtip_y + 3 ,2,1); r.centerx = x + b_w // 2; pygame.draw.rect(screen, colour, r)
-       r = pygame.Rect(0,arrowtip_y + 2 ,1,2); r.x = x; pygame.draw.rect(screen, colour, r)
-       r = pygame.Rect(0,arrowtip_y + 2 ,1,2); r.x = x+b_w-1; pygame.draw.rect(screen, colour, r)
-       pygame.draw.rect(screen, colour, (x, r.bottom, b_w, container.bottom - r.bottom))
+    
 
 
-
-    def draw_subsequent_departure(self, screen, colour, y, departure_time, departure_time_font, departure_dest, departure_dest_font,
-                                note, note_font, time_until_departure, platform,
-                                w=351, bar_thickness=2, x=9, include_platform=True):
-        h = 24
-        container = pygame.Rect(x,y,w,h)
-        inner_container = pygame.Rect(x, y + bar_thickness, w, h-bar_thickness)
-        # Top Bar
-        pygame.draw.rect(screen, (0,0,0), (x, y, w, bar_thickness))
-        # Colour Bar
-        r = pygame.Rect(0,0, 4, 18)
-        r.centery = inner_container.centery
-        r.x = inner_container.x
-        pygame.draw.rect(screen, colour, r)
-        # Text (departure time)
-        departure_time = departure_time.lstrip('0')
-        t = departure_time_font.render(f'{departure_time}', True, (0,0,0))
-        tr = t.get_rect()
-        tr.centery = inner_container.centery
-        tr.x = x + 9
-        screen.blit(t, tr.topleft)
-        # Text (departure destination)
-        xpos = tr.right + 14
-        t = departure_dest_font.render(f'{departure_dest}', True, (0,0,0))
-        tr = t.get_rect()
-        tr.centery = inner_container.centery
-        tr.x = xpos
-        screen.blit(t, tr.topleft)
-        # Time until departure box
-        r = pygame.Rect(302,0,49,18)
-        r.centery = inner_container.centery
-        pygame.draw.rect(screen, (0,0,0), r)
-        info_xlim = r.x
-        # time until departure
-        t = departure_time_font.render(f'{time_until_departure}', True, (255,255,255))
-        tr = t.get_rect()
-        tr.centery = r.centery
-        tr.centerx = r.centerx
-        screen.blit(t, tr.topleft)
-        # Platform number box
-        if include_platform:
-            rp = pygame.Rect(0,0,18,18)
-            rp.centery = inner_container.centery
-            rp.right = r.left - 5
-            pygame.draw.rect(screen, colour, rp)
-            info_xlim = rp.x
-            # Platform number
-            t = departure_time_font.render(f'{platform}', True, (255,255,255))
-            tr = t.get_rect()
-            tr.centery = inner_container.centery
-            tr.centerx = rp.centerx
-            screen.blit(t, tr.topleft)
-            
-        # Text (departure note)
-        t = note_font.render(f'{note}', True, (0,0,0))
-        tr = t.get_rect()
-        tr.centery = inner_container.centery
-        tr.right = info_xlim - 10
-        screen.blit(t, tr.topleft)
-        return inner_container.bottom
-
-
-    def draw_clock(self, screen, config, x, y, w, h, border_width, font, time):
-        pygame.draw.rect(screen, config.BLACK, (x,y,w,h))
-        r = pygame.draw.rect(screen, config.LIGHT_WARM_GREY, (x+border_width, y+border_width, w-border_width*2, h-border_width*2))
-        t = font.render(time, True, config.BLACK)
-        tr = t.get_rect(); tr.center = r.center
-        screen.blit(t, tr.topleft)
-
-        def express_stop():
-            return
 
 
 
