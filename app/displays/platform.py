@@ -22,7 +22,6 @@ class PlatformDisplay(Display):
     def update(self, now):
         if now - self.last_update >= 10 or not self.departures:
             self.departures, next_run = self.ctx['stop'].get_next_departures(3, return_next_run = True)
-            self.departures = self.filter_departure_list(self.departures, 3)
             self.stops = self.ctx["ptv_api"].get_pid_stops(next_run, self.ctx['stop'].stop_id)
             self.last_update = now
 
@@ -129,20 +128,7 @@ class PlatformDisplay(Display):
 
 
     
-    def filter_departure_list(self, departures, n_to_show):
-        new_departure_list = []
-
-        for dep in departures:
-            if 'RRB' not in dep.get('flag', ''):
-                new_departure_list.append(dep)
-            if len(new_departure_list) == n_to_show:
-                break
-
-        # Top up with None
-        while len(new_departure_list) < n_to_show:
-            new_departure_list.append(None)
-
-        return new_departure_list
+    
         
 
 
