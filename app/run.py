@@ -49,16 +49,10 @@ screen.fill(config.BACKGROUND_COLOR)
 colourMap = gtfs_loader.build_colour_map("data/gtfs_static/routes.txt")
 
 # Fonts
-f_platformNumber_large = pygame.font.Font("assets/fonts/NETWORKSANS-2019-BOLD.TTF", 25)
-f_platformNumber_small = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 13)
 f_destination_large = pygame.font.Font("assets/fonts/NETWORKSANS-2019-BOLD.TTF", 27)
 f_destination_small = pygame.font.Font("assets/fonts/NETWORKSANS-2019-BOLD.TTF", 14)
-f_depTime_large = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 24)
 f_depTime_small = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 14)
-f_timeToDep_large = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 24)
-f_timeToDep_small = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 13)
 f_stopsList = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 12)
-f_currentTime = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 15)
 f_bold_27 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-BOLD.TTF", 27)
 f_bold_25 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-BOLD.TTF", 25)
 f_med_14 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-MEDIUM.TTF", 14)
@@ -78,16 +72,10 @@ ctx = {
     "train_stop_id": stop.stop_id,
     "colourMap": colourMap,
     "fonts": {
-        "platform_large": f_platformNumber_large,
-        "platform_small": f_platformNumber_small,
         "dest_large": f_destination_large,
         "dest_small": f_destination_small,
-        "dep_large": f_depTime_large,
         "dep_small": f_depTime_small,
-        "ttd_large": f_timeToDep_large,
-        "ttd_small": f_timeToDep_small,
         "stops": f_stopsList,
-        "clock": f_currentTime,
         "f_bold_27": f_bold_27,
         "f_bold_25": f_bold_25,
         "f_med_14": f_med_14,
