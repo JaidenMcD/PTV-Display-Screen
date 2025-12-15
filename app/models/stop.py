@@ -6,6 +6,7 @@ from datetime import datetime
 import pytz
 import os
 import re
+import config
 
 tz = pytz.timezone(os.getenv("TIMEZONE"))
 
@@ -39,30 +40,57 @@ class Stop:
         # Format input
         raw_name = self._input_name.strip()
         query_name = raw_name.replace(' ', '%20')
-        endpoint = f"/v3/search/{query_name}?route_types=0"
+        
+        # Resolve Metro
+        endpoint = f"/v3/search/{query_name}?route_types={config.route_type_train}"
         result = send_ptv_request(endpoint)
-
         target = self.normalise(raw_name)
         scored = [
             (self.score_stop(c,target), c)
             for c in result["stops"]
         ]
         scored.sort(key=lambda x: x[0], reverse=True)
-        best_score, stop = scored[0] if scored else (0, None)
+        best_score, train_stop = scored[0] if scored else (0, None)
         if best_score == 0:
-            print("NO GOOD STOP FOUND --------------------------")
-            exit()
+            print("No matching metro station found")
+            train_stop = None
+        else:
+            print(f"Found stop {train_stop['stop_name']} [{train_stop['stop_id']}] with a score of {best_score}")
+
+        # Resolve V-Line
+        endpoint = f"/v3/search/{query_name}?route_types={config.route_type_vline}"
+        result = send_ptv_request(endpoint)
+        target = self.normalise(raw_name)
+        scored = [
+            (self.score_stop(c,target), c)
+            for c in result["stops"]
+        ]
+        scored.sort(key=lambda x: x[0], reverse=True)
+        best_score, vline_stop = scored[0] if scored else (0, None)
+        if best_score == 0:
+            print("No matching VLine stop found")
+            vline_stop = None
+        else:
+            print(f"Found VLine stop {vline_stop['stop_name']} [{vline_stop['stop_id']}] with a score of {best_score}")
 
         self._input_name = None  # discard after use
         
-        print(f"Found stop {stop['stop_name']} [{stop['stop_id']}] with a score of {best_score}")
+        if vline_stop is None and train_stop is None:
+            print("[Error] No matching station found")
+            exit()
 
         # Filling metadata
+        self.stop_id = train_stop['stop_id'] if train_stop else None
+        self.vline_stop_id = vline_stop['stop_id'] if vline_stop else None
+        self.route_type = train_stop['route_type'] if train_stop else None
+        self.vline_route_type = vline_stop['route_type'] if vline_stop else None
+
+        # Pick metro over Vline if possible
+        stop = train_stop if train_stop else vline_stop
         self.name = stop['stop_name']
-        self.stop_id = stop['stop_id']
         self.routes = stop['routes']
         self.stop_suburb = stop['stop_suburb']
-        self.route_type = stop['route_type']
+        
         self.stop_latitude = stop['stop_latitude']
         self.stop_longitude = stop['stop_longitude']
         self.stop_sequence = stop['stop_sequence']
