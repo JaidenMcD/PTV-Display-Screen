@@ -95,33 +95,31 @@ class PlatformDisplay(Display):
         colour = self._to_rgb(colourMap.get(departure["route_gtfs_id"]))
         pygame.draw.rect(screen, colour, (0, 0, config.SCREEN_RES[0], 10))
 
-
-        """ Top Section """
-        # Destination
-        coords = (100, 12)
-        text = fonts["f_bold_27"].render(departure["destination"], True, config.BLACK)
-        screen.blit(text, coords)
-        baseline_y = coords[1] + fonts["f_bold_27"].get_ascent()
-
-        # Departure Time
-        time_y = baseline_y - fonts["f_reg_21"].get_ascent()
-        text = fonts["f_reg_21"].render(departure.get("departure_time", "--:--"), True, config.BLACK)
-        screen.blit(text, (11, time_y))
-
-        # Time to departure
-        UIComponents.time_to_departure(screen, config, 379, 15, 91, 31, fonts["f_reg_23"], departure.get("time_to_departure", "-"), bg_color=config.BLACK)
-
-        # Draw platform number onyl if multiple platforms
         if self.multi_platform and departure['platform']:
-            platform_rect = pygame.draw.rect(screen, colour, (344, 14, 31, 31))
-            text = fonts["f_bold_25"].render(departure.get("platform", "-"), True, config.WHITE)
-            text_rect = text.get_rect(); text_rect.center = platform_rect.center
-            screen.blit(text, text_rect.topleft)
-
-        formatted = f"{departure['express_note']} {departure['departure_note']}"
-        t = fonts["f_reg_12"].render(formatted, True, config.BLACK)
-        screen.blit(t, (10,51))
-
+            platform = departure['platform']
+        else:
+            platform = None
+        UIComponents.metro_departure_header(config, screen, 
+                                   colour, 
+                                   x=0, 
+                                   y=0, 
+                                   w=480, 
+                                   h= 0, 
+                                   ttd_y = 15, 
+                                   ttdw = 91, 
+                                   ttd_h = 31, 
+                                   dep_time_font = fonts["f_reg_21"], 
+                                   dep_time = departure.get("departure_time", "--:--"), 
+                                   time_to_dep_font = fonts["f_reg_23"], 
+                                   time_to_dep = departure.get("time_to_departure", "-"), 
+                                   dest_font = fonts["f_bold_27"], 
+                                   dest = departure["destination"], 
+                                   dep_note_font = fonts["f_reg_12"], 
+                                   dep_note = f"{departure['express_note']} {departure['departure_note']}", 
+                                   platform = platform, 
+                                   platform_font = fonts["f_bold_25"]
+        )
+       
         pygame.draw.rect(screen, config.BLACK, (11,77, config.SCREEN_RES[0] - 11*2, 1))
 
         UIComponents.draw_stop_list(screen, config, self.stops, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=4, v_padding=7, font=fonts["stops"], tick=(3,2), text_offset=9)
