@@ -327,3 +327,19 @@ class UIComponents:
         # Dep note
         t = dep_note_font.render(dep_note, True, config.BLACK)
         screen.blit(t, (x+10,y+51))
+
+
+    @staticmethod
+    def no_trains_departing_black(screen, config, w,h,font):
+        screen.fill(config.BLACK)
+        gap = 10
+        t1 = font.render(f"No trains departing", True, config.WHITE)
+        t2 = font.render(f"from this platform", True, config.WHITE)
+        tr1 = t1.get_rect()
+        tr2 = t2.get_rect()
+        tr1.centerx = w // 2
+        tr2.centerx = w //2
+        tr1.bottom = h // 2 - gap //2 
+        tr2.top = h // 2 + gap // 2
+        screen.blit(t1, tr1.topleft)
+        screen.blit(t2, tr2.topleft)

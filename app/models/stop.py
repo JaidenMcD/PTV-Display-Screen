@@ -118,10 +118,13 @@ class Stop:
 
         result = send_ptv_request(endpoint)
         if not result:
-            return []
+            return [], []
 
         departures = result.get("departures", [])[:n_departures]
         runs = result.get("runs", {}) or {}
+        
+        if departures == []:
+            return [], []
         
         departures_list: List[Dict[str, Any]] = []
         now_local = datetime.now(tz)
@@ -174,7 +177,7 @@ class Stop:
             next_run = runs.get(str(departures[0]["run_id"]))
             return departures_list, next_run
         
-        return departures_list
+        return departures_list, []
 
     def _get_pid_destination(self, run: dict) -> str:
         """

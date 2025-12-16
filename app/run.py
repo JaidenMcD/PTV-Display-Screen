@@ -65,6 +65,7 @@ f_reg_13 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 13)
 f_reg_12 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 13)
 f_reg_10 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 10)
 f_reg_9 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 9)
+f_reg_35 = pygame.font.Font("assets/fonts/NETWORKSANS-2019-REGULAR.TTF", 35)
 
 ctx = {
     "stop": stop,
@@ -88,7 +89,8 @@ ctx = {
         "f_reg_13": f_reg_13,
         "f_reg_12": f_reg_12,
         "f_reg_10": f_reg_10,
-        "f_reg_9": f_reg_9
+        "f_reg_9": f_reg_9,
+        "f_reg_35": f_reg_35
     },
 }
 
