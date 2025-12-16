@@ -18,14 +18,13 @@ class Stop:
     """
     Represents a PTV metro train stop and provides departure lookup functionality.
     """
-    def __init__(self, name: str, platforms: List[str]):
+    def __init__(self, name: str):
         """
         Initialise a Stop object and resolve it against the PTV API.
 
         :param name: User-provided stop name
         :param platforms: List of platform numbers to filter departures
         """
-        self.platforms = platforms
         self._input_name = name
 
         # Core stop metadata (important)
@@ -94,6 +93,7 @@ class Stop:
 
     def get_next_departures(self,
                             n_departures: int,
+                            platform = None,
                             return_next_run: bool = False
     ):
         """
@@ -104,8 +104,8 @@ class Stop:
         :return: List of departure dictionaries (optionally plus next run)
         """
         platform_str = ""
-        if self.platforms != [""]:
-            for platform_no in self.platforms:
+        if platform:
+            for platform_no in platform:
                 platform_str += f"&platform_numbers={platform_no}"
 
         endpoint = (

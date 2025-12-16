@@ -19,7 +19,7 @@ search_term = input("Enter station: ")
 platforms = input("Comma seperated platforms to show (skip with 'enter' for all): ")
 platforms = platforms.split(',')
 print(platforms)
-stop = Stop(search_term, platforms)
+stop = Stop(search_term)
 
 
 
@@ -94,7 +94,7 @@ ctx = {
 
 # Register displays here
 displays = [
-    PlatformDisplay(ctx),
+    PlatformDisplay(ctx, platforms),
     AltDisplay(ctx)
     # Add more displays later, e.g., AltDisplay(ctx)
 ]

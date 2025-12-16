@@ -4,12 +4,12 @@ from .base import Display
 from .ui_components import UIComponents
 
 class PlatformDisplay(Display):
-    def __init__(self, ctx):
+    def __init__(self, ctx, platform=None):
         super().__init__(ctx)
         self.departures = []
         self.stops = []
         self.last_update = 0
-        self.multi_platform = len(self.ctx['stop'].platforms) != 1 or self.ctx['stop'].platforms == ['']
+        self.platform = platform
 
     def on_show(self):
         self.last_update = 0  # force refresh on entry
@@ -21,7 +21,7 @@ class PlatformDisplay(Display):
 
     def update(self, now):
         if now - self.last_update >= 10 or not self.departures:
-            self.departures, next_run = self.ctx['stop'].get_next_departures(3, return_next_run = True)
+            self.departures, next_run = self.ctx['stop'].get_next_departures(3, self.platform, return_next_run = True)
             self.stops = self.ctx["ptv_api"].get_pid_stops(next_run, self.ctx['stop'].stop_id)
             self.last_update = now
 
@@ -51,7 +51,7 @@ class PlatformDisplay(Display):
                 time_until_departure=dep["time_to_departure"],
                 platform=dep["platform"],
                 w=351, bar_thickness=1, x=9, 
-                include_platform=self.multi_platform and dep['platform']
+                include_platform= self.platform is None
                 )
             else:
                 colour = config.MID_GREY
@@ -95,7 +95,7 @@ class PlatformDisplay(Display):
         colour = self._to_rgb(colourMap.get(departure["route_gtfs_id"]))
         pygame.draw.rect(screen, colour, (0, 0, config.SCREEN_RES[0], 10))
 
-        if self.multi_platform and departure['platform']:
+        if self.platform is None and departure.get('platform'):
             platform = departure['platform']
         else:
             platform = None

@@ -314,10 +314,14 @@ class UIComponents:
         UIComponents.time_to_departure(screen, config, ttd_x, y+ttd_y, ttdw, ttd_h, time_to_dep_font, time_to_dep, bg_color=config.BLACK)
 
         # Draw platform number only if multiple platforms
-        if platform:
-            platform_rect = pygame.draw.rect(screen, colour, (platform_x, y+ttd_y, ttd_h, ttd_h))
-            text = platform_font.render(platform, True, config.WHITE)
-            text_rect = text.get_rect(); text_rect.center = platform_rect.center
+        if platform is not None:
+            platform_rect = pygame.draw.rect(
+                screen, colour,
+                (platform_x, y + ttd_y, ttd_h, ttd_h)
+            )
+            text = platform_font.render(str(platform), True, config.WHITE)
+            text_rect = text.get_rect()
+            text_rect.center = platform_rect.center
             screen.blit(text, text_rect.topleft)
 
         # Dep note
