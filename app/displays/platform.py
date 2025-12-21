@@ -10,6 +10,8 @@ class PlatformDisplay(Display):
         self.stops = []
         self.last_update = 0
         self.platform = platform
+        if self.platform == ['']:
+            self.platform = None
 
     def on_show(self):
         self.last_update = 0  # force refresh on entry

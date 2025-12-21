@@ -104,7 +104,7 @@ class Stop:
         :return: List of departure dictionaries (optionally plus next run)
         """
         platform_str = ""
-        if platform:
+        if platform and platform != ['']:
             for platform_no in platform:
                 platform_str += f"&platform_numbers={platform_no}"
 
