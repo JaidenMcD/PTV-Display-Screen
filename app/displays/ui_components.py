@@ -1,6 +1,5 @@
 import pygame
 from datetime import datetime
-import fonts
 
 class UIComponents:
     """Reusable UI drawing components for all displays."""
@@ -143,73 +142,7 @@ class UIComponents:
         screen.blit(t, tr.topleft)
         
         return inner_container.bottom
-    @staticmethod
-    def departure_item_short(config, colour, x, y, departure_time, time_to_departure, destination, note, w=135, h=36, ttd_w=42, ttd_h=18, bold_font=fonts.font_list["f_bold_10"], med_font=fonts.font_list["f_med_11"], reg_font=fonts.font_list["f_reg_9"], bar_width = 4, v_padding=2, text_offset=11):
-        """
-        Draw a single departure item (used for subsequent departures).
-        
-        Args:
-            screen: Pygame surface to draw on
-            config: Config object with color definitions
-            colour: Color for the left bar and platform box (route color)
-            y: Y coordinate
-            departure_time: Time string (e.g., "10:30am")
-            departure_time_font: Pygame font for time
-            departure_dest: Destination name
-            departure_dest_font: Pygame font for destination
-            note: Note text (e.g., "Express", "Stops all")
-            note_font: Pygame font for note
-            time_until_departure: Time until departure (e.g., "5 min")
-            platform: Platform number (optional)
-            w, h: Width and height
-            bar_thickness: Thickness of top separator bar
-            x: X coordinate
-            include_platform: Whether to show platform box
-            
-        Returns:
-            Y coordinate of the bottom of the drawn item
-        """
-        screen = pygame.Surface((w,h), pygame.SRCALPHA)
-        # Left colour bar
-        pygame.draw.rect(screen, colour, (x, y, bar_width, h))
-        
-        # Departure time
-        departure_time_clean = departure_time.lstrip('0')
-        t = reg_font.render(f'{departure_time_clean}', True, config.BLACK)
-        tr = t.get_rect()
-        tr.top = x + v_padding
-        tr.x = x + text_offset
-        screen.blit(t, tr.topleft)
-        
-        # Destination
-        t = bold_font.render(f'{destination}', True, config.BLACK)
-        tr = t.get_rect()
-        tr.centery = y + h // 2
-        tr.x = x + text_offset
-        screen.blit(t, tr.topleft)
-        
-        # Departure note
-        t = reg_font.render(f'{note}', True, config.BLACK)
-        tr = t.get_rect()
-        tr.bottom = y + h - v_padding
-        tr.x = x + text_offset
-        screen.blit(t, tr.topleft)
 
-        # Time until departure box
-        r = pygame.Rect(0, 0, ttd_w, ttd_h)
-        r.x = x + w - ttd_w - 1
-        r.y = y + v_padding + 1
-        pygame.draw.rect(screen, config.BLACK, r)
-
-        # Time until departure text
-        t = med_font.render(f'{time_to_departure}', True, config.WHITE)
-        tr = t.get_rect()
-        tr.centery = r.centery
-        tr.centerx = r.centerx
-        screen.blit(t, tr.topleft)
-        
-        return screen
-    
     @staticmethod
     def draw_express_arrow(screen, container, colour, bar_width=4, arrowtip_y=10):
         """
@@ -359,45 +292,7 @@ class UIComponents:
                 stop_index = stop_index + 1
     
     @staticmethod
-    def metro_departure_header(config, colour, x, y, w, h, ttd_y, ttdw, ttd_h, dep_time_font, dep_time, time_to_dep_font, time_to_dep, dest_font, dest, dep_note_font, dep_note, platform = None, platform_font = None):
-        screen = pygame.Surface((w,h), pygame.SRCALPHA)
-        """ Top Section """
-        # hardcoded values
-        ttd_pad_right = 2 #px
-        platform_pad_right = 4 #px
-        ttd_x = x + w - ttd_pad_right - ttdw
-        platform_x = ttd_x - platform_pad_right - ttd_h
-        # Destination
-        coords = (x+100, y+12)
-        text = dest_font.render(dest, True, config.BLACK)
-        screen.blit(text, coords)
-        baseline_y = coords[1] + dest_font.get_ascent()
-
-        # Departure Time
-        time_y = baseline_y - dep_time_font.get_ascent()
-        text = dep_time_font.render(dep_time, True, config.BLACK)
-        screen.blit(text, (x+11, time_y))
-
-        # Time to departure
-        UIComponents.time_to_departure(screen, config, ttd_x, y+ttd_y, ttdw, ttd_h, time_to_dep_font, time_to_dep, bg_color=config.BLACK)
-
-        # Draw platform number only if multiple platforms
-        if platform is not None:
-            platform_rect = pygame.draw.rect(
-                screen, colour,
-                (platform_x, y + ttd_y, ttd_h, ttd_h)
-            )
-            text = platform_font.render(str(platform), True, config.WHITE)
-            text_rect = text.get_rect()
-            text_rect.center = platform_rect.center
-            screen.blit(text, text_rect.topleft)
-
-        # Dep note
-        t = dep_note_font.render(dep_note, True, config.BLACK)
-        screen.blit(t, (x+10,y+51))
-    
-    @staticmethod
-    def metro_departure_headera(config, screen, colour, x, y, w, h, ttd_y, ttdw, ttd_h, dep_time_font, dep_time, time_to_dep_font, time_to_dep, dest_font, dest, dep_note_font, dep_note, platform = None, platform_font = None):
+    def metro_departure_header(config, screen, colour, x, y, w, h, ttd_y, ttdw, ttd_h, dep_time_font, dep_time, time_to_dep_font, time_to_dep, dest_font, dest, dep_note_font, dep_note, platform = None, platform_font = None):
         """ Top Section """
         # hardcoded values
         ttd_pad_right = 2 #px
