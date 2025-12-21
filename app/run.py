@@ -9,7 +9,7 @@ from api import ptv_api
 from data import gtfs_loader
 from displays.platform import PlatformDisplay  # keep filename as-is; rename when convenient
 from displays.altdisplay import AltDisplay
-from models.stop import Stop
+from models.train_stop import TrainStop
 
 load_dotenv()
 device = int(os.getenv("DEVICE", "0"))
@@ -19,7 +19,7 @@ search_term = input("Enter station: ")
 platforms = input("Comma seperated platforms to show (skip with 'enter' for all): ")
 platforms = platforms.split(',')
 print(platforms)
-stop = Stop(search_term)
+stop = TrainStop(search_term)
 
 
 

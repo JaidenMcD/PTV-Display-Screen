@@ -14,7 +14,7 @@ import config
 tz = pytz.timezone(os.getenv("TIMEZONE"))
 
 
-class Stop:
+class TrainStop:
     """
     Represents a PTV metro train stop and provides departure lookup functionality.
     """
