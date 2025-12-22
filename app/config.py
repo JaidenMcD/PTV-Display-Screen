@@ -17,3 +17,11 @@ route_type_train = 0
 route_type_tram = 1
 route_type_bus = 2
 route_type_vline = 3
+
+# Tram Alert Mappings
+tram_alert_mappings = {
+    "SpecialEvent": {
+        "header": "Special Event Services",
+        "icon_path": "assets/icons/special-event-info.png",
+    }
+}

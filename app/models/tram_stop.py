@@ -4,6 +4,7 @@ from typing import Dict, List, Any
 from datetime import datetime
 import os
 import re
+import api.gtfs
 
 import pytz
 from collections import defaultdict
@@ -191,6 +192,20 @@ class TramStop:
         result = send_ptv_request(endpoint)
         if not result:
             return []
+        
+        # disruptions
+        # get route numbers
+        routes = result.get("routes", []) 
+        route_numbers = [info['route_number'] for info in routes.values()]
+        service_updates = api.gtfs.tram_service_updates(route_numbers)
+
+        alerts = []
+        for service_update in service_updates:
+            alerts.append({
+                "header": service_update['header'],
+                "description": service_update['description'],
+                "url": service_update['url']
+            })
 
         # Group Departures by route_id
         raw_departures = result.get('departures', [])
@@ -280,7 +295,7 @@ class TramStop:
         # Sort by route_id so routes are grouped together on display
         departures_list.sort(key=lambda x: int(x["route_number"]) if x["route_number"].isdigit() else float('inf'))
         
-        return departures_list
+        return departures_list, alerts
 
 
     @staticmethod
