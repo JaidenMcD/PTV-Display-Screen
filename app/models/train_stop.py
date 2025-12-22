@@ -50,47 +50,65 @@ class TrainStop:
         """
         Resolve the provided stop name to a PTV stop ID and metadata.
         """
-        print(f'Resolving stop for input name: {self._input_name}...')
+        logger.info(f'Resolving stop for input name: {self._input_name}...')
+        try:
+            raw_name = self._input_name.strip()
+            if not raw_name:
+                raise ValueError("Stop name cannot be empty.")
+            
+            query_name = raw_name.replace(' ', '%20')
+            target = self.normalise(raw_name)
 
-        raw_name = self._input_name.strip()
-        query_name = raw_name.replace(' ', '%20')
-        target = self.normalise(raw_name)
+            # Resolve Metro
+            endpoint = (
+                f"/v3/search/{query_name}"
+                f"?route_types={config.route_type_train}"
+            )
+            result = send_ptv_request(endpoint)
 
-        # Resolve Metro
-        endpoint = (
-            f"/v3/search/{query_name}"
-            f"?route_types={config.route_type_train}"
-        )
-        result = send_ptv_request(endpoint)
+            if result is None:
+                logger.error(f"API returned None for stop search {raw_name}")
+                raise ValueError(f"API error searching for '{raw_name}'")
+            
+            candidates = result.get("stops", [])
+            if not candidates:
+                logger.warning(f"No train stops found for: {raw_name}")
+                raise ValueError(f"No matching metro station found for '{raw_name}'")
+            
+            scored = [
+                (self.score_stop(candidate, target), candidate)
+                for candidate in candidates
+            ]
+            scored.sort(key=lambda x: x[0], reverse=True)
+
+            best_score, train_stop = scored[0] if scored else (0, None)
+
+            if best_score == 0 or train_stop is None:
+                raise ValueError(f"No matching metro station found for '{raw_name}'")
+            
+            logger.info(
+                f"Resolved stop: {train_stop['stop_name']} "
+                f"[ID: {train_stop['stop_id']}] with score {best_score}"
+            )
+
+            self._input_name = None  # discard after use
+            
+            # Populate Metadata
+            self.stop_id = train_stop['stop_id'] 
+            self.route_type = train_stop['route_type']
+            self.name = train_stop['stop_name']
+            self.routes = train_stop['routes']
+            self.stop_suburb = train_stop['stop_suburb']
+            self.stop_latitude = train_stop['stop_latitude']
+            self.stop_longitude = train_stop['stop_longitude']
+            self.stop_sequence = train_stop['stop_sequence']
+            self.stop_landmark = train_stop['stop_landmark']
         
-        scored = [
-            (self.score_stop(candidate, target), candidate)
-            for candidate in result.get("stops", [])
-        ]
-        scored.sort(key=lambda x: x[0], reverse=True)
-
-        best_score, train_stop = scored[0] if scored else (0, None)
-
-        if best_score == 0 or train_stop is None:
-            raise ValueError(f"No matching metro station found for '{raw_name}'")
-        
-        print(
-            f"Found stop {train_stop['stop_name']} "
-            f"[{train_stop['stop_id']}] with score {best_score}"
-        )
-
-        self._input_name = None  # discard after use
-        
-        # Populate Metadata
-        self.stop_id = train_stop['stop_id'] 
-        self.route_type = train_stop['route_type']
-        self.name = train_stop['stop_name']
-        self.routes = train_stop['routes']
-        self.stop_suburb = train_stop['stop_suburb']
-        self.stop_latitude = train_stop['stop_latitude']
-        self.stop_longitude = train_stop['stop_longitude']
-        self.stop_sequence = train_stop['stop_sequence']
-        self.stop_landmark = train_stop['stop_landmark']
+        except ValueError:
+            raise
+        except Exception as e:
+            logger.error(f"Unexpected error resolving stop: {str(e)}")
+            raise
 
     def get_next_departures(self,
                             n_departures: int,
