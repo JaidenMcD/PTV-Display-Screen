@@ -1,6 +1,7 @@
 import logging
 import logging.handlers
 import os
+import pytz
 from pathlib import Path
 
 # --- DO NOT CHANGE THESE VALUES ---
@@ -93,16 +94,27 @@ def validate_required_env_vars():
     }
 
     missing = []
+    invalid = []
+
     for var, desc in required_vars.items():
         if not os.getenv(var):
             missing.append(f"{var} ({desc})")
 
-    if missing:
-        raise EnvironmentError(
-            f"Missing required environment variables:\n" +
-            "\n".join(f"  - {var}" for var in missing) +
-            "\nPlease set these in your .env file."
-        )
+    # validate timezone
+    tz_str = os.getenv("TIMEZONE")
+    if tz_str:
+        try:
+            pytz.timezone(tz_str)
+        except pytz.exceptions.UnknownTimeZoneError:
+            invalid.append(f"TIMEZONE='{tz_str}' is not a valid timezone")
+
+    if missing or invalid:
+        error_msg = "Missing or invalid environment variables:\n"
+        if missing:
+            error_msg += "Missing: " + ", ".join(missing) + "\n"
+        if invalid:
+            error_msg += "Invalid: " + ", ".join(invalid)
+        raise EnvironmentError(error_msg)
 
 # Initialize logging at module load
 logger = setup_logging()

@@ -1,6 +1,5 @@
-pygame==1.9.6
+pygame
 python-dotenv
 requests
 pytz
 gtfs-realtime-bindings
-requests-cache

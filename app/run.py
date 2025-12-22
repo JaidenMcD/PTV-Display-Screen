@@ -119,7 +119,8 @@ train_enabled = input("Enable trains? (y/n): ").lower() == 'y'
 
 if train_enabled:
     search_term = input("Enter train station: ")
-    platforms = input("Comma separated platforms (or Enter for all): ").split(',')
+    platforms_input = input("Comma separated platforms (or Enter for all): ").strip()
+    platforms = [p.strip() for p in platforms_input.split(',')] if platforms_input else []
     stops['train'] = TrainStop(search_term)
     displays.append(PlatformDisplay({**ctx_base, "stop": stops['train'], "colourMap": colourMap}, platforms))
 
@@ -138,38 +139,44 @@ active_idx = 0
 active = displays[active_idx]
 active.on_show()
 
-logger.info(f"Application started with {len(displays)} display(s)")
+try:
+    logger.info(f"Application started with {len(displays)} display(s)")
 
-# Main Loop
-frame_count = 0
-while running:
-    now = time.time()
+    # Main Loop
+    frame_count = 0
+    while running:
+        now = time.time()
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-            logger.info("Quit event received")
-        elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-            active_idx = (active_idx + 1) % len(displays)
-            active = displays[active_idx]
-            active.on_show()
-            logger.debug(f"Switched to display {active_idx}")
-        active.handle_event(event)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+                logger.info("Quit event received")
+            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                active_idx = (active_idx + 1) % len(displays)
+                active = displays[active_idx]
+                active.on_show()
+                logger.debug(f"Switched to display {active_idx}")
+            active.handle_event(event)
 
-    try:
-        active.update(now)
-        active.draw(screen)
-        pygame.display.flip()
-    except Exception as e:
-        logger.error(f"Error in display loop: {str(e)}")
-        screen.fill(config.BACKGROUND_COLOR)
-        pygame.display.flip()
+        try:
+            active.update(now)
+            active.draw(screen)
+            pygame.display.flip()
+        except Exception as e:
+            logger.error(f"Error in display loop: {str(e)}")
+            screen.fill(config.BACKGROUND_COLOR)
+            pygame.display.flip()
 
-    clock.tick(config.FPS)
-    frame_count += 1
+        clock.tick(config.FPS)
+        frame_count += 1
 
-    if frame_count % 300 == 0:  # Every 5 minutes at 1 FPS
-        logger.debug(f"Application running normally ({frame_count} frames)")
-
-pygame.quit()
-logger.info("Application closed")
+        if frame_count % 300 == 0:  # Every 5 minutes at 1 FPS
+            logger.debug(f"Application running normally ({frame_count} frames)")
+except KeyboardInterrupt:
+    logger.info("KeyboardInterrupt received")
+    running = False
+except Exception as e:
+    logger.critical(f"Critical error in main loop: {str(e)}", exc_info=True)
+finally:
+    pygame.quit()
+    logger.info("Application closed")

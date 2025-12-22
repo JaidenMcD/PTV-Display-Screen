@@ -17,8 +17,12 @@ key = os.getenv("API_KEY")
 BASE_URL = "https://timetableapi.ptv.vic.gov.au"
 
 train_stop_id = os.getenv("TRAIN_STOP_ID")
-tz = pytz.timezone(os.getenv("TIMEZONE"))
-utc = pytz.utc
+
+try:
+    tz = pytz.timezone(os.getenv("TIMEZONE"))
+except pytz.exceptions.UnknownTimeZoneError as e:
+    logger.error(f"Invalid timezone in environment: {e}")
+    raise
 
 def getUrl(endpoint: str) -> str:
     """Generate a properly signed PTV API URL."""
@@ -86,26 +90,3 @@ def get_GTFS_route_id(route_id: str) -> Optional[str]:
         logger.error(f"GTFS route ID not found in response for route_id {route_id}")
         return None
 
-def get_pid_destination(run: dict) -> str:
-    """
-    Given a PTV 'run' object, return the PID destination.
-    
-    Args:
-        run: Run object from PTV API
-    
-    Returns:
-        Destination name
-    """
-    try:
-        interchange = run.get("interchange") or {}
-        distributor = interchange.get("distributor")
-
-        # 1. Distributor takes priority for departures
-        if distributor and distributor.get("advertised"):
-            return distributor.get("destination_name") or "Unknown"
-
-        # 2. If no distributor advertised, fallback to run destination
-        return run.get("destination_name", "Unknown")
-    except Exception as e:
-        logger.error(f"Error extracting destination: {str(e)}")
-        return "Unknown"

@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 import pygame
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 import pytz
 import os
 
@@ -11,7 +11,7 @@ utc = pytz.utc
 def parse_departure_time(
     departure: Dict[str, Any],
     now_local: datetime,
-) -> (str, str):
+) -> Tuple[str, str]:
     """
     Convert a departure's UTC time fields into local display strings.
 

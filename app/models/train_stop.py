@@ -1,5 +1,5 @@
 
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 from datetime import datetime
 import os
 import re
@@ -19,7 +19,7 @@ class TrainStop:
     """
     Represents a PTV metro train stop and provides departure lookup functionality.
     """
-    def __init__(self, name: str):
+    def __init__(self, name: str, platforms: Optional[List[str]] = None):
         """
         Initialise a Stop object and resolve it against the PTV API.
 
@@ -27,6 +27,12 @@ class TrainStop:
         :param platforms: List of platform numbers to filter departures
         """
         self._input_name = name
+
+        # Validate and clean platforms
+        if platforms:
+            self.platform = [str(p).strip() for p in platforms if p.strip()]
+        else:
+            self.platform = None
 
         # Core stop metadata (important)
         self.stop_id = None
@@ -347,13 +353,20 @@ class TrainStop:
     def _get_invalid_stops_for_route(self, route_id: int) -> set:
         """
         Get set of invalid stop names for a given route.
-        Centralized from hardcoded logic.
+        
+        These are stops that appear in the API response but shouldn't be
+        displayed (e.g., duplicate entries, test stops, or API anomalies).
+        
+        Known issues:
+        - Route 11: "Darling" appears as phantom stop
+        - Route 4: "Darling" appears as phantom stop
+        - Route 6: "Burnley" appears as phantom stop
         
         Args:
             route_id: PTV route ID
         
         Returns:
-            Set of stop names to skip
+            Set of stop names to filter out
         """
         invalid_map = {
             11: {"darling"},
@@ -393,7 +406,7 @@ class TrainStop:
         self,
         stop: Dict[str, Any],
         target_name: str,
-        target_suburb: str | None = None,
+        target_suburb: Optional[str] = None,
     ) -> int:
         """
         Score how well a stop matches a target name and suburb.
