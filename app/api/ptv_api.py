@@ -109,9 +109,3 @@ def get_pid_destination(run: dict) -> str:
     except Exception as e:
         logger.error(f"Error extracting destination: {str(e)}")
         return "Unknown"
-
-        
-def searchPTVAPI(term):
-    endpoint = f"/v3/search/{term}?route_types=0"
-    result = send_ptv_request(endpoint)
-    return result
