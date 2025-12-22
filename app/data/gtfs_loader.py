@@ -33,4 +33,11 @@ def build_colour_map(routes_path):
         route_id = route_id.split(':')[0]
         colourMap[route_id] = "#" + route['color']
     return colourMap
-        
+
+def build_tram_colour_map(routes_path):
+    routeinfo = load_route_data(routes_path)
+    colourMap = {}
+    for route in routeinfo:
+        route_id = route['short_name']
+        colourMap[route_id] = {'route_col' : "#" + route['color'], 'text_col' : "#" + route['text_color']}
+    return colourMap

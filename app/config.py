@@ -14,4 +14,6 @@ SCREEN_RES = (480, 320)   # display resolution
 
 # PTV API Values
 route_type_train = 0
+route_type_tram = 1
+route_type_bus = 2
 route_type_vline = 3

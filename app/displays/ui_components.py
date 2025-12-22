@@ -343,3 +343,53 @@ class UIComponents:
         tr2.top = h // 2 + gap // 2
         screen.blit(t1, tr1.topleft)
         screen.blit(t2, tr2.topleft)
+
+    @staticmethod
+    def tram_departure_item(config, w, h, route_no, destination, time_to_departure, colour, text_colour, font, destination_padding):
+        """ Create a surface for a tram departure item """
+        screen = pygame.Surface((w, h))
+
+        # Route Number Box
+        r = pygame.draw.rect(screen, colour, (0, 0, h, h))
+        t = font.render(route_no, True, text_colour)
+        tr = t.get_rect()
+        tr.center = r.center
+        screen.blit(t, tr.topleft)
+
+        # TTD box
+        r = pygame.draw.rect(screen, config.NETWORK_GREY, (w - h, 0, h, h))
+        t = font.render(time_to_departure, True, config.WHITE)
+        tr = t.get_rect()
+        tr.center = r.center
+        screen.blit(t, tr.topleft)
+
+        # Destination Text
+        r = pygame.draw.rect(screen, config.WHITE, (h, 0, w - h*2, h))
+        t = font.render(destination, True, config.BLACK)
+        tr = t.get_rect()
+        tr.centery = h // 2
+        tr.x = h + destination_padding   
+        screen.blit(t, tr.topleft)
+
+        return screen
+
+    @staticmethod
+    def tram_footer(w,h,time,config,font,h_padding):
+        """ Create a surface for the tram footer """
+        screen = pygame.Surface((w, h))
+        screen.fill(config.NETWORK_GREY)
+
+        # Current Time
+        t = font.render(time, True, config.WHITE)
+        tr = t.get_rect()
+        tr.x = h_padding
+        tr.centery = h // 2
+        screen.blit(t, tr.topleft)
+
+        # Logo
+        t = font.render('tramtracker', True, config.WHITE)
+        tr = t.get_rect()
+        tr.right = w - h_padding
+        tr.centery = h // 2
+        screen.blit(t, tr.topleft)
+        return screen
