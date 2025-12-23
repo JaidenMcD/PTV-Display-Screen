@@ -11,6 +11,8 @@ class FontManager:
         "bold": "NETWORKSANS-2019-BOLD.TTF",
         "medium": "NETWORKSANS-2019-MEDIUM.TTF",
         "regular": "NETWORKSANS-2019-REGULAR.TTF",
+        "regular-italic": "NETWORKSANS-2019-REGULARITALIC.TTF",
+        "light": "NETWORKSANS-2019-LIGHT.TTF"
     }
 
     # Valid size range
