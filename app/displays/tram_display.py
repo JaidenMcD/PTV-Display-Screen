@@ -50,7 +50,7 @@ class TramDisplay(Display):
         
 
         # Footer
-        current_time = TramUI.get_current_time_string()
+        current_time = utils.get_current_time_string()
         footer = TramUI.tram_footer(320,30,current_time,config,fonts['f_reg_9'],h_padding=10)
         footer = pygame.transform.rotate(footer, 90)
         footer_rect = footer.get_rect()

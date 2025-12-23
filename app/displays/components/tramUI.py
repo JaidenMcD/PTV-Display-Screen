@@ -54,19 +54,6 @@ class TramUI:
         tr.centery = h // 2
         screen.blit(t, tr.topleft)
         return screen
-
-    @staticmethod
-    def get_current_time_string(format_str="%I:%M:%S %p"):
-        """
-        Get the current time as a formatted string.
-        
-        Args:
-            format_str: Python datetime format string
-            
-        Returns:
-            Formatted time string in lowercase
-        """
-        return datetime.now().strftime(format_str).lower()
     
     @staticmethod
     def alert(config, fonts, header, description, url, w, h):

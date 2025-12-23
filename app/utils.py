@@ -86,3 +86,16 @@ def wrap_text(text, font, width):
         if line:
             wrapped_lines.append(line)
     return wrapped_lines
+
+
+def get_current_time_string(format_str="%I:%M:%S %p"):
+    """
+    Get the current time as a formatted string.
+    
+    Args:
+        format_str: Python datetime format string
+        
+    Returns:
+        Formatted time string in lowercase
+    """
+    return datetime.now().strftime(format_str).lower()

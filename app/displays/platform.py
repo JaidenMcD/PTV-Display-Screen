@@ -2,6 +2,7 @@ import pygame
 from datetime import datetime
 from .base import Display
 from .components.trainUI import TrainUI
+import utils
 
 class PlatformDisplay(Display):
     def __init__(self, ctx, platform=None):
@@ -79,7 +80,7 @@ class PlatformDisplay(Display):
             y = y + gap
         
         # Clock drawn always
-        current_time = TrainUI.get_current_time_string()
+        current_time = utils.get_current_time_string()
         TrainUI.draw_clock(screen, config, 369, 216, 102, 46, 1, fonts["f_med_14"], current_time)
 
         # Check if no departures

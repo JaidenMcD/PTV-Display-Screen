@@ -200,19 +200,6 @@ class TrainUI:
         pygame.draw.rect(screen, colour, r)
         
         pygame.draw.rect(screen, colour, (x, r.bottom, bar_width, container.bottom - r.bottom))
-
-    @staticmethod
-    def get_current_time_string(format_str="%I:%M:%S %p"):
-        """
-        Get the current time as a formatted string.
-        
-        Args:
-            format_str: Python datetime format string
-            
-        Returns:
-            Formatted time string in lowercase
-        """
-        return datetime.now().strftime(format_str).lower()
     
     @staticmethod
     def draw_stop_list(screen, config, stops, colour, x, y, stop_h, stop_w, bar_width, v_padding, font, tick, text_offset):
