@@ -429,13 +429,13 @@ class TrainStop:
 
     @staticmethod
     def filter_departure_list(
-        departures: List[Dict[str, Any] | None],
+        departures: List[Optional[Dict[str, Any]]],
         n_to_show: int,
-    ) -> List[Dict[str, Any] | None]:
+    ) -> List[Optional[Dict[str, Any]]]:
         """
         Remove RRB services and pad the list with None up to n_to_show.
         """
-        filtered: List[Dict[str, Any] | None] = []
+        filtered: List[Optional[Dict[str, Any]]] = []
 
         for dep in departures:
             if dep and "RRB" not in dep.get("flag", ""):
