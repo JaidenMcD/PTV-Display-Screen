@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 class FontManager:
-    FONT_PATH = Path("assets/fonts")
+    FONT_PATH = Path(__file__).resolve().parent / "assets" / "fonts"
 
     # Weight -> filename mapping
     WEIGHT_MAP = {

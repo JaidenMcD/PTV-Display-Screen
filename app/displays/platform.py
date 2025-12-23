@@ -1,9 +1,11 @@
 import pygame
+from pathlib import Path
 from datetime import datetime
 from .base import Display
 from .components.trainUI import TrainUI
 import utils
 from fonts import FontManager as Fonts
+
 
 class PlatformDisplay(Display):
     def __init__(self, ctx, platform=None):
@@ -92,7 +94,8 @@ class PlatformDisplay(Display):
             tr.y = 147
             screen.blit(t, tr.topleft)
 
-            img = pygame.image.load('assets/icons/no-trains.png').convert_alpha()
+            img_path = Path(__file__).resolve().parent.parent / "assets" / "icons" / "no-trains.png"
+            img = pygame.image.load(str(img_path)).convert_alpha()
             img = pygame.transform.scale(img, (87,87))
             img_r = img.get_rect()
             img_r.centerx = 480//2

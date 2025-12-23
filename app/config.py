@@ -28,12 +28,12 @@ route_type_vline = 3
 tram_alert_mappings = {
     "SpecialEvent": {
         "header": "Special Event Services",
-        "icon_path": "assets/icons/special-event-info.png",
+        "icon_path": str(Path(__file__).resolve().parent / "assets" / "icons" / "special-event-info.png"),
     }
 }
 
 # --------- LOGGING CONFIG ----------
-LOG_DIR = Path("logs")
+LOG_DIR = Path(__file__).resolve().parent.parent / "logs"
 LOG_DIR.mkdir(exist_ok=True)
 LOG_FILE = LOG_DIR / "ptv_display.log"
 
