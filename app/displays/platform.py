@@ -1,7 +1,7 @@
 import pygame
 from datetime import datetime
 from .base import Display
-from .ui_components import UIComponents
+from .components.trainUI import TrainUI
 
 class PlatformDisplay(Display):
     def __init__(self, ctx, platform=None):
@@ -35,7 +35,7 @@ class PlatformDisplay(Display):
 
         # If no departures, overwrite screen with no trains
         if self.departures == []:
-            UIComponents.no_trains_departing_black(screen, config, 480,320,fonts["f_reg_35"])
+            TrainUI.no_trains_departing_black(screen, config, 480,320,fonts["f_reg_35"])
             return
 
         screen.fill(config.LIGHT_WARM_GREY)
@@ -48,7 +48,7 @@ class PlatformDisplay(Display):
             dep = self.departures[i]
             if dep:
                 colour = self._to_rgb(colourMap.get(dep["route_gtfs_id"]))
-                y = UIComponents.draw_departure_item(
+                y = TrainUI.draw_departure_item(
                 screen, config, colour, y, 
                 departure_time=dep["departure_time"],
                 departure_time_font=fonts["f_reg_13"],
@@ -63,7 +63,7 @@ class PlatformDisplay(Display):
                 )
             else:
                 colour = config.MID_GREY
-                y = UIComponents.draw_departure_item(
+                y = TrainUI.draw_departure_item(
                     screen, config, colour, y, 
                     departure_time="--",
                     departure_time_font=fonts["f_reg_13"],
@@ -79,8 +79,8 @@ class PlatformDisplay(Display):
             y = y + gap
         
         # Clock drawn always
-        current_time = UIComponents.get_current_time_string()
-        UIComponents.draw_clock(screen, config, 369, 216, 102, 46, 1, fonts["f_med_14"], current_time)
+        current_time = TrainUI.get_current_time_string()
+        TrainUI.draw_clock(screen, config, 369, 216, 102, 46, 1, fonts["f_med_14"], current_time)
 
         # Check if no departures
         if all(x is None for x in self.departures):
@@ -107,7 +107,7 @@ class PlatformDisplay(Display):
             platform = departure['platform']
         else:
             platform = None
-        UIComponents.metro_departure_header(config, screen, 
+        TrainUI.metro_departure_header(config, screen, 
                                    colour, 
                                    x=0, 
                                    y=0, 
@@ -130,7 +130,7 @@ class PlatformDisplay(Display):
        
         pygame.draw.rect(screen, config.BLACK, (11,77, config.SCREEN_RES[0] - 11*2, 1))
 
-        UIComponents.draw_stop_list(screen, config, self.stops, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=4, v_padding=7, font=fonts["stops"], tick=(3,2), text_offset=9)
+        TrainUI.draw_stop_list(screen, config, self.stops, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=4, v_padding=7, font=fonts["stops"], tick=(3,2), text_offset=9)
 
 
     

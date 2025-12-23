@@ -1,7 +1,7 @@
 import pygame
 from datetime import datetime
 
-class UIComponents:
+class TrainUI:
     """Reusable UI drawing components for all displays."""
     
     @staticmethod
