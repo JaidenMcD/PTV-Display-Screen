@@ -2,7 +2,7 @@ import pygame
 from datetime import datetime
 import utils
 
-class UIComponents:
+class TramUI:
     """Reusable UI drawing components for all displays."""
 
     @staticmethod
