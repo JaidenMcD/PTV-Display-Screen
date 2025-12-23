@@ -3,6 +3,7 @@ from datetime import datetime
 from .base import Display
 from .components.trainUI import TrainUI
 import utils
+from fonts import FontManager as Fonts
 
 class PlatformDisplay(Display):
     def __init__(self, ctx, platform=None):
@@ -31,12 +32,11 @@ class PlatformDisplay(Display):
 
     def draw(self, screen):
         config = self.ctx["config"]
-        fonts = self.ctx["fonts"]
         colourMap = self.ctx["colourMap"]
 
         # If no departures, overwrite screen with no trains
         if self.departures == []:
-            TrainUI.no_trains_departing_black(screen, config, 480,320,fonts["f_reg_35"])
+            TrainUI.no_trains_departing_black(screen, config, 480,320,Fonts.get("bold", 12))
             return
 
         screen.fill(config.LIGHT_WARM_GREY)
@@ -52,11 +52,11 @@ class PlatformDisplay(Display):
                 y = TrainUI.draw_departure_item(
                 screen, config, colour, y, 
                 departure_time=dep["departure_time"],
-                departure_time_font=fonts["f_reg_13"],
+                departure_time_font=Fonts.get("regular", 13),
                 departure_dest=dep["destination"],
-                departure_dest_font=fonts["f_med_12"],
+                departure_dest_font=Fonts.get("medium", 12),
                 note=dep["express_note"],
-                note_font=fonts["f_reg_9"],
+                note_font=Fonts.get("regular", 9),
                 time_until_departure=dep["time_to_departure"],
                 platform=dep["platform"],
                 w=351, bar_thickness=1, x=9, 
@@ -67,11 +67,11 @@ class PlatformDisplay(Display):
                 y = TrainUI.draw_departure_item(
                     screen, config, colour, y, 
                     departure_time="--",
-                    departure_time_font=fonts["f_reg_13"],
+                    departure_time_font=Fonts.get("regular", 13),
                     departure_dest="--",
-                    departure_dest_font=fonts["f_med_12"],
+                    departure_dest_font=Fonts.get("medium", 12),
                     note="",
-                    note_font=fonts["f_reg_9"],
+                    note_font=Fonts.get("regular", 9),
                     time_until_departure="-- min",
                     platform=None,
                     w=351, bar_thickness=1, x=9, 
@@ -81,12 +81,12 @@ class PlatformDisplay(Display):
         
         # Clock drawn always
         current_time = utils.get_current_time_string()
-        TrainUI.draw_clock(screen, config, 369, 216, 102, 46, 1, fonts["f_med_14"], current_time)
+        TrainUI.draw_clock(screen, config, 369, 216, 102, 46, 1, Fonts.get("medium", 14), current_time)
 
         # Check if no departures
         if all(x is None for x in self.departures):
             pygame.draw.rect(screen, config.MID_GREY, (0, 0, config.SCREEN_RES[0], 10))
-            t = fonts["f_med_22"].render('No trains are departing from this platform', True, config.BLACK)
+            t = Fonts.get("medium", 22).render('No trains are departing from this platform', True, config.BLACK)
             tr = t.get_rect()
             tr.centerx = 480//2
             tr.y = 147
@@ -117,21 +117,21 @@ class PlatformDisplay(Display):
                                    ttd_y = 15, 
                                    ttdw = 91, 
                                    ttd_h = 31, 
-                                   dep_time_font = fonts["f_reg_21"], 
+                                   dep_time_font = Fonts.get("regular", 21), 
                                    dep_time = departure.get("departure_time", "--:--"), 
-                                   time_to_dep_font = fonts["f_reg_23"], 
+                                   time_to_dep_font = Fonts.get("regular", 23), 
                                    time_to_dep = departure.get("time_to_departure", "-"), 
-                                   dest_font = fonts["f_bold_27"], 
+                                   dest_font = Fonts.get("bold", 27), 
                                    dest = departure["destination"], 
-                                   dep_note_font = fonts["f_reg_12"], 
+                                   dep_note_font = Fonts.get("regular", 12), 
                                    dep_note = f"{departure['express_note']} {departure['departure_note']}", 
                                    platform = platform, 
-                                   platform_font = fonts["f_bold_25"]
+                                   platform_font = Fonts.get("bold", 25)
         )
        
         pygame.draw.rect(screen, config.BLACK, (11,77, config.SCREEN_RES[0] - 11*2, 1))
 
-        TrainUI.draw_stop_list(screen, config, self.stops, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=4, v_padding=7, font=fonts["stops"], tick=(3,2), text_offset=9)
+        TrainUI.draw_stop_list(screen, config, self.stops, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=4, v_padding=7, font=Fonts.get("regular", 12), tick=(3,2), text_offset=9)
 
 
     

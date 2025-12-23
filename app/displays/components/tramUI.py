@@ -1,6 +1,7 @@
 import pygame
 from datetime import datetime
 import utils
+from fonts import FontManager as Fonts
 
 class TramUI:
     """Reusable UI drawing components for all displays."""
@@ -56,7 +57,7 @@ class TramUI:
         return screen
     
     @staticmethod
-    def alert(config, fonts, header, description, url, w, h):
+    def alert(config, header, description, url, w, h):
         """ Create a surface for special event alert """
         screen = pygame.Surface((w, h), pygame.SRCALPHA)
         
@@ -66,9 +67,9 @@ class TramUI:
 
         # Header
         header_surf = pygame.Surface((w - header_height, header_height), pygame.SRCALPHA)
-        wrapped_lines = utils.wrap_text(header, fonts['f_bold_25'], w - header_height)
+        wrapped_lines = utils.wrap_text(header, Fonts.get("bold", 25), w - header_height)
         for i, line in enumerate(wrapped_lines):
-            t = fonts['f_bold_25'].render(line, True, config.BLACK)
+            t = Fonts.get("bold", 25).render(line, True, config.BLACK)
             tr = t.get_rect()
             tr.x = 0
             tr.y = 20 + (i * 22)
@@ -82,9 +83,9 @@ class TramUI:
 
         #info
         info_surf = pygame.Surface((w, h - header_height), pygame.SRCALPHA)
-        wrapped_lines = utils.wrap_text(description, fonts['f_reg_12'], w - 20)
+        wrapped_lines = utils.wrap_text(description, Fonts.get("regular", 12), w - 20)
         for i, line in enumerate(wrapped_lines):
-            t = fonts['f_reg_12'].render(line, True, config.BLACK)
+            t = Fonts.get("regular", 12).render(line, True, config.BLACK)
             tr = t.get_rect()
             tr.x = 10
             tr.y = 10 + (i * 16)
