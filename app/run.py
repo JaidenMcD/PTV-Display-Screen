@@ -9,7 +9,6 @@ import config
 from api import ptv_api
 from data import gtfs_loader
 from displays.platform import PlatformDisplay  # keep filename as-is; rename when convenient
-from displays.altdisplay import AltDisplay
 from displays.tram_display import TramDisplay
 from models.train_stop import TrainStop
 from models.tram_stop import TramStop

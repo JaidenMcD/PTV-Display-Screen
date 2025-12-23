@@ -27,7 +27,8 @@ class TrainUI:
         tr.center = r.center
         screen.blit(t, tr.topleft)
 
-    def time_to_departure(self, screen, config, x, y, w, h, font, time_text, bg_color=None):
+    @staticmethod
+    def time_to_departure(screen, config, x, y, w, h, font, time_text, bg_color=None):
         """
         Draw a simple time display box with optional background color.
         
@@ -277,7 +278,8 @@ class TrainUI:
                             pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 2, bar_width, 2))
                 stop_index = stop_index + 1
     
-    def metro_departure_header(self, config, screen, colour, x, y, w, h, ttd_y, ttdw, ttd_h, dep_time_font, dep_time, time_to_dep_font, time_to_dep, dest_font, dest, dep_note_font, dep_note, platform = None, platform_font = None):
+    @staticmethod
+    def metro_departure_header(config, screen, colour, x, y, w, h, ttd_y, ttdw, ttd_h, dep_time_font, dep_time, time_to_dep_font, time_to_dep, dest_font, dest, dep_note_font, dep_note, platform = None, platform_font = None):
         """ Top Section """
         # hardcoded values
         ttd_pad_right = 2 #px
@@ -296,7 +298,7 @@ class TrainUI:
         screen.blit(text, (x+11, time_y))
 
         # Time to departure
-        self.time_to_departure(screen, config, ttd_x, y+ttd_y, ttdw, ttd_h, time_to_dep_font, time_to_dep, bg_color=config.BLACK)
+        TrainUI.time_to_departure(screen, config, ttd_x, y+ttd_y, ttdw, ttd_h, time_to_dep_font, time_to_dep, bg_color=config.BLACK)
 
         # Draw platform number only if multiple platforms
         if platform is not None:
