@@ -9,6 +9,17 @@
 <body>
     <div class="container">
         <h1>PTV Display Control</h1>
+        <h2> 1. Select Transit Type </h2>
+        <input type="radio" name="option" value="Metropolitan-Train" onchange="change_transit_type(this.value)"> Metropolitan Train<br>
+        <input type="radio" name="option" value="Tram" onchange="change_transit_type(this.value)"> Tram<br>
+        <input type="radio" name="option" value="Bus" onchange="change_transit_type(this.value)"> Bus (unsupported)<br>
+        <h2>2. Select Station / Stop </h2>
+        <div id="stop-select-div"></div>
+        <input list="Train-Stops-Select" name="Train-Stop-Select" id="Train-Stop-Select">
+        <datalist id="Train-Stops-Select">
+        </datalist>
+
+
 
     <script src="/static/script.js"></script>
 </body>

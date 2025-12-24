@@ -106,7 +106,7 @@ def start_flask_server(display_state):
         app.run(
             host='0.0.0.0',
             port=5000,
-            debug=False,
+            debug=True,
             use_reloader=False,
             threaded=True
         )
