@@ -10,14 +10,13 @@ app = Flask(__name__, template_folder='templates', static_folder='static', stati
 
 # Global State - shared with display process
 display_state = {
-    'active_display' : 0,
-    'tram_enabled': False,
-    'train_enabled': False,
-    'tram_stop': None,
-    'train_stop': None,
+    'stop': False,
+    'transit-type': False,
+    'display-type': 'default_display',
     'train_platforms': [],
-    'display_list': []
-}
+    'running': True,
+    'version': 0,
+    }
 
 @app.route('/')
 def index():
@@ -33,3 +32,19 @@ def api_stops():
     with p.open('r', encoding='utf-8') as fh:
         data = json.load(fh)
     return jsonify(data)
+
+@app.route('/api/send-to-display', methods=['POST'])
+def send_to_display():
+    data = request.json
+    transit_type = data.get('transitType')
+    stop = data.get('stop')
+    display_type = data.get('displayType')
+
+    display_state['transit_type'] = transit_type
+    display_state['stop'] = stop
+    display_state['display_type'] = display_type
+
+    display_state['version'] += 1
+
+    
+    return jsonify({'message': f'Sent {stop} ({display_type}) to display'})

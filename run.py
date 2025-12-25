@@ -36,60 +36,19 @@ def signal_handler(signum, frame):
 
 def get_display_config():
     """
-    Interactive configuration for display setup.
-    Returns display_state dictionary for display loop.
+    Return default display_state - controlled via webpage only.
     """
     display_state = {
-        'tram_enabled': False,
-        'train_enabled': False,
-        'tram_stop': None,
-        'train_stop': None,
+        'stop': False,
+        'transit_type': False,
+        'display_type': 'default_display',
         'train_platforms': [],
-        'active_display': 0,
         'running': False,
-        'display_list': []
+        'version': 0,
     }
     
-    print("\n" + "="*50)
-    print("PTV Display Screen - Configuration")
-    print("="*50 + "\n")
-    
-    tram_enabled = input("Enable trams? (y/n): ").lower() == 'y'
-    train_enabled = input("Enable trains? (y/n): ").lower() == 'y'
-    
-    if not train_enabled and not tram_enabled:
-        print("Error: At least one transit type must be enabled!")
-        return None
-    
-    if train_enabled:
-        search_term = input("Enter train station name: ").strip()
-        if not search_term:
-            print("Error: Train station required!")
-            return None
-        platforms_input = input("Comma separated platforms (or Enter for all): ").strip()
-        platforms = [p.strip() for p in platforms_input.split(',')] if platforms_input else []
-        
-        display_state['train_enabled'] = True
-        display_state['train_stop'] = search_term
-        display_state['train_platforms'] = platforms
-    
-    if tram_enabled:
-        search_term = input("Enter tram stop name: ").strip()
-        if not search_term:
-            print("Error: Tram stop required!")
-            return None
-        
-        display_state['tram_enabled'] = True
-        display_state['tram_stop'] = search_term
-    
-    print("\n" + "="*50)
-    print("Configuration complete!")
-    print(f"Train: {display_state['train_stop'] if train_enabled else 'Disabled'}")
-    print(f"Tram: {display_state['tram_stop'] if tram_enabled else 'Disabled'}")
-    print("="*50 + "\n")
-    
+    logger.info("Display state initialized - awaiting webpage control")
     return display_state
-
 
 def start_flask_server(display_state):
     """Start Flask web server in a separate thread."""
