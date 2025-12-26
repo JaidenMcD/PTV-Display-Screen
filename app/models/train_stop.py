@@ -19,14 +19,13 @@ class TrainStop:
     """
     Represents a PTV metro train stop and provides departure lookup functionality.
     """
-    def __init__(self, name: str, platforms: Optional[List[str]] = None):
+    def __init__(self, stop_id, platforms: Optional[List[str]] = None):
         """
         Initialise a Stop object and resolve it against the PTV API.
 
         :param name: User-provided stop name
         :param platforms: List of platform numbers to filter departures
         """
-        self._input_name = name
 
         # Validate and clean platforms
         if platforms:
@@ -35,7 +34,7 @@ class TrainStop:
             self.platform = None
 
         # Core stop metadata (important)
-        self.stop_id = None
+        self.stop_id = stop_id
         self.name = None
         self.routes: List[Dict[str, Any]] = []
 
@@ -56,58 +55,25 @@ class TrainStop:
         """
         Resolve the provided stop name to a PTV stop ID and metadata.
         """
-        logger.info(f'Resolving stop for input name: {self._input_name}...')
+        logger.info(f'Resolving stop for stop ID: {self.stop_id}...')
         try:
-            raw_name = self._input_name.strip()
-            if not raw_name:
-                raise ValueError("Stop name cannot be empty.")
-            
-            query_name = raw_name.replace(' ', '%20')
-            target = self.normalise(raw_name)
 
             # Resolve Metro
             endpoint = (
-                f"/v3/search/{query_name}"
-                f"?route_types={config.route_type_train}"
+                f"/v3/stops/{self.stop_id}/route_type/0"
+                f"?stop_location=true&stop_amenities=true&stop_accessibility=true"
+                f"&stop_contact=true&stop_ticket=true&stop_staffing=true&stop_disruptions=true"
             )
             result = send_ptv_request(endpoint)
+            train_stop = result.get("stop")
 
-            if result is None:
-                logger.error(f"API returned None for stop search {raw_name}")
-                raise ValueError(f"API error searching for '{raw_name}'")
-            
-            candidates = result.get("stops", [])
-            if not candidates:
-                logger.warning(f"No train stops found for: {raw_name}")
-                raise ValueError(f"No matching metro station found for '{raw_name}'")
-            
-            scored = [
-                (self.score_stop(candidate, target), candidate)
-                for candidate in candidates
-            ]
-            scored.sort(key=lambda x: x[0], reverse=True)
-
-            best_score, train_stop = scored[0] if scored else (0, None)
-
-            if best_score == 0 or train_stop is None:
-                raise ValueError(f"No matching metro station found for '{raw_name}'")
-            
-            logger.info(
-                f"Resolved stop: {train_stop['stop_name']} "
-                f"[ID: {train_stop['stop_id']}] with score {best_score}"
-            )
-
-            self._input_name = None  # discard after use
-            
             # Populate Metadata
-            self.stop_id = train_stop['stop_id'] 
             self.route_type = train_stop['route_type']
             self.name = train_stop['stop_name']
             self.routes = train_stop['routes']
-            self.stop_suburb = train_stop['stop_suburb']
-            self.stop_latitude = train_stop['stop_latitude']
-            self.stop_longitude = train_stop['stop_longitude']
-            self.stop_sequence = train_stop['stop_sequence']
+            self.stop_suburb = train_stop["stop_location"]["suburb"]
+            self.stop_latitude = train_stop["stop_location"]["gps"]['latitude']
+            self.stop_longitude = train_stop["stop_location"]["gps"]['longitude']
             self.stop_landmark = train_stop['stop_landmark']
         
         except ValueError:

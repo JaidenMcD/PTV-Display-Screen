@@ -19,17 +19,16 @@ class TramStop:
     """
     Represents a PTV tram stop and provides departure lookup functionality.
     """
-    def __init__(self, name: str):
+    def __init__(self, stop_id):
         """
         Initialise a Stop object and resolve it against the PTV API.
 
         :param name: User-provided stop name
         :raises ValueError: If stop cannot be resolved
         """
-        self._input_name = name
 
         # Core stop metadata (important)
-        self.stop_id: Optional[int] = None
+        self.stop_id = stop_id
         self.name: Optional[str] = None
         self.routes: List[Dict[str, Any]] = []
 
@@ -52,53 +51,18 @@ class TramStop:
         
         :raises ValueError: If no matching stop found
         """
-        logger.info(f'Resolving tram stop for input name: {self._input_name}...')
+        logger.info(f'Resolving tram stop for stop ID: {self.stop_id}...')
 
         try:   
-            raw_name = self._input_name.strip()
-            if not raw_name:
-                raise ValueError("Stop name cannot be empty.")
-            
-            query_name = raw_name.replace(' ', '%20')
-            target = self.normalise(raw_name)
-
             # Resolve Tram
             endpoint = (
-                f"/v3/search/{query_name}"
-                f"?route_types={config.route_type_tram}"
+                f"/v3/stops/{self.stop_id}/route_type/{config.route_type_tram}"
+                f"?stop_location=true&stop_amenities=true&stop_accessibility=true"
+                f"&stop_contact=true&stop_ticket=true&stop_staffing=true&stop_disruptions=true"
             )
             result = send_ptv_request(endpoint)
-
-            if result is None:
-                logger.error(f"API returned None for stop search {raw_name}")
-                raise ValueError(f"API error searching for '{raw_name}'")
-            
-            candidates = result.get("stops", [])
-            if not candidates:
-                logger.warning(f"No tram stops found for: {raw_name}")
-                raise ValueError(f"No matching tram stop found for '{raw_name}'")
-        
-            scored = [
-                (self.score_stop(candidate, target), candidate)
-                for candidate in candidates
-            ]
-            scored.sort(key=lambda x: x[0], reverse=True)
-
-            best_score, tram_stop = scored[0]
-
-            if best_score == 0 or tram_stop is None:
-                logger.error(f"Best match score was 0 for: {raw_name}")
-                raise ValueError(f"No matching metro station found for '{raw_name}'")
-
-            logger.info(
-                f"Resolved stop: {tram_stop['stop_name']} "
-                f"[ID: {tram_stop['stop_id']}] with score {best_score}"
-            )
-
-            self._input_name = None  # discard after use
-        
+            tram_stop = result['stop']
             # Populate Metadata
-            self.stop_id = tram_stop['stop_id'] 
             self.route_type = tram_stop['route_type']
             self.name = tram_stop['stop_name']
             self.routes = tram_stop.get('routes', [])

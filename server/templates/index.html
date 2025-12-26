@@ -15,8 +15,9 @@
         <input type="radio" name="option" value="Bus" onchange="change_transit_type(this.value)"> Bus (unsupported)<br>
         <h2>2. Select Station / Stop </h2>
         <div id="stop-select-div"></div>
-        <input list="Train-Stops-Select" name="Train-Stop-Select" id="Train-Stop-Select">
-        <datalist id="Train-Stops-Select">
+        <input list="Train-Stops-Select" id="Train-Stop-Select">
+        <input type="hidden" id="Train-Stop-Id">
+        <datalist id="Train-Stops-Select"></datalist>
         </datalist>
         <h2>3. Select PID Type</h2>
         <div id="display-select-div">

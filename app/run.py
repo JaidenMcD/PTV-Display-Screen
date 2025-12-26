@@ -93,7 +93,6 @@ def run_display_loop(display_state):
         last_version = display_state.get('version', 0)
         while running and display_state['running']:
             now = time.time()
-            print(display_state)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
@@ -103,13 +102,13 @@ def run_display_loop(display_state):
             if display_state.get('version', 0) != last_version:
                 logger.info(f'Display state changed')
                 if display_state['transit_type'] == 'Metropolitan-Train':
-                    stop = TrainStop(display_state['stop'], display_state['train_platforms'])
+                    stop = TrainStop(display_state['stop_id'], display_state['train_platforms'])
                     if display_state['display_type'] == 'platform':
                         display = PlatformDisplay({**ctx_base, "stop": stop, "colourMap": colourMap_metropolitan_train}, display_state['train_platforms'])
                         display.on_show()
 
                 elif display_state['transit_type'] == 'Tram':
-                    stop = TramStop(display_state['stop'])
+                    stop = TramStop(display_state['stop_id'])
                     if display_state['display_type'] == 'tram_display':
                         display = TramDisplay({**ctx_base, "stop": stop, "colourMap": colourMap_tram})
                         display.on_show()

@@ -73,13 +73,16 @@ def get_stops(route_type_id):
         endpoint = f"/v3/stops/route/{route["route_id"]}/route_type/{route_type_id}"
         result = send_ptv_request(endpoint)
         for stop in result["stops"]:
-            stops.append(stop["stop_name"])
+            stops.append({
+                'stop_name': stop["stop_name"],
+                'stop_id': stop["stop_id"]
+                })
 
-    # Remove duplicates
-    stops = list(set(stops))
+    # Remove duplicates by converting to a dict keyed by stop_id
+    unique_stops = {stop['stop_id']: stop for stop in stops}
 
-    # sort alphabetically
-    stops.sort()
+    # Convert back to list and sort alphabetically by stop_name
+    stops = sorted(unique_stops.values(), key=lambda x: x['stop_name'])
     return stops
 
 def update_metropolitan_train_stops():
@@ -120,7 +123,4 @@ def update_bus_stops():
         print(f"Successfully saved list to {file_path}")
     except IOError as e:
         print(f"Error saving file: {e}")
-
-update_bus_stops()
-
 

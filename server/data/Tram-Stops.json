@@ -1,1005 +1,4410 @@
 [
-    "124A-Casino/MCEC/Clarendon St",
-    "125A-Southbank Tram Depot/Light Rail",
-    "130a-Raglan St/Clarendon St",
-    "48A-Dandenong Rd/Hawthorn Rd",
-    "53A-Matthews Ave/Keilor Rd",
-    "7A-William Barak Bridge/Melbourne Park",
-    "7B-Rod Laver Arena/MCG Gates 1-3",
-    "7C-MCG Gates 4-7/John Cain Arena",
-    "7D-Olympic Boulevard",
-    "A'Beckett St/Malvern Rd #36",
-    "ANZAC Station/St Kilda Rd #20",
-    "Abbotsford St Interchange/Abbotsford St #19",
-    "Abbotsford St/Queensberry St #14",
-    "Abinger St/Church St #60",
-    "Acheron Ave/Camberwell Rd #46",
-    "Acland St/Fitzroy St #135",
-    "Adelaide St/Church St #55",
-    "Airlie Ave/High St #37",
-    "Airport West/Matthews Ave #59",
-    "Alandale St/Riversdale Rd #59",
-    "Albany Rd/Malvern Rd #41",
-    "Albert Park Station/Light Rail #128",
-    "Albert Rd/Clarendon St #130",
-    "Albert St/Gisborne St #11",
-    "Albert St/Lygon St #123",
-    "Albert St/Nicholson St #10",
-    "Albert St/Nicholson St #22",
-    "Albert St/Plenty Rd #55",
-    "Albert St/Sydney Rd #22",
-    "Albion St/Holmes St #127",
-    "Albion St/Lygon St #127",
-    "Albion St/Melville Rd #37",
-    "Albion St/Sydney Rd #26",
-    "Alexandra Pde/Brunswick St #18",
-    "Alexandra Pde/Nicholson St #15",
-    "Alexandra Pde/Smith St #21",
-    "Alexandra St/Dandenong Rd #36",
-    "Alfred Cres/St Georges Rd #21",
-    "Alfred Hospital/Commercial Rd #26",
-    "Alfred Rd/Toorak Rd #56",
-    "Alfred Square/The Esplanade #136",
-    "Allan Rd/Balaclava Rd #42",
-    "Alma Rd/Chapel St #40",
-    "Alma Rd/St Kilda Rd #32",
-    "Anderson Rd/Burke Rd #56",
-    "Anderson St/Wattletree Rd #50",
-    "Arden St/Abbotsford St #15",
-    "Argyle St/Chapel St #39",
-    "Argyle St/St Kilda Rd #33",
-    "Armadale St/Wattletree Rd #41",
-    "Armadale Station/High St #40",
-    "Armstrong St/Danks St #138",
-    "Arthur St/Chapel St #49",
-    "Arthur St/Hawthorn Rd #49",
-    "Arthur St/St Kilda Rd #23",
-    "Arthurton Rd/High St #33",
-    "Arthurton Rd/St Georges Rd #29",
-    "Arts Precinct/St Kilda Rd #14",
-    "Arts Precinct/Sturt St #17",
-    "Ascot Vale Rd/Maribyrnong Rd #34",
-    "Auburn Gr/High St #39",
-    "Auburn Rd/Riversdale Rd #36",
-    "Bailey Ave/Dandenong Rd #44",
-    "Baker St/Church St #64",
-    "Balaclava Rd/Hawthorn Rd #51",
-    "Balaclava Rd/Normanby Rd #55",
-    "Balaclava Station/Carlisle St #38",
-    "Ballantyne St/High St #39",
-    "Ballarat Rd/Gordon St #58",
-    "Balmain St/Church St #54",
-    "Balwyn Cinema/Whitehorse Rd #46",
-    "Balwyn Rd/Doncaster Rd #51",
-    "Balwyn Rd/Whitehorse Rd #47",
-    "Balwyn Shopping Centre/Whitehorse Rd #48",
-    "Bambra Rd/Glenhuntly Rd #54",
-    "Barb St/Raleigh Rd #44",
-    "Barkers Rd/Church St #26",
-    "Barkers Rd/Glenferrie Rd #77",
-    "Barkers Rd/High St #29",
-    "Barkly Square/115 Sydney Rd #20",
-    "Barkly Square/Sydney Rd #20",
-    "Barkly St/Carlisle St #33",
-    "Barkly St/St Kilda Rd #31",
-    "Barkly St/Toorak Rd #56",
-    "Barrow St/Moreland Rd #130",
-    "Batman Park/Spencer St #124",
-    "Beacon Cove/Light Rail #129",
-    "Beaconsfield Pde/Victoria Ave #32",
-    "Beatrice St/St Kilda Rd #26",
-    "Belford St/Acland St #139",
-    "Bell St/Brunswick St #15",
-    "Bell St/Gilbert Rd #40",
-    "Bell St/Glenferrie Rd #58",
-    "Bell St/Melville Rd #45",
-    "Bell St/Nicholson St #135",
-    "Bell St/Plenty Rd #45",
-    "Bell St/Sydney Rd #34",
-    "Belmont Ave/Cotham Rd #37",
-    "Belmont Ave/High St #50",
-    "Belmont Ave/Malvern Rd #49",
-    "Bendigo St/Malvern Rd #32",
-    "Bent St/High St #34",
-    "Benwerrin Reserve/Burwood Hwy #68",
-    "Berkeley St/Riversdale Rd #33",
-    "Beryl St/Toorak Rd #55",
-    "Bickleigh St/Burke Rd #52",
-    "Bird Ave/St Georges Rd #31",
-    "Blackburn Rd/Burwood Hwy #70",
-    "Bloomfield Rd/Union Rd #35",
-    "Blyth St/Lygon St #125",
-    "Blyth St/Nicholson St #23",
-    "Blyth St/Sydney Rd #24",
-    "Blythe St/High St #41",
-    "Boldrewood Pde/Plenty Rd #55",
-    "Booran Rd/Glenhuntly Rd #58",
-    "Bosisto St/Bridge Rd #17",
-    "Boundary Rd/Racecourse Rd #22",
-    "Bourke St/Spring St #0",
-    "Bourke St/William St #5",
-    "Bourke Street Mall/Elizabeth St #3",
-    "Bourke Street Mall/Swanston St #10",
-    "Bowen St/Camberwell Rd #45",
-    "Bowen St/Maribyrnong Rd #39",
-    "Box Hill Central/Whitehorse Rd #58",
-    "Boyanda Rd/High St #52",
-    "Bracken Ave/Miller St #36",
-    "Bradshaw St/Keilor Rd #51",
-    "Braille Library/Commercial Rd #28",
-    "Brearley Pde/Melville Rd #44",
-    "Brewster St/Mt Alexander Rd #43",
-    "Bridge Rd/Church St #61",
-    "Bridport St/Montague St #28",
-    "Bridport St/Victoria Ave #29",
-    "Briggs St/Hawthorn Rd #56",
-    "Brighton Rd/Carlisle St #35",
-    "Brighton Rd/Chapel St #36",
-    "Brighton Rd/Glenhuntly Rd #43",
-    "Brook St/Church St #25",
-    "Browning St/Plenty Rd #58",
-    "Bruce St/Gilbert Rd #41",
-    "Brunning St/Brighton Rd #38",
-    "Brunswick Baptist Church/Sydney Rd #24",
-    "Brunswick Rd/Grantham St #29",
-    "Brunswick Rd/Lygon St #120",
-    "Brunswick Rd/Nicholson St #19",
-    "Brunswick Rd/Sydney Rd #19",
-    "Brunswick St/Gertrude St #13",
-    "Brunswick Town Hall/Sydney Rd #21",
-    "Brunswick Tram Depot/Sydney Rd #27",
-    "Buchanan Ave/Doncaster Rd #49",
-    "Buckley St/Pascoe Vale Rd #37",
-    "Bundoora Park/Plenty Rd #61",
-    "Bundoora Square SC/Plenty Rd #67",
-    "Burke Rd/Camberwell Rd #41",
-    "Burke Rd/Cotham Rd #42",
-    "Burke Rd/Doncaster Rd #44",
-    "Burke Rd/High St #44",
-    "Burke Rd/High St #51",
-    "Burke Rd/Malvern Rd #50",
-    "Burke Rd/Wattletree Rd #52",
-    "Burke Rd/Waverley Rd #60",
-    "Burke Rd/Whitehorse Rd #42",
-    "Burnley St/Bridge Rd #21",
-    "Burnley St/Swan St #14",
-    "Burnley St/Victoria St #24",
-    "Burrowes St/Union Rd #34",
-    "Burwood Rd/Glenferrie Rd #73",
-    "Burwood Rd/Power St #27",
-    "Cabrini Hospital/Wattletree Rd #47",
-    "Callantina Rd/Glenferrie Rd #68",
-    "Camberwell Civic Centre/Camberwell Rd #43",
-    "Camberwell Girls Grammar/Burke Rd #67",
-    "Camberwell Junction/Burke Rd #61",
-    "Camberwell Junction/Camberwell Rd #40",
-    "Camberwell Junction/Riversdale Rd #40",
-    "Camberwell Market/517 Riversdale Rd #41",
-    "Camberwell Primary School/Camberwell Rd #42",
-    "Camberwell Shopping Centre/755 Burke Rd #62",
-    "Camberwell Station/Burke Rd #64",
-    "Camberwell Tram Depot/Riversdale Rd #39",
-    "Cameron St/Matthews Ave #55",
-    "Canterbury Rd/Albert Rd #132",
-    "Canterbury Rd/Burke Rd #66",
-    "Canterbury Rd/Fitzroy St #133",
-    "Canterbury Rd/Malvern Rd #36",
-    "Canterbury Rd/Mills St #133",
-    "Canterbury Rd/Toorak Rd #133",
-    "Carlisle Ave/Carlisle St #39",
-    "Carlisle St/Chapel St #37",
-    "Carlisle St/St Kilda Rd #35",
-    "Carnegie/Truganini Rd #68",
-    "Carr St/Sydney Rd #38",
-    "Carter St/Mills St #134",
-    "Casino/Southbank/Queens Bridge St #115",
-    "Caulfield Junior College/Balaclava Rd #47",
-    "Caulfield Park Bowling Club/Balaclava Rd #52",
-    "Caulfield Park/Balaclava Rd #53",
-    "Caulfield Racecourse/Normanby Rd #56",
-    "Caulfield Railway Station/Derby Rd #57",
-    "Cecil St/Park St #25",
-    "Cemetery Road West/Royal Pde #14",
-    "Central Park Ave/Cordite Ave #49",
-    "Centre Rd/Truganini Rd #67",
-    "Chapel St/Brighton Rd #37",
-    "Chapel St/Carlisle St #37",
-    "Chapel St/Commercial Rd #31",
-    "Chapel St/Dandenong Rd #32",
-    "Chapel St/High St #31",
-    "Chapel St/Malvern Rd #31",
-    "Chapel St/Toorak Rd #128",
-    "Charles St/Cotham Rd #35",
-    "Charles St/High St #35",
-    "Charles St/Smith St #17",
-    "Chatham St/Chapel St #46",
-    "Chatsworth Rd/High St #36",
-    "Chaucer St/Ascot Vale Rd #33",
-    "Chetwynd St/Victoria St #10",
-    "Christowel St/Camberwell Rd #46",
-    "Chrystobel Cres/Glenferrie Rd #75",
-    "Church St/Bridge Rd #18",
-    "Church St/Swan St #11",
-    "Church St/Victoria St #21",
-    "City Rd/Clarendon St #126",
-    "City Rd/Kings Way #116",
-    "City Rd/Light Rail #126",
-    "City Square/Swanston St #11",
-    "Cityview Rd/Doncaster Rd #49",
-    "Clarendon St/Albert Rd #130",
-    "Clarendon St/High St #38",
-    "Clarendon St/Park St #24",
-    "Clarendon St/Whiteman St #125",
-    "Clarke Ave/Glenhuntly Rd #57",
-    "Clarke St/High St #30",
-    "Clarke St/St Georges Rd #26",
-    "Clements Dr/Plenty Rd #70",
-    "Clendon Rd/Malvern Rd #38",
-    "Cliff St/Chapel St #48",
-    "Clifton Hill Interchange/Queens Pde #25",
-    "Closeburn Ave/Dandenong Rd #36",
-    "Clyde St/High St #41",
-    "Clyde St/Raleigh Rd #42",
-    "Cobden St/High St #35",
-    "Coburg Market/Sydney Rd #33",
-    "Coleridge St/Brighton Rd #41",
-    "Collett St/Racecourse Rd #24",
-    "Collins St/Elizabeth St #2",
-    "Collins St/High St #41",
-    "Collins St/William St #4",
-    "Commercial Rd/Chapel St #47",
-    "Commercial Rd/St Kilda Rd #25",
-    "Cooloongatta Rd/Riversdale Rd #48",
-    "Cooper St/Gilbert Rd #44",
-    "Cooper St/Keilor Rd #50",
-    "Coppin St/Bridge Rd #20",
-    "Coppin St/Swan St #12",
-    "Cotham Rd/Burke Rd #70",
-    "Cotham Rd/Glenferrie Rd #80",
-    "Cotter St/Church St #54",
-    "Cowderoy St/Park St #141",
-    "Cramer St/Gilbert Rd #42",
-    "Crotonhurst Ave/Hawthorn Rd #53",
-    "Crozier St/Nicholson St #132",
-    "Currajong Ave/Burke Rd #58",
-    "Curzon St/Queensberry St #13",
-    "D1-Docklands Stadium/La Trobe St",
-    "D10-New Quay Prom/Docklands Dr",
-    "D10-NewQuay Prom/Docklands Dr",
-    "D11-Waterfront City/Docklands Dr",
-    "D14-Southern Cross Station/Collins St",
-    "D15-Batman's Hill/Collins St",
-    "D16-Harbour Esp/Collins St",
-    "D17-Merchant St/Collins St",
-    "D18-Bourke St/Collins St",
-    "D2-Central Pier/Harbour Esp",
-    "D3-Stadium Precinct - Bourke St/Harbour Esp",
-    "D4-Docklands Park/Harbour Esp",
-    "D5-South Wharf/Wurundjeri Way",
-    "D6-Flinders Street West/Flinders St",
-    "D6-Victoria Police Centre/Flinders St",
-    "Daly St/Dawson St #33",
-    "Dandenong Rd/Chapel St #42",
-    "Dandenong Rd/Derby Rd #58",
-    "Dandenong Rd/Glenferrie Rd #52",
-    "Dandenong Rd/Waverley Rd #59",
-    "Danks St/Mills St #136",
-    "Darebin Rd/High St #36",
-    "Darling Rd/Waverley Rd #64",
-    "Davey Ave/Hawthorn Rd #65",
-    "David St/Plenty Rd #47",
-    "Dawson St/Grantham St #31",
-    "De Carle St/Moreland Rd #131",
-    "De La Salle College/High St #45",
-    "Deakin St/Park St #141",
-    "Deakin University/Burwood Hwy #63",
-    "Deepdene Park/Whitehorse Rd #44",
-    "Deepdene Shopping Centre/Whitehorse Rd #43",
-    "Dennis St/High St #35",
-    "Densham Rd/Malvern Rd #39",
-    "Derby St/Riversdale Rd #44",
-    "Devon St/Miller St #36",
-    "Dight Ave/Doncaster Rd #50",
-    "Dixon St/High St #47",
-    "Dixon St/Wattletree Rd #48",
-    "Djerring Flemington Hub/Mt Alexander Rd #23",
-    "Dorcas St/Clarendon St #128",
-    "Dorcas St/Eastern Rd #22",
-    "Dover St/Hawthorn Rd #60",
-    "Droop St/Ballarat Rd #59",
-    "Duke St/Chapel St #44",
-    "Duncraig Ave/Wattletree Rd #44",
-    "Dundas St/Plenty Rd #42",
-    "Earl St/Matthews Ave #56",
-    "East Brighton/Hawthorn Rd #68",
-    "East Richmond Railway Station/Church St #56",
-    "Edgar St/Malvern Rd #48",
-    "Edgewater Square/Gordon St #56",
-    "Edinburgh St/Swan St #13",
-    "Edsall St/Glenferrie Rd #55",
-    "Edward St/Sydney Rd #31",
-    "Egerton Rd/Dandenong Rd #43",
-    "Egerton Rd/Wattletree Rd #43",
-    "Elgar Rd/Burwood Hwy #62",
-    "Elgar Rd/Riversdale Rd #61",
-    "Elgar Rd/Whitehorse Rd #56",
-    "Elizabeth St/Bourke St #5",
-    "Elizabeth St/Church St #64",
-    "Elizabeth St/Collins St #5",
-    "Elizabeth St/Flinders St #4",
-    "Elizabeth St/Malvern Rd #45",
-    "Elliott Ave/Royal Park #24",
-    "Elmhurst Rd/Balaclava Rd #47",
-    "Elsternwick Railway Station/Glenhuntly Rd #44",
-    "Elsternwick Shopping Centre/Glenhuntly Rd #45",
-    "Empress Rd/Balaclava Rd #41",
-    "Epsom Rd/Maribyrnong Rd #40",
-    "Epworth Hospital/Bridge Rd #15",
-    "Erica Ave/Wattletree Rd #51",
-    "Errol St/Victoria St #11",
-    "Essendon North PS/Keilor Rd #49",
-    "Essendon North Primary School/Keilor Rd #49",
-    "Essendon Tram Depot/Mt Alexander Rd #27",
-    "Essex Rd/Riversdale Rd #53",
-    "Ethel Gr/Plenty Rd #53",
-    "Exhibition St/Collins St #7",
-    "Exhibition St/La Trobe St #8",
-    "Fairview Ave/Toorak Rd #57",
-    "Fallon St/Glenhuntly Rd #55",
-    "Fawkner Park/Toorak Rd #123",
-    "Federation Square/Swanston St #13",
-    "Fenwick St/Lygon St #116",
-    "Ferguson St/Maribyrnong Rd #38",
-    "Fermanagh Rd/Riversdale Rd #42",
-    "Ferndale St/Riversdale Rd #60",
-    "Ferrars St/Park St #26",
-    "Findon Cres/Barkers Rd #27",
-    "Findon St/Barkers Rd #27",
-    "Fitzroy Bowls Club/Brunswick St #20",
-    "Fitzroy St/Park St #143",
-    "Fitzwilliam St/Glenferrie Rd #78",
-    "Flagstaff Railway Station/William St #7",
-    "Flagstaff Station/La Trobe St #3",
-    "Flemington Bridge Station/Flemington Rd #22",
-    "Flemington Racecourse/Epsom Rd #30",
-    "Flemington Racecourse/Racecourse Rd #29",
-    "Flemington Rd/Peel St #12",
-    "Fletcher St/Napier St #41",
-    "Fletcher St/Pascoe Vale Rd #38",
-    "Flinders St/Queens Bridge St #1",
-    "Flinders Street Railway Station/Elizabeth St #1",
-    "Flockhart St/Victoria St #23",
-    "Florence Ave/Cotham Rd #39",
-    "Footscray Market/Leeds St #63",
-    "Footscray Station/Leeds St #64",
-    "Fordham Gardens/Camberwell Rd #50",
-    "Fordholm Rd/Riversdale Rd #31",
-    "Francis St/Malvern Rd #33",
-    "Fraser St/High St #46",
-    "Fraser St/Light Rail #131",
-    "Fraser St/Park St #140",
-    "Fraser St/Patterson St #140",
-    "Freeman St/Nicholson St #16",
-    "Fullarton Rd/Matthews Ave #54",
-    "Gadd St/St Georges Rd #31",
-    "Gaffney St/Sydney Rd #37",
-    "Gardenvale Rd/Hawthorn Rd #62",
-    "Gardiner Railway Station/Burke Rd #51",
-    "Gardiner Rd/Glenferrie Rd #67",
-    "Gardiner Station/Burke Rd #51",
-    "Gatehouse St/Royal Pde #13",
-    "Geelong Rd/Droop St #61",
-    "Gertrude St/Brunswick St #13",
-    "Gertrude St/Smith St #15",
-    "Gibbons St/Church St #55",
-    "Gilmour St/Burwood Hwy #59",
-    "Gipps St/Church St #58",
-    "Gladstone Ave/St Georges Rd #30",
-    "Gladstone St/High St #36",
-    "Glass St/Mt Alexander Rd #45",
-    "Glen Eira Rd/Brighton Rd #39",
-    "Glen Eira Rd/Hawthorn Rd #54",
-    "Glen Huntly Railway Station/Glen Huntly Rd #61",
-    "Glen Iris Rd/Camberwell Rd #48",
-    "Glenarm Rd/Malvern Rd #50",
-    "Glenbervie Rd/Toorak Rd #139",
-    "Glendale St/Riversdale Rd #57",
-    "Glenferrie Railway Station/Glenferrie Rd #74",
-    "Glenferrie Rd/Cotham Rd #36",
-    "Glenferrie Rd/High St #44",
-    "Glenferrie Rd/Malvern Rd #43",
-    "Glenferrie Rd/Riversdale Rd #32",
-    "Glenferrie Rd/Toorak Rd #139",
-    "Glenferrie Rd/Wattletree Rd #45",
-    "Glenferrie Station/Glenferrie Rd #74",
-    "Glenhuntly Rd/Hawthorn Rd #57",
-    "Glenhuntly Rd/Truganini Rd #66",
-    "Glenhuntly Shops/Glenhuntly Rd #60",
-    "Glenhuntly Tram Depot/Glenhuntly Rd #53",
-    "Glenlyon Rd/Lygon St #122",
-    "Glenlyon Rd/Nicholson St #21",
-    "Glenlyon Rd/Sydney Rd #21",
-    "Glyndon Rd/Riversdale Rd #49",
-    "Gold St/Queens Pde #24",
-    "Gooch St/High St #39",
-    "Gordon St/River St #54",
-    "Gower St/Plenty Rd #48",
-    "Graham St/Light Rail #128",
-    "Graham St/Victoria Ave #31",
-    "Grandview Ave/Toorak Rd #54",
-    "Grange Rd/Glenhuntly Rd #62",
-    "Grange Rd/Toorak Rd #133",
-    "Grant St-Police Memorial/St Kilda Rd #17",
-    "Grant St/Sturt St #18",
-    "Grantham St/Dawson St #31",
-    "Grattan St/Church St #24",
-    "Greenhills Rd/Plenty Rd #68",
-    "Greenwood Dr/Plenty Rd #63",
-    "Greeves St/Carlisle St #34",
-    "Grice Cres/Mt Alexander Rd #42",
-    "Grimshaw St/Plenty Rd #65",
-    "Haines St/Abbotsford St #16",
-    "Halstead St/Hawthorn Rd #52",
-    "Hanover St/Brunswick St #14",
-    "Harding St/Nicholson St #133",
-    "Harding St/Sydney Rd #32",
-    "Hardwicke St/Whitehorse Rd #45",
-    "Harold Holt Swim Centre/High St #49",
-    "Harold St/Danks St #137",
-    "Harp Rd/High St #39",
-    "Harp Village/High St #40",
-    "Harris Ave/Burke Rd #52",
-    "Hastings Rd/Riversdale Rd #38",
-    "Havelock St/Carlisle St #32",
-    "Hawker St/Matthews Ave #57",
-    "Hawksburn Rd/Toorak Rd #130",
-    "Hawthorn Bridge/Bridge Rd #23",
-    "Hawthorn Railway Station/Burwood Rd #26",
-    "Hawthorn Rd/Balaclava Rd #51",
-    "Hawthorn Rd/Dandenong Rd #48",
-    "Hawthorn Rd/Glenhuntly Rd #51",
-    "Heller St/Grantham St #29",
-    "High St/Barkers Rd #29",
-    "High St/Chapel St #45",
-    "High St/Cotham Rd #34",
-    "High St/Glenferrie Rd #57",
-    "High St/St Kilda Rd #27",
-    "Highett St/Church St #62",
-    "Highfield Rd/Riversdale Rd #51",
-    "Highfield Rd/Toorak Rd #53",
-    "Highpoint Shopping Centre/Wests Rd #49",
-    "Highview Gr/Burwood Hwy #69",
-    "Hill Rd/Doncaster Rd #50",
-    "Hill St/Church St #24",
-    "Hobson St/Malvern Rd #33",
-    "Hoddle St/Fletcher St #39",
-    "Hoddle St/Victoria Pde #18",
-    "Hodgson St/Smith St #18",
-    "Hoffmans Rd/Keilor Rd #52",
-    "Holden St/Nicholson St #19",
-    "Holden St/St Georges Rd #24",
-    "Hood St/Whitehorse Rd #55",
-    "Hope St/Melville Rd #36",
-    "Hornby St/Dandenong Rd #33",
-    "Hornby St/High St #32",
-    "Hotham St/Balaclava Rd #40",
-    "Hotham St/Brighton Rd #42",
-    "Hotham St/Carlisle St #40",
-    "Hotham St/Maribyrnong Rd #38",
-    "Howard St/Church St #53",
-    "Howard St/Victoria St #9",
-    "Howell St/Hawthorn Rd #67",
-    "Hughes St/Waverley Rd #63",
-    "Huntingtower Rd/High St #42",
-    "Hutton St/St Georges Rd #33",
-    "Ievers St/Royal Pde #17",
-    "Inglisby Rd/Whitehorse Rd #54",
-    "Inkerman Rd/Hawthorn Rd #50",
-    "Inkerman St/Chapel St #38",
-    "Inkerman St/St Kilda Rd #34",
-    "Irving Rd/Malvern Rd #39",
-    "Irving Rd/Toorak Rd #136",
-    "Irymple Ave/High St #42",
-    "Jacka Bvd/Fitzroy St #135",
-    "Jacka St/Gilbert Rd #45",
-    "Jacobs Reserve/Melville Rd #38",
-    "Janefield Dr/Plenty Rd #70",
-    "Jasmine St/Glenhuntly Rd #52",
-    "Johnson St/Glenferrie Rd #76",
-    "Johnston St/Brunswick St #16",
-    "Johnston St/Nicholson St #13",
-    "Johnston St/Smith St #19",
-    "Jolimont Rd/Wellington Pde #10",
-    "Jolimont Station-MCG/Wellington Pde #11",
-    "Kambrook Rd/Balaclava Rd #54",
-    "Kambrook Rd/Glenhuntly Rd #56",
-    "Kean St/Glenhuntly Rd #56",
-    "Keats St/Burwood Hwy #69",
-    "Keele St/Smith St #20",
-    "Keilor Rd/Matthews Ave #53",
-    "Kenilworth Gr/Malvern Rd #49",
-    "Kent Gr/Balaclava Rd #45",
-    "Kent St/Church St #63",
-    "Kerferd Rd/Canterbury Rd #132",
-    "Kew Cemetery/High St #37",
-    "Kew High School/High St #43",
-    "Kew Junction/High St #32",
-    "Kew Shopping Centre/High St #33",
-    "Kew Traffic School/Cotham Rd #41",
-    "King William St/Brunswick St #14",
-    "Kings Way/Sturt St #20",
-    "Kooyong Railway Station/Glenferrie Rd #65",
-    "Kooyong Rd/Balaclava Rd #46",
-    "Kooyong Rd/Dandenong Rd #42",
-    "Kooyong Rd/Glenhuntly Rd #49",
-    "Kooyong Rd/High St #41",
-    "Kooyong Rd/Malvern Rd #40",
-    "Kooyong Rd/Toorak Rd #137",
-    "Kooyong Rd/Wattletree Rd #42",
-    "Kooyong Tennis Centre/Glenferrie Rd #66",
-    "Kooyongkoot Rd/Riversdale Rd #34",
-    "La Trobe St/Spencer St #119",
-    "La Trobe St/Victoria St #9",
-    "La Trobe University/Plenty Rd #60",
-    "Lakeside Dr/Burwood Hwy #72",
-    "Langridge St/Patterson St #139",
-    "Lansdowne Rd/Dandenong Rd #37",
-    "Lansdowne St/Victoria Pde #13",
-    "Lansdowne St/Wellington Pde #9",
-    "Latona Ave/Gilbert Rd #39",
-    "Laura St/Glenhuntly Rd #57",
-    "Lauriston Girls School/Malvern Rd #42",
-    "Leake St/Mt Alexander Rd #45",
-    "Leeds St/Hopkins St #63",
-    "Leicester St/Brunswick St #17",
-    "Lennox St/Swan St #9",
-    "Lennox St/Victoria St #20",
-    "Leonard St/Royal Pde #15",
-    "Leopold St/St Kilda Rd #24",
-    "Leslie St/Victoria St #23",
-    "Leura Gr/Burke Rd #58",
-    "Lewisham Rd/High St #34",
-    "Liddiard St/Glenferrie Rd #75",
-    "Lincoln Rd/Mt Alexander Rd #46",
-    "Lincoln Square/Swanston St #3",
-    "Lithgow St/Toorak Rd #53",
-    "Llaneast St/Glenferrie Rd #55",
-    "Lockhart St/Hawthorn Rd #56",
-    "Lockhart St/Riversdale Rd #52",
-    "Loddon Ave/Plenty Rd #56",
-    "Lonsdale St/Spencer St #120",
-    "Lorne Rd/Malvern Rd #35",
-    "Lorne St/St Kilda Rd #27",
-    "Luna Park/The Esplanade #138",
-    "Lygon St/Elgin St #112",
-    "Lyric St/Gordon St #55",
-    "Lytton St/Lygon St #113",
-    "Macarthur Rd/Royal Pde #14",
-    "Macgregor St/Waverley Rd #62",
-    "Madden Gr/Swan St #17",
-    "Malcolm St/Chapel St #51",
-    "Malvern Railway Station/Glenferrie Rd #53",
-    "Malvern Rd/Chapel St #47",
-    "Malvern Rd/Glenferrie Rd #59",
-    "Malvern Rd/High St #53",
-    "Malvern Tram Depot/Glenferrie Rd #56",
-    "Manningtree Rd/Glenferrie Rd #72",
-    "Mansfield St/High St #40",
-    "Maple Cres/Camberwell Rd #47",
-    "Maribyrnong College/River St #53",
-    "Maribyrnong Community Centre/Raleigh Rd #45",
-    "Maribyrnong Park/Maribyrnong Rd #41",
-    "Maribyrnong Rd/Ascot Vale Rd #34",
-    "Maribyrnong Rd/Mt Alexander Rd #30",
-    "Maribyrnong Rd/Union Rd #37",
-    "Market St/Flinders St #3",
-    "Maroona Rd/Glenhuntly Rd #63",
-    "Marshall Ave/Cotham Rd #38",
-    "Marshall Rd/Matthews Ave #58",
-    "Mary St/Park St #142",
-    "Mathoura Rd/Malvern Rd #35",
-    "Matlock Ct/Dandenong Rd #43",
-    "Mayfield Ave/Glenferrie Rd #62",
-    "McCutcheon St/High St #34",
-    "McKay St/Victoria St #22",
-    "McNamara St/Gilbert Rd #46",
-    "Melbourne Aquarium/Flinders St #2",
-    "Melbourne Cemetery/Lygon St #115",
-    "Melbourne Central & State Library stations/La Trobe St #6",
-    "Melbourne Central Station/Elizabeth St #5",
-    "Melbourne Central Station/La Trobe St #5",
-    "Melbourne Central Station/Swanston St #8",
-    "Melbourne Museum/Nicholson St #11",
-    "Melbourne Showgrounds/Union Rd #33",
-    "Melbourne Sports & Aquatic Centre/Albert Rd #131",
-    "Melbourne Sports and Aquatic Centre/Light Rail #129",
-    "Melbourne Town Hall/Collins St #6",
-    "Melbourne University/Swanston St #1",
-    "Melbourne Zoo/Royal Park #26",
-    "Melrose St/Flemington Rd #20",
-    "Mercer Rd/High St #43",
-    "Mercy College/Sydney Rd #39",
-    "Meredith St/Malvern Rd #46",
-    "Mernda Ave/Glenhuntly Rd #64",
-    "Mernda Rd/Glenferrie Rd #64",
-    "Merribell Ave/Nicholson St #134",
-    "Metropolitan Fire Brigade/Plenty Rd #62",
-    "Michael St/Queens Pde #24",
-    "Middle Park Station/Light Rail #130",
-    "Middle Rd/Burke Rd #55",
-    "Middle St/Mt Alexander Rd #28",
-    "Middleborough Rd/Burwood Hwy #66",
-    "Miles St/Sturt St #19",
-    "Miller St/Gilbert Rd #37",
-    "Miller St/High St #42",
-    "Miller St/Nicholson St #20",
-    "Miller St/St Georges Rd #25",
-    "Miller St/St Georges Rd #34",
-    "Millicent St/Burwood Hwy #60",
-    "Mills St/Danks St #136",
-    "Mimosa Rd/Glenhuntly Rd #65",
-    "Mitchell St/Carlisle St #34",
-    "Mitchell St/High St #32",
-    "Mitchell St/Holmes St #128",
-    "Mont Albert Rd/Burke Rd #68",
-    "Montague St/Bridport St #28",
-    "Montague St/Light Rail #126",
-    "Montague St/Park St #27",
-    "Montgomery St/Mt Alexander Rd #31",
-    "Mooltan St/Mt Alexander Rd #24",
-    "Moonee Ponds Junction/Pascoe Vale Rd #32",
-    "Moonee Valley Civic Centre/Pascoe Vale Rd #34",
-    "Moonga Rd/Toorak Rd #138",
-    "Moor St/Nicholson St #12",
-    "Moorakyne Ave/Glenferrie Rd #61",
-    "Moore St/Maribyrnong Rd #35",
-    "Moore St/Sydney Rd #29",
-    "Moray St/Park St #23",
-    "Moreland Rd/Holmes St #129",
-    "Moreland Rd/Melville Rd #40",
-    "Moreland Rd/Nicholson St #129",
-    "Moreland Rd/Sydney Rd #28",
-    "Moreland Station/Cameron St #133",
-    "Moreland Station/Moreland Rd #133",
-    "Morrah St/Royal Pde #12",
-    "Moubray St/St Kilda Rd #26",
-    "Mount Alexander College/Mt Alexander Rd #25",
-    "Mount Cooper Dr/Plenty Rd #64",
-    "Mt Alexander Rd/Keilor Rd #47",
-    "Munro St/Sydney Rd #32",
-    "Munro St/Union Rd #35",
-    "Murphy St/Flemington Rd #15",
-    "Murray Rd/Gilbert Rd #43",
-    "Murray Rd/Plenty Rd #49",
-    "Murray St/Malvern Rd #41",
-    "Murray St/Pascoe Vale Rd #36",
-    "Napier St/Gertrude St #14",
-    "Narrak Rd/Whitehorse Rd #51",
-    "Nelson Rd/Whitehorse Rd #57",
-    "Newmarket Plaza/Racecourse Rd #26",
-    "Newry St/Brunswick St #19",
-    "Nicholls St/Wattletree Rd #46",
-    "Nicholson St/Droop St #62",
-    "Nicholson St/Fletcher St #40",
-    "Nicholson St/Hopkins St #62",
-    "Nicholson St/Victoria Pde #10",
-    "Normanby Ave/High St #38",
-    "Normanby Ave/St Georges Rd #32",
-    "Normanby Rd/Balaclava Rd #55",
-    "North Balwyn Shopping Centre/Doncaster Rd #47",
-    "North Coburg Terminus/Sydney Rd #40",
-    "North Melbourne Town Hall/Errol St #12",
-    "North Melbourne Town Hall/Queensberry St #12",
-    "North Port Station/Light Rail #127",
-    "North Rd/Hawthorn Rd #63",
-    "North Richmond Railway Station/Victoria St #19",
-    "Northcote Ave/Hawthorn Rd #53",
-    "Northcote Ave/Whitehorse Rd #49",
-    "Northcote Town Hall/High St #31",
-    "Nott St/Wattletree Rd #51",
-    "Oak Gr/Waverley Rd #63",
-    "Oakover Rd/Gilbert Rd #38",
-    "Oberwyl Rd/Toorak Rd #54",
-    "Old Burwood Rd/Burwood Hwy #67",
-    "Ontario St/Balaclava Rd #44",
-    "Orange Gr/Camberwell Rd #47",
-    "Orange Gr/Carlisle St #39",
-    "Ormond Rd/Mt Alexander Rd #30",
-    "Orrong Cres/Camberwell Rd #48",
-    "Orrong Rd/Balaclava Rd #43",
-    "Orrong Rd/Dandenong Rd #38",
-    "Orrong Rd/Glenhuntly Rd #46",
-    "Orrong Rd/High St #38",
-    "Orrong Rd/Malvern Rd #37",
-    "Orrong Rd/Toorak Rd #134",
-    "Osborne Gr/Plenty Rd #44",
-    "Osburn Ave/Doncaster Rd #48",
-    "Otira Rd/Balaclava Rd #44",
-    "Pakington St/High St #34",
-    "Palermo St/Chapel St #49",
-    "Park Gr/Swan St #16",
-    "Park St/Clarendon St #129",
-    "Park St/Fitzroy St #134",
-    "Park St/Montague St #27",
-    "Park St/Royal Park #28",
-    "Park St/St Georges Rd #23",
-    "Parkhill Rd/High St #36",
-    "Parkside St/Glenhuntly Rd #48",
-    "Parliament Railway Station/Macarthur St #10",
-    "Pascoe Vale Rd/Fletcher St #38",
-    "Peel St/Smith St #16",
-    "Peel St/Victoria St #8",
-    "Pelham St/Elizabeth St #9",
-    "Perth St/High St #29",
-    "Peverill St/Burke Rd #69",
-    "Pigdon St/Lygon St #118",
-    "Pine Ave/Burke Rd #57",
-    "Plant St/Malvern Rd #44",
-    "Pleasant Rd/Burke Rd #59",
-    "Port Junction/79 Whiteman St #125",
-    "Porter St/Commercial Rd #29",
-    "Power St/Burwood Rd #27",
-    "Power St/Glenferrie Rd #64",
-    "Power St/Riversdale Rd #29",
-    "Prahran Market/Commercial Rd #30",
-    "Prahran RSL/High St #33",
-    "Prahran Station/High St #30",
-    "Presbyterian Ladies College/Burwood Hwy #61",
-    "Preston Cemetery/Plenty Rd #59",
-    "Princes Park/Hawthorn Rd #59",
-    "Princes St/Fitzroy St #132",
-    "Princes St/Lygon St #114",
-    "Princes Tce/Melville Rd #43",
-    "Prospect Hill Rd/Burke Rd #63",
-    "Punt Rd/Bridge Rd #14",
-    "Punt Rd/Commercial Rd #27",
-    "Punt Rd/High St #28",
-    "Punt Rd/Toorak Rd #125",
-    "Punt Rd/Wellington Pde #14",
-    "QPO/Cotham Rd #34",
-    "Queen St/Bourke St #4",
-    "Queen Victoria Market/39 Peel St #9",
-    "Queen Victoria Market/Elizabeth St #7",
-    "Queen Victoria Market/Peel St #9",
-    "Queens Park/Pascoe Vale Rd #35",
-    "Queens Pde/Toorak Rd #57",
-    "Queens Way/Queens Way #31",
-    "Queensberry St/Abbotsford St #14",
-    "Queensberry St/Peel St #11",
-    "Queensberry St/Swanston St #4",
-    "RMIT University/Swanston St #7",
-    "RMIT/Plenty Rd #71",
-    "Racing Victoria/161 Epsom Rd #31",
-    "Racing Victoria/400 Epsom Rd #31",
-    "Raglan St/Plenty Rd #43",
-    "Raleigh Rd/Wests Rd #48",
-    "Randall St/Raleigh Rd #45",
-    "Rathmines Rd/Burke Rd #66",
-    "Raynes St/Hawthorn Rd #61",
-    "Reid St/Nicholson St #17",
-    "Rennie St/Nicholson St #131",
-    "Renown St/Sydney Rd #38",
-    "Reservoir District Secondary College/Plenty Rd #57",
-    "Reynard St/Melville Rd #42",
-    "Reynard St/Sydney Rd #31",
-    "Richardson St/Lygon St #117",
-    "Richardson St/Mills St #135",
-    "Richardson St/Victoria Ave #30",
-    "Richmond Station/Swan St #8",
-    "Richmond Town Hall/Bridge Rd #19",
-    "River Bvd/Victoria St #25",
-    "River St/Rosamond Rd #52",
-    "Riversdale Rd/Burke Rd #61",
-    "Riversdale Rd/Glenferrie Rd #70",
-    "Riversdale Station/Riversdale Rd #46",
-    "Robinson Rd/Riversdale Rd #35",
-    "Rogers Ave/Hawthorn Rd #67",
-    "Rogers St/Sydney Rd #36",
-    "Rosamond Rd/Raleigh Rd #46",
-    "Rosamond Rd/River St #52",
-    "Rose St/Nicholson St #14",
-    "Rose St/Smith St #20",
-    "Roslyn St/Burwood Hwy #60",
-    "Royal Childrens Hospital/Flemington Rd #19",
-    "Royal Melbourne Hospital-Parkville Station/Royal Pde #10",
-    "Royal Melbourne Hospital/Flemington Rd #14",
-    "Royal Park Station/Royal Park #27",
-    "Royal Pde/Glenhuntly Rd #50",
-    "Russell St/Bourke St #7",
-    "Russell St/Flinders St #6",
-    "Sackville St/Burke Rd #69",
-    "Salisbury St/Pascoe Vale Rd #36",
-    "Sandown Rd/Epsom Rd #32",
-    "Scotchmer St/Nicholson St #18",
-    "Scotchmer St/St Georges Rd #22",
-    "Scott St/Brighton Rd #40",
-    "Separation St/High St #33",
-    "Service St/Keilor Rd #48",
-    "Settlement Rd/Plenty Rd #66",
-    "Sevenoaks Rd/Burwood Hwy #71",
-    "Seymour Gr/Burke Rd #59",
-    "Seymour St/Plenty Rd #44",
-    "Shaftesbury Ave/Malvern Rd #46",
-    "Shamrock St/Mt Alexander Rd #42",
-    "Shoobra Rd/Glenhuntly Rd #47",
-    "Shrine of Remembrance/St Kilda Rd #19",
-    "Sidwell Ave/Balaclava Rd #42",
-    "Simpson St/Wellington Pde #13",
-    "Smith Rd/Camberwell Rd #50",
-    "Smith St/Gertrude St #15",
-    "Smith St/Melville Rd #34",
-    "Smith St/Queens Pde #22",
-    "Smith St/Victoria Pde #15",
-    "Smithfield Rd/Racecourse Rd #28",
-    "Somers St/Burwood Hwy #59",
-    "Sorrett Ave/Glenferrie Rd #58",
-    "Soudan St/Wattletree Rd #46",
-    "South Daly St/Dawson St #33",
-    "South Melbourne Station/Light Rail #127",
-    "South St/Glenferrie Rd #69",
-    "South Yarra Railway Station/Toorak Rd #127",
-    "Southern Cross Railway Station/Spencer St #122",
-    "Spencer St/Bourke St #1",
-    "Spencer St/Collins St #1",
-    "Spencer St/Flinders St #1",
-    "Spencer St/La Trobe St #1",
-    "Spring St/Bourke St #9",
-    "Spring St/Collins St #8",
-    "Spring St/Flinders St #8",
-    "Springvale Rd/Burwood Hwy #73",
-    "St David St/Brunswick St #15",
-    "St George's Hospital/Cotham Rd #40",
-    "St Georges Rd/Miller St #35",
-    "St Ignatius Church/Church St #59",
-    "St James Park/Burwood Rd #25",
-    "St Kilda Junction/St Kilda Rd #30",
-    "St Kilda Primary School/Brighton Rd #36",
-    "St Kilda Rd/Carlisle St #35",
-    "St Kilda Rd/Fitzroy St #131",
-    "St Kilda Station/Fitzroy St #132",
-    "St Kilda Town Hall/Carlisle St #36",
-    "St Leonards Rd/Union Rd #36",
-    "St Michaels Grammar School/Chapel St #41",
-    "St Pauls Catholic Church/Sydney Rd #35",
-    "St Vincent Plaza/Victoria St #12",
-    "St Vincents Plaza/Victoria Pde #12",
-    "Stanley Rd/Burwood Hwy #74",
-    "Starling St/Burwood Hwy #65",
-    "State Netball Hockey Centre/Royal Park #25",
-    "Station St/Burwood Hwy #64",
-    "Station St/High St #41",
-    "Stawell St/Swan St #15",
-    "Stevenson St/High St #31",
-    "Stewart St/Lygon St #126",
-    "Stewart St/Sydney Rd #25",
-    "Stone St/Hawthorn Rd #61",
-    "Stonnington Pl/Glenferrie Rd #60",
-    "Stubbs St/Racecourse Rd #23",
-    "Sturt St/Kings Way #118",
-    "Summerhill Rd/Toorak Rd #52",
-    "Sumner Ave/St Georges Rd #28",
-    "Sunburst Ave/Doncaster Rd #48",
-    "Surrey Rd/Malvern Rd #32",
-    "Swan St/Church St #57",
-    "Swan Street Shopping Centre/Swan St #10",
-    "Swanston St/Bourke St #6",
-    "Swanston St/Flinders St #5",
-    "Sycamore St/Hawthorn Rd #58",
-    "Sydney Rd/Moreland Rd #132",
-    "Sylverly Gr/Hawthorn Rd #55",
-    "Sylvester Gr/Plenty Rd #50",
-    "Taunton Dr/Plenty Rd #69",
-    "Taylor St/Hawthorn Rd #64",
-    "Tennyson St/Waverley Rd #61",
-    "The Avenue/Dandenong Rd #34",
-    "The Avenue/Nicholson St #130",
-    "The Avenue/Sydney Rd #30",
-    "The Avenue/Waverley Rd #62",
-    "Thistle St/Mt Alexander Rd #43",
-    "Thomas St/Cotham Rd #39",
-    "Thorn St/Mt Alexander Rd #44",
-    "Through Rd/Riversdale Rd #54",
-    "Through Rd/Toorak Rd #55",
-    "Through St/Riversdale Rd #30",
-    "Tiernan St/Droop St #60",
-    "Titch St/Gordon St #57",
-    "Tivoli Rd/Toorak Rd #129",
-    "Toorak Rd/Burke Rd #54",
-    "Toorak Rd/Camberwell Rd #51",
-    "Toorak Rd/Chapel St #50",
-    "Toorak Rd/Glenferrie Rd #63",
-    "Toorak Rd/St Kilda Rd #22",
-    "Toorak Village/Toorak Rd #132",
-    "Tooronga Rd/High St #48",
-    "Tooronga Rd/Malvern Rd #47",
-    "Tooronga Rd/Riversdale Rd #37",
-    "Tooronga Rd/Wattletree Rd #49",
-    "Trafalgar Rd/Camberwell Rd #44",
-    "Trafalgar Rd/Riversdale Rd #43",
-    "Treadwell Rd/Keilor Rd #52",
-    "Truganini Rd/Glenhuntly Rd #66",
-    "Tweedie Pl/Church St #63",
-    "Tyler St/Plenty Rd #52",
-    "Tyrone St/Camberwell Rd #49",
-    "Union Rd/Maribyrnong Rd #37",
-    "Union Rd/Riversdale Rd #55",
-    "Union Rd/Whitehorse Rd #53",
-    "Union Square Shopping Centre/Grantham St #30",
-    "Union St/Hawthorn Rd #66",
-    "Union St/High St #34",
-    "Union St/St Kilda Rd #29",
-    "Urquhart St/Glenferrie Rd #71",
-    "Vadlure Ave/Balaclava Rd #41",
-    "Van Ness Ave/Raleigh Rd #43",
-    "Vermont South Shopping Centre/Burwood Hwy #75",
-    "Victoria Park/High St #38",
-    "Victoria Pde/Nicholson St #11",
-    "Victoria Rd/Burke Rd #65",
-    "Victoria St/Church St #65",
-    "Victoria St/Errol St #11",
-    "Victoria St/La Trobe St #9",
-    "Victoria St/Lygon St #124",
-    "Victoria St/Melville Rd #35",
-    "Victoria St/Peel St #10",
-    "Victoria St/Racecourse Rd #24",
-    "Victoria St/Sydney Rd #23",
-    "Vincent St/Wattletree Rd #50",
-    "Vision Australia/Glenferrie Rd #66",
-    "Visy Park/Royal Pde #16",
-    "Walker St/High St #26",
-    "Walker St/Royal Pde #16",
-    "Walsh St/Toorak Rd #124",
-    "Waltham St/Bridge Rd #17",
-    "Wanda Rd/Hawthorn Rd #49",
-    "Warra St/Glenferrie Rd #65",
-    "Warrick St/Mt Alexander Rd #29",
-    "Warrigal Rd/Burwood Hwy #58",
-    "Warrigal Rd/Riversdale Rd #56",
-    "Warrs Rd/Raleigh Rd #44",
-    "Wattle Ave/Doncaster Rd #46",
-    "Wattle Park/1013 Riversdale Rd #58",
-    "Wattle Park/Riversdale Rd #58",
-    "Wattle Rd/Power St #28",
-    "Wattle Valley Rd/Riversdale Rd #50",
-    "Wattletree Rd/Dandenong Rd #40",
-    "Wattletree Rd/Glenferrie Rd #54",
-    "Wellington St/Glenferrie Rd #79",
-    "Wellington St/Mt Alexander Rd #26",
-    "Wellington St/Queens Pde #23",
-    "Wellington St/Racecourse Rd #25",
-    "Wellington St/Victoria Pde #16",
-    "Wells St/Park St #119",
-    "West Preston/Gilbert Rd #47",
-    "Westbourne Gr/St Georges Rd #27",
-    "Westbury St/Dandenong Rd #34",
-    "Westgarth St/High St #27",
-    "Weston St/Lygon St #121",
-    "Wests Rd/Cordite Ave #48",
-    "Wests Rd/Raleigh Rd #48",
-    "Wests Rd/Williamson Rd #50",
-    "Wharton St/Whitehorse Rd #50",
-    "Wilkinson St/Plenty Rd #54",
-    "William St/Bourke St #3",
-    "William St/Collins St #3",
-    "William St/Victoria St #9",
-    "Williams Rd/Dandenong Rd #35",
-    "Williams Rd/High St #35",
-    "Williams Rd/Malvern Rd #34",
-    "Williams Rd/Toorak Rd #131",
-    "Williamson Rd/Rosamond Rd #51",
-    "Williamson Rd/Wests Rd #50",
-    "Willow Gr/Riversdale Rd #47",
-    "Wilson Gr/Camberwell Rd #49",
-    "Wilson St/Chapel St #48",
-    "Wimbledon Ave/Brighton Rd #38",
-    "Windsor Railway Station/Chapel St #43",
-    "Wood St/Plenty Rd #51",
-    "Woodlands Ave/High St #42",
-    "Woodlands Ave/Melville Rd #41",
-    "Woolton Ave/High St #37",
-    "Woorigoleen Rd/Toorak Rd #135",
-    "Yarra Bvd/Bridge Rd #22",
-    "Yarra Bvd/Swan St #18",
-    "York St/Clarendon St #127",
-    "York St/Kings Way #117"
+    {
+        "stop_name": "124A-Casino/MCEC/Clarendon St",
+        "stop_id": 2500
+    },
+    {
+        "stop_name": "125A-Southbank Tram Depot/Light Rail",
+        "stop_id": 2505
+    },
+    {
+        "stop_name": "130a-Raglan St/Clarendon St",
+        "stop_id": 2557
+    },
+    {
+        "stop_name": "48A-Dandenong Rd/Hawthorn Rd",
+        "stop_id": 2723
+    },
+    {
+        "stop_name": "53A-Matthews Ave/Keilor Rd",
+        "stop_id": 2658
+    },
+    {
+        "stop_name": "7A-William Barak Bridge/Melbourne Park",
+        "stop_id": 2482
+    },
+    {
+        "stop_name": "7B-Rod Laver Arena/MCG Gates 1-3",
+        "stop_id": 2171
+    },
+    {
+        "stop_name": "7C-MCG Gates 4-7/John Cain Arena",
+        "stop_id": 2140
+    },
+    {
+        "stop_name": "7D-Olympic Boulevard",
+        "stop_id": 2100
+    },
+    {
+        "stop_name": "A'Beckett St/Malvern Rd #36",
+        "stop_id": 3231
+    },
+    {
+        "stop_name": "ANZAC Station/St Kilda Rd #20",
+        "stop_id": 3062
+    },
+    {
+        "stop_name": "Abbotsford St Interchange/Abbotsford St #19",
+        "stop_id": 3149
+    },
+    {
+        "stop_name": "Abbotsford St/Queensberry St #14",
+        "stop_id": 3158
+    },
+    {
+        "stop_name": "Abinger St/Church St #60",
+        "stop_id": 2322
+    },
+    {
+        "stop_name": "Acheron Ave/Camberwell Rd #46",
+        "stop_id": 3061
+    },
+    {
+        "stop_name": "Acland St/Fitzroy St #135",
+        "stop_id": 2887
+    },
+    {
+        "stop_name": "Adelaide St/Church St #55",
+        "stop_id": 2327
+    },
+    {
+        "stop_name": "Airlie Ave/High St #37",
+        "stop_id": 2635
+    },
+    {
+        "stop_name": "Airport West/Matthews Ave #59",
+        "stop_id": 2649
+    },
+    {
+        "stop_name": "Alandale St/Riversdale Rd #59",
+        "stop_id": 2102
+    },
+    {
+        "stop_name": "Albany Rd/Malvern Rd #41",
+        "stop_id": 3237
+    },
+    {
+        "stop_name": "Albert Park Station/Light Rail #128",
+        "stop_id": 2961
+    },
+    {
+        "stop_name": "Albert Rd/Clarendon St #130",
+        "stop_id": 2558
+    },
+    {
+        "stop_name": "Albert St/Gisborne St #11",
+        "stop_id": 2485
+    },
+    {
+        "stop_name": "Albert St/Lygon St #123",
+        "stop_id": 2227
+    },
+    {
+        "stop_name": "Albert St/Nicholson St #10",
+        "stop_id": 2005
+    },
+    {
+        "stop_name": "Albert St/Nicholson St #10",
+        "stop_id": 2003
+    },
+    {
+        "stop_name": "Albert St/Nicholson St #22",
+        "stop_id": 2936
+    },
+    {
+        "stop_name": "Albert St/Plenty Rd #55",
+        "stop_id": 2787
+    },
+    {
+        "stop_name": "Albert St/Sydney Rd #22",
+        "stop_id": 2808
+    },
+    {
+        "stop_name": "Albion St/Holmes St #127",
+        "stop_id": 2240
+    },
+    {
+        "stop_name": "Albion St/Lygon St #127",
+        "stop_id": 2231
+    },
+    {
+        "stop_name": "Albion St/Melville Rd #37",
+        "stop_id": 3085
+    },
+    {
+        "stop_name": "Albion St/Sydney Rd #26",
+        "stop_id": 2804
+    },
+    {
+        "stop_name": "Alexandra Pde/Brunswick St #18",
+        "stop_id": 2544
+    },
+    {
+        "stop_name": "Alexandra Pde/Brunswick St #18",
+        "stop_id": 2966
+    },
+    {
+        "stop_name": "Alexandra Pde/Nicholson St #15",
+        "stop_id": 2950
+    },
+    {
+        "stop_name": "Alexandra Pde/Nicholson St #15",
+        "stop_id": 2951
+    },
+    {
+        "stop_name": "Alexandra Pde/Smith St #21",
+        "stop_id": 2094
+    },
+    {
+        "stop_name": "Alexandra Pde/Smith St #21",
+        "stop_id": 2006
+    },
+    {
+        "stop_name": "Alexandra St/Dandenong Rd #36",
+        "stop_id": 2597
+    },
+    {
+        "stop_name": "Alfred Cres/St Georges Rd #21",
+        "stop_id": 2539
+    },
+    {
+        "stop_name": "Alfred Hospital/Commercial Rd #26",
+        "stop_id": 3213
+    },
+    {
+        "stop_name": "Alfred Hospital/Commercial Rd #26",
+        "stop_id": 3290
+    },
+    {
+        "stop_name": "Alfred Rd/Toorak Rd #56",
+        "stop_id": 3068
+    },
+    {
+        "stop_name": "Alfred Square/The Esplanade #136",
+        "stop_id": 2889
+    },
+    {
+        "stop_name": "Allan Rd/Balaclava Rd #42",
+        "stop_id": 2775
+    },
+    {
+        "stop_name": "Alma Rd/Chapel St #40",
+        "stop_id": 2348
+    },
+    {
+        "stop_name": "Alma Rd/St Kilda Rd #32",
+        "stop_id": 2314
+    },
+    {
+        "stop_name": "Anderson Rd/Burke Rd #56",
+        "stop_id": 3261
+    },
+    {
+        "stop_name": "Anderson Rd/Burke Rd #56",
+        "stop_id": 3302
+    },
+    {
+        "stop_name": "Anderson St/Wattletree Rd #50",
+        "stop_id": 2580
+    },
+    {
+        "stop_name": "Arden St/Abbotsford St #15",
+        "stop_id": 3156
+    },
+    {
+        "stop_name": "Argyle St/Chapel St #39",
+        "stop_id": 2349
+    },
+    {
+        "stop_name": "Argyle St/St Kilda Rd #33",
+        "stop_id": 2313
+    },
+    {
+        "stop_name": "Armadale St/Wattletree Rd #41",
+        "stop_id": 2591
+    },
+    {
+        "stop_name": "Armadale Station/High St #40",
+        "stop_id": 2631
+    },
+    {
+        "stop_name": "Armstrong St/Danks St #138",
+        "stop_id": 2569
+    },
+    {
+        "stop_name": "Arthur St/Chapel St #49",
+        "stop_id": 2334
+    },
+    {
+        "stop_name": "Arthur St/Hawthorn Rd #49",
+        "stop_id": 2725
+    },
+    {
+        "stop_name": "Arthur St/St Kilda Rd #23",
+        "stop_id": 2610
+    },
+    {
+        "stop_name": "Arthurton Rd/High St #33",
+        "stop_id": 2072
+    },
+    {
+        "stop_name": "Arthurton Rd/St Georges Rd #29",
+        "stop_id": 2530
+    },
+    {
+        "stop_name": "Arts Precinct/St Kilda Rd #14",
+        "stop_id": 2203
+    },
+    {
+        "stop_name": "Arts Precinct/Sturt St #17",
+        "stop_id": 2266
+    },
+    {
+        "stop_name": "Ascot Vale Rd/Maribyrnong Rd #34",
+        "stop_id": 2393
+    },
+    {
+        "stop_name": "Auburn Gr/High St #39",
+        "stop_id": 2633
+    },
+    {
+        "stop_name": "Auburn Rd/Riversdale Rd #36",
+        "stop_id": 2103
+    },
+    {
+        "stop_name": "Bailey Ave/Dandenong Rd #44",
+        "stop_id": 2767
+    },
+    {
+        "stop_name": "Baker St/Church St #64",
+        "stop_id": 2316
+    },
+    {
+        "stop_name": "Balaclava Rd/Hawthorn Rd #51",
+        "stop_id": 2727
+    },
+    {
+        "stop_name": "Balaclava Rd/Normanby Rd #55",
+        "stop_id": 2302
+    },
+    {
+        "stop_name": "Balaclava Station/Carlisle St #38",
+        "stop_id": 2736
+    },
+    {
+        "stop_name": "Ballantyne St/High St #39",
+        "stop_id": 2035
+    },
+    {
+        "stop_name": "Ballarat Rd/Gordon St #58",
+        "stop_id": 2361
+    },
+    {
+        "stop_name": "Balmain St/Church St #54",
+        "stop_id": 2328
+    },
+    {
+        "stop_name": "Balwyn Cinema/Whitehorse Rd #46",
+        "stop_id": 2425
+    },
+    {
+        "stop_name": "Balwyn Rd/Doncaster Rd #51",
+        "stop_id": 2830
+    },
+    {
+        "stop_name": "Balwyn Rd/Whitehorse Rd #47",
+        "stop_id": 2424
+    },
+    {
+        "stop_name": "Balwyn Shopping Centre/Whitehorse Rd #48",
+        "stop_id": 2422
+    },
+    {
+        "stop_name": "Bambra Rd/Glenhuntly Rd #54",
+        "stop_id": 3192
+    },
+    {
+        "stop_name": "Barb St/Raleigh Rd #44",
+        "stop_id": 2379
+    },
+    {
+        "stop_name": "Barkers Rd/Church St #26",
+        "stop_id": 2878
+    },
+    {
+        "stop_name": "Barkers Rd/Glenferrie Rd #77",
+        "stop_id": 2928
+    },
+    {
+        "stop_name": "Barkers Rd/High St #29",
+        "stop_id": 2450
+    },
+    {
+        "stop_name": "Barkly Square/115 Sydney Rd #20",
+        "stop_id": 2400
+    },
+    {
+        "stop_name": "Barkly Square/Sydney Rd #20",
+        "stop_id": 2811
+    },
+    {
+        "stop_name": "Barkly St/Carlisle St #33",
+        "stop_id": 2739
+    },
+    {
+        "stop_name": "Barkly St/St Kilda Rd #31",
+        "stop_id": 2399
+    },
+    {
+        "stop_name": "Barkly St/Toorak Rd #56",
+        "stop_id": 3024
+    },
+    {
+        "stop_name": "Barrow St/Moreland Rd #130",
+        "stop_id": 2234
+    },
+    {
+        "stop_name": "Batman Park/Spencer St #124",
+        "stop_id": 2499
+    },
+    {
+        "stop_name": "Beacon Cove/Light Rail #129",
+        "stop_id": 2510
+    },
+    {
+        "stop_name": "Beaconsfield Pde/Victoria Ave #32",
+        "stop_id": 2285
+    },
+    {
+        "stop_name": "Beatrice St/St Kilda Rd #26",
+        "stop_id": 2407
+    },
+    {
+        "stop_name": "Belford St/Acland St #139",
+        "stop_id": 2284
+    },
+    {
+        "stop_name": "Bell St/Brunswick St #15",
+        "stop_id": 2548
+    },
+    {
+        "stop_name": "Bell St/Gilbert Rd #40",
+        "stop_id": 2518
+    },
+    {
+        "stop_name": "Bell St/Glenferrie Rd #58",
+        "stop_id": 2901
+    },
+    {
+        "stop_name": "Bell St/Melville Rd #45",
+        "stop_id": 3075
+    },
+    {
+        "stop_name": "Bell St/Nicholson St #135",
+        "stop_id": 2044
+    },
+    {
+        "stop_name": "Bell St/Plenty Rd #45",
+        "stop_id": 2008
+    },
+    {
+        "stop_name": "Bell St/Sydney Rd #34",
+        "stop_id": 2794
+    },
+    {
+        "stop_name": "Belmont Ave/Cotham Rd #37",
+        "stop_id": 2439
+    },
+    {
+        "stop_name": "Belmont Ave/High St #50",
+        "stop_id": 2618
+    },
+    {
+        "stop_name": "Belmont Ave/Malvern Rd #49",
+        "stop_id": 3249
+    },
+    {
+        "stop_name": "Bendigo St/Malvern Rd #32",
+        "stop_id": 3223
+    },
+    {
+        "stop_name": "Bent St/High St #34",
+        "stop_id": 2057
+    },
+    {
+        "stop_name": "Benwerrin Reserve/Burwood Hwy #68",
+        "stop_id": 3036
+    },
+    {
+        "stop_name": "Berkeley St/Riversdale Rd #33",
+        "stop_id": 2104
+    },
+    {
+        "stop_name": "Beryl St/Toorak Rd #55",
+        "stop_id": 3067
+    },
+    {
+        "stop_name": "Bickleigh St/Burke Rd #52",
+        "stop_id": 3255
+    },
+    {
+        "stop_name": "Bird Ave/St Georges Rd #31",
+        "stop_id": 2528
+    },
+    {
+        "stop_name": "Blackburn Rd/Burwood Hwy #70",
+        "stop_id": 3038
+    },
+    {
+        "stop_name": "Bloomfield Rd/Union Rd #35",
+        "stop_id": 3129
+    },
+    {
+        "stop_name": "Blyth St/Lygon St #125",
+        "stop_id": 2229
+    },
+    {
+        "stop_name": "Blyth St/Nicholson St #23",
+        "stop_id": 2934
+    },
+    {
+        "stop_name": "Blyth St/Sydney Rd #24",
+        "stop_id": 2133
+    },
+    {
+        "stop_name": "Blythe St/High St #41",
+        "stop_id": 2010
+    },
+    {
+        "stop_name": "Boldrewood Pde/Plenty Rd #55",
+        "stop_id": 2004
+    },
+    {
+        "stop_name": "Booran Rd/Glenhuntly Rd #58",
+        "stop_id": 3367
+    },
+    {
+        "stop_name": "Booran Rd/Glenhuntly Rd #58",
+        "stop_id": 3199
+    },
+    {
+        "stop_name": "Bosisto St/Bridge Rd #17",
+        "stop_id": 3002
+    },
+    {
+        "stop_name": "Boundary Rd/Racecourse Rd #22",
+        "stop_id": 3148
+    },
+    {
+        "stop_name": "Bourke St/Spring St #0",
+        "stop_id": 2013
+    },
+    {
+        "stop_name": "Bourke St/William St #5",
+        "stop_id": 3106
+    },
+    {
+        "stop_name": "Bourke Street Mall/Elizabeth St #3",
+        "stop_id": 2720
+    },
+    {
+        "stop_name": "Bourke Street Mall/Swanston St #10",
+        "stop_id": 2206
+    },
+    {
+        "stop_name": "Bowen St/Camberwell Rd #45",
+        "stop_id": 3042
+    },
+    {
+        "stop_name": "Bowen St/Maribyrnong Rd #39",
+        "stop_id": 2387
+    },
+    {
+        "stop_name": "Box Hill Central/Whitehorse Rd #58",
+        "stop_id": 2409
+    },
+    {
+        "stop_name": "Boyanda Rd/High St #52",
+        "stop_id": 2616
+    },
+    {
+        "stop_name": "Bracken Ave/Miller St #36",
+        "stop_id": 2523
+    },
+    {
+        "stop_name": "Bradshaw St/Keilor Rd #51",
+        "stop_id": 2659
+    },
+    {
+        "stop_name": "Braille Library/Commercial Rd #28",
+        "stop_id": 3216
+    },
+    {
+        "stop_name": "Braille Library/Commercial Rd #28",
+        "stop_id": 3215
+    },
+    {
+        "stop_name": "Brearley Pde/Melville Rd #44",
+        "stop_id": 3076
+    },
+    {
+        "stop_name": "Brewster St/Mt Alexander Rd #43",
+        "stop_id": 2671
+    },
+    {
+        "stop_name": "Bridge Rd/Church St #61",
+        "stop_id": 2321
+    },
+    {
+        "stop_name": "Bridport St/Montague St #28",
+        "stop_id": 2278
+    },
+    {
+        "stop_name": "Bridport St/Victoria Ave #29",
+        "stop_id": 2280
+    },
+    {
+        "stop_name": "Briggs St/Hawthorn Rd #56",
+        "stop_id": 2759
+    },
+    {
+        "stop_name": "Brighton Rd/Carlisle St #35",
+        "stop_id": 2311
+    },
+    {
+        "stop_name": "Brighton Rd/Chapel St #36",
+        "stop_id": 2434
+    },
+    {
+        "stop_name": "Brighton Rd/Glenhuntly Rd #43",
+        "stop_id": 3178
+    },
+    {
+        "stop_name": "Brook St/Church St #25",
+        "stop_id": 2879
+    },
+    {
+        "stop_name": "Browning St/Plenty Rd #58",
+        "stop_id": 2015
+    },
+    {
+        "stop_name": "Bruce St/Gilbert Rd #41",
+        "stop_id": 2517
+    },
+    {
+        "stop_name": "Brunning St/Brighton Rd #38",
+        "stop_id": 3169
+    },
+    {
+        "stop_name": "Brunswick Baptist Church/Sydney Rd #24",
+        "stop_id": 2806
+    },
+    {
+        "stop_name": "Brunswick Rd/Grantham St #29",
+        "stop_id": 3222
+    },
+    {
+        "stop_name": "Brunswick Rd/Lygon St #120",
+        "stop_id": 2224
+    },
+    {
+        "stop_name": "Brunswick Rd/Nicholson St #19",
+        "stop_id": 2942
+    },
+    {
+        "stop_name": "Brunswick Rd/Sydney Rd #19",
+        "stop_id": 2812
+    },
+    {
+        "stop_name": "Brunswick St/Gertrude St #13",
+        "stop_id": 2016
+    },
+    {
+        "stop_name": "Brunswick Town Hall/Sydney Rd #21",
+        "stop_id": 2810
+    },
+    {
+        "stop_name": "Brunswick Tram Depot/Sydney Rd #27",
+        "stop_id": 2119
+    },
+    {
+        "stop_name": "Buchanan Ave/Doncaster Rd #49",
+        "stop_id": 2833
+    },
+    {
+        "stop_name": "Buckley St/Pascoe Vale Rd #37",
+        "stop_id": 2772
+    },
+    {
+        "stop_name": "Buckley St/Pascoe Vale Rd #37",
+        "stop_id": 2679
+    },
+    {
+        "stop_name": "Bundoora Park/Plenty Rd #61",
+        "stop_id": 2054
+    },
+    {
+        "stop_name": "Bundoora Square SC/Plenty Rd #67",
+        "stop_id": 2059
+    },
+    {
+        "stop_name": "Burke Rd/Camberwell Rd #41",
+        "stop_id": 3012
+    },
+    {
+        "stop_name": "Burke Rd/Cotham Rd #42",
+        "stop_id": 2432
+    },
+    {
+        "stop_name": "Burke Rd/Doncaster Rd #44",
+        "stop_id": 3399
+    },
+    {
+        "stop_name": "Burke Rd/High St #44",
+        "stop_id": 2842
+    },
+    {
+        "stop_name": "Burke Rd/High St #51",
+        "stop_id": 2617
+    },
+    {
+        "stop_name": "Burke Rd/Malvern Rd #50",
+        "stop_id": 3299
+    },
+    {
+        "stop_name": "Burke Rd/Wattletree Rd #52",
+        "stop_id": 2577
+    },
+    {
+        "stop_name": "Burke Rd/Waverley Rd #60",
+        "stop_id": 2294
+    },
+    {
+        "stop_name": "Burke Rd/Whitehorse Rd #42",
+        "stop_id": 2431
+    },
+    {
+        "stop_name": "Burnley St/Bridge Rd #21",
+        "stop_id": 3004
+    },
+    {
+        "stop_name": "Burnley St/Swan St #14",
+        "stop_id": 2107
+    },
+    {
+        "stop_name": "Burnley St/Swan St #14",
+        "stop_id": 2108
+    },
+    {
+        "stop_name": "Burnley St/Victoria St #24",
+        "stop_id": 2461
+    },
+    {
+        "stop_name": "Burrowes St/Union Rd #34",
+        "stop_id": 3130
+    },
+    {
+        "stop_name": "Burwood Rd/Glenferrie Rd #73",
+        "stop_id": 2922
+    },
+    {
+        "stop_name": "Burwood Rd/Power St #27",
+        "stop_id": 3056
+    },
+    {
+        "stop_name": "Cabrini Hospital/Wattletree Rd #47",
+        "stop_id": 2584
+    },
+    {
+        "stop_name": "Callantina Rd/Glenferrie Rd #68",
+        "stop_id": 2916
+    },
+    {
+        "stop_name": "Camberwell Civic Centre/Camberwell Rd #43",
+        "stop_id": 3014
+    },
+    {
+        "stop_name": "Camberwell Girls Grammar/Burke Rd #67",
+        "stop_id": 3281
+    },
+    {
+        "stop_name": "Camberwell Girls Grammar/Burke Rd #67",
+        "stop_id": 3282
+    },
+    {
+        "stop_name": "Camberwell Junction/Burke Rd #61",
+        "stop_id": 3270
+    },
+    {
+        "stop_name": "Camberwell Junction/Camberwell Rd #40",
+        "stop_id": 3340
+    },
+    {
+        "stop_name": "Camberwell Junction/Riversdale Rd #40",
+        "stop_id": 2105
+    },
+    {
+        "stop_name": "Camberwell Junction/Riversdale Rd #40",
+        "stop_id": 2106
+    },
+    {
+        "stop_name": "Camberwell Market/517 Riversdale Rd #41",
+        "stop_id": 2109
+    },
+    {
+        "stop_name": "Camberwell Primary School/Camberwell Rd #42",
+        "stop_id": 3013
+    },
+    {
+        "stop_name": "Camberwell Shopping Centre/755 Burke Rd #62",
+        "stop_id": 3273
+    },
+    {
+        "stop_name": "Camberwell Station/Burke Rd #64",
+        "stop_id": 3277
+    },
+    {
+        "stop_name": "Camberwell Station/Burke Rd #64",
+        "stop_id": 3276
+    },
+    {
+        "stop_name": "Camberwell Tram Depot/Riversdale Rd #39",
+        "stop_id": 2150
+    },
+    {
+        "stop_name": "Cameron St/Matthews Ave #55",
+        "stop_id": 2654
+    },
+    {
+        "stop_name": "Canterbury Rd/Albert Rd #132",
+        "stop_id": 2561
+    },
+    {
+        "stop_name": "Canterbury Rd/Burke Rd #66",
+        "stop_id": 3279
+    },
+    {
+        "stop_name": "Canterbury Rd/Fitzroy St #133",
+        "stop_id": 2884
+    },
+    {
+        "stop_name": "Canterbury Rd/Malvern Rd #36",
+        "stop_id": 3230
+    },
+    {
+        "stop_name": "Canterbury Rd/Mills St #133",
+        "stop_id": 2563
+    },
+    {
+        "stop_name": "Canterbury Rd/Toorak Rd #133",
+        "stop_id": 2254
+    },
+    {
+        "stop_name": "Carlisle Ave/Carlisle St #39",
+        "stop_id": 2778
+    },
+    {
+        "stop_name": "Carlisle St/Chapel St #37",
+        "stop_id": 2122
+    },
+    {
+        "stop_name": "Carlisle St/St Kilda Rd #35",
+        "stop_id": 2779
+    },
+    {
+        "stop_name": "Carnegie/Truganini Rd #68",
+        "stop_id": 3211
+    },
+    {
+        "stop_name": "Carr St/Sydney Rd #38",
+        "stop_id": 2983
+    },
+    {
+        "stop_name": "Carter St/Mills St #134",
+        "stop_id": 2564
+    },
+    {
+        "stop_name": "Casino/Southbank/Queens Bridge St #115",
+        "stop_id": 3007
+    },
+    {
+        "stop_name": "Caulfield Junior College/Balaclava Rd #47",
+        "stop_id": 2309
+    },
+    {
+        "stop_name": "Caulfield Park Bowling Club/Balaclava Rd #52",
+        "stop_id": 2306
+    },
+    {
+        "stop_name": "Caulfield Park/Balaclava Rd #53",
+        "stop_id": 2305
+    },
+    {
+        "stop_name": "Caulfield Racecourse/Normanby Rd #56",
+        "stop_id": 2301
+    },
+    {
+        "stop_name": "Caulfield Racecourse/Normanby Rd #56",
+        "stop_id": 2312
+    },
+    {
+        "stop_name": "Caulfield Railway Station/Derby Rd #57",
+        "stop_id": 2299
+    },
+    {
+        "stop_name": "Cecil St/Park St #25",
+        "stop_id": 2274
+    },
+    {
+        "stop_name": "Cemetery Road West/Royal Pde #14",
+        "stop_id": 2817
+    },
+    {
+        "stop_name": "Central Park Ave/Cordite Ave #49",
+        "stop_id": 3126
+    },
+    {
+        "stop_name": "Centre Rd/Truganini Rd #67",
+        "stop_id": 3210
+    },
+    {
+        "stop_name": "Chapel St/Brighton Rd #37",
+        "stop_id": 3168
+    },
+    {
+        "stop_name": "Chapel St/Carlisle St #37",
+        "stop_id": 2974
+    },
+    {
+        "stop_name": "Chapel St/Carlisle St #37",
+        "stop_id": 2737
+    },
+    {
+        "stop_name": "Chapel St/Commercial Rd #31",
+        "stop_id": 3220
+    },
+    {
+        "stop_name": "Chapel St/Dandenong Rd #32",
+        "stop_id": 2604
+    },
+    {
+        "stop_name": "Chapel St/High St #31",
+        "stop_id": 2644
+    },
+    {
+        "stop_name": "Chapel St/Malvern Rd #31",
+        "stop_id": 3221
+    },
+    {
+        "stop_name": "Chapel St/Toorak Rd #128",
+        "stop_id": 2188
+    },
+    {
+        "stop_name": "Charles St/Cotham Rd #35",
+        "stop_id": 2441
+    },
+    {
+        "stop_name": "Charles St/High St #35",
+        "stop_id": 2854
+    },
+    {
+        "stop_name": "Charles St/Smith St #17",
+        "stop_id": 2019
+    },
+    {
+        "stop_name": "Chatham St/Chapel St #46",
+        "stop_id": 2340
+    },
+    {
+        "stop_name": "Chatsworth Rd/High St #36",
+        "stop_id": 2636
+    },
+    {
+        "stop_name": "Chaucer St/Ascot Vale Rd #33",
+        "stop_id": 2395
+    },
+    {
+        "stop_name": "Chetwynd St/Victoria St #10",
+        "stop_id": 3164
+    },
+    {
+        "stop_name": "Christowel St/Camberwell Rd #46",
+        "stop_id": 3016
+    },
+    {
+        "stop_name": "Chrystobel Cres/Glenferrie Rd #75",
+        "stop_id": 2925
+    },
+    {
+        "stop_name": "Church St/Bridge Rd #18",
+        "stop_id": 2829
+    },
+    {
+        "stop_name": "Church St/Swan St #11",
+        "stop_id": 2110
+    },
+    {
+        "stop_name": "Church St/Victoria St #21",
+        "stop_id": 3352
+    },
+    {
+        "stop_name": "Church St/Victoria St #21",
+        "stop_id": 2467
+    },
+    {
+        "stop_name": "City Rd/Clarendon St #126",
+        "stop_id": 2552
+    },
+    {
+        "stop_name": "City Rd/Kings Way #116",
+        "stop_id": 3116
+    },
+    {
+        "stop_name": "City Rd/Light Rail #126",
+        "stop_id": 2959
+    },
+    {
+        "stop_name": "City Square/Swanston St #11",
+        "stop_id": 2205
+    },
+    {
+        "stop_name": "Cityview Rd/Doncaster Rd #49",
+        "stop_id": 2834
+    },
+    {
+        "stop_name": "Clarendon St/Albert Rd #130",
+        "stop_id": 2559
+    },
+    {
+        "stop_name": "Clarendon St/High St #38",
+        "stop_id": 2020
+    },
+    {
+        "stop_name": "Clarendon St/Park St #24",
+        "stop_id": 2273
+    },
+    {
+        "stop_name": "Clarendon St/Whiteman St #125",
+        "stop_id": 2503
+    },
+    {
+        "stop_name": "Clarke Ave/Glenhuntly Rd #57",
+        "stop_id": 3197
+    },
+    {
+        "stop_name": "Clarke St/High St #30",
+        "stop_id": 2021
+    },
+    {
+        "stop_name": "Clarke St/St Georges Rd #26",
+        "stop_id": 2533
+    },
+    {
+        "stop_name": "Clements Dr/Plenty Rd #70",
+        "stop_id": 2755
+    },
+    {
+        "stop_name": "Clendon Rd/Malvern Rd #38",
+        "stop_id": 3233
+    },
+    {
+        "stop_name": "Cliff St/Chapel St #48",
+        "stop_id": 2337
+    },
+    {
+        "stop_name": "Clifton Hill Interchange/Queens Pde #25",
+        "stop_id": 2042
+    },
+    {
+        "stop_name": "Closeburn Ave/Dandenong Rd #36",
+        "stop_id": 2598
+    },
+    {
+        "stop_name": "Clyde St/High St #41",
+        "stop_id": 2160
+    },
+    {
+        "stop_name": "Clyde St/Raleigh Rd #42",
+        "stop_id": 2382
+    },
+    {
+        "stop_name": "Cobden St/High St #35",
+        "stop_id": 2855
+    },
+    {
+        "stop_name": "Coburg Market/Sydney Rd #33",
+        "stop_id": 2795
+    },
+    {
+        "stop_name": "Coleridge St/Brighton Rd #41",
+        "stop_id": 3175
+    },
+    {
+        "stop_name": "Coleridge St/Brighton Rd #41",
+        "stop_id": 3176
+    },
+    {
+        "stop_name": "Collett St/Racecourse Rd #24",
+        "stop_id": 3146
+    },
+    {
+        "stop_name": "Collins St/Elizabeth St #2",
+        "stop_id": 2721
+    },
+    {
+        "stop_name": "Collins St/High St #41",
+        "stop_id": 2023
+    },
+    {
+        "stop_name": "Collins St/William St #4",
+        "stop_id": 3107
+    },
+    {
+        "stop_name": "Commercial Rd/Chapel St #47",
+        "stop_id": 2339
+    },
+    {
+        "stop_name": "Commercial Rd/St Kilda Rd #25",
+        "stop_id": 2606
+    },
+    {
+        "stop_name": "Commercial Rd/St Kilda Rd #25",
+        "stop_id": 2607
+    },
+    {
+        "stop_name": "Cooloongatta Rd/Riversdale Rd #48",
+        "stop_id": 2112
+    },
+    {
+        "stop_name": "Cooper St/Gilbert Rd #44",
+        "stop_id": 2514
+    },
+    {
+        "stop_name": "Cooper St/Keilor Rd #50",
+        "stop_id": 2661
+    },
+    {
+        "stop_name": "Cooper St/Keilor Rd #50",
+        "stop_id": 2660
+    },
+    {
+        "stop_name": "Coppin St/Bridge Rd #20",
+        "stop_id": 2999
+    },
+    {
+        "stop_name": "Coppin St/Swan St #12",
+        "stop_id": 2114
+    },
+    {
+        "stop_name": "Cotham Rd/Burke Rd #70",
+        "stop_id": 2695
+    },
+    {
+        "stop_name": "Cotham Rd/Glenferrie Rd #80",
+        "stop_id": 2931
+    },
+    {
+        "stop_name": "Cotter St/Church St #54",
+        "stop_id": 2329
+    },
+    {
+        "stop_name": "Cowderoy St/Park St #141",
+        "stop_id": 2573
+    },
+    {
+        "stop_name": "Cramer St/Gilbert Rd #42",
+        "stop_id": 2516
+    },
+    {
+        "stop_name": "Crotonhurst Ave/Hawthorn Rd #53",
+        "stop_id": 2762
+    },
+    {
+        "stop_name": "Crozier St/Nicholson St #132",
+        "stop_id": 2262
+    },
+    {
+        "stop_name": "Currajong Ave/Burke Rd #58",
+        "stop_id": 3264
+    },
+    {
+        "stop_name": "Curzon St/Queensberry St #13",
+        "stop_id": 3159
+    },
+    {
+        "stop_name": "D1-Docklands Stadium/La Trobe St",
+        "stop_id": 2869
+    },
+    {
+        "stop_name": "D10-New Quay Prom/Docklands Dr",
+        "stop_id": 2703
+    },
+    {
+        "stop_name": "D10-NewQuay Prom/Docklands Dr",
+        "stop_id": 2783
+    },
+    {
+        "stop_name": "D11-Waterfront City/Docklands Dr",
+        "stop_id": 2876
+    },
+    {
+        "stop_name": "D14-Southern Cross Station/Collins St",
+        "stop_id": 2479
+    },
+    {
+        "stop_name": "D15-Batman's Hill/Collins St",
+        "stop_id": 2489
+    },
+    {
+        "stop_name": "D16-Harbour Esp/Collins St",
+        "stop_id": 2696
+    },
+    {
+        "stop_name": "D17-Merchant St/Collins St",
+        "stop_id": 2490
+    },
+    {
+        "stop_name": "D18-Bourke St/Collins St",
+        "stop_id": 2890
+    },
+    {
+        "stop_name": "D2-Central Pier/Harbour Esp",
+        "stop_id": 2049
+    },
+    {
+        "stop_name": "D3-Stadium Precinct - Bourke St/Harbour Esp",
+        "stop_id": 2870
+    },
+    {
+        "stop_name": "D4-Docklands Park/Harbour Esp",
+        "stop_id": 2871
+    },
+    {
+        "stop_name": "D5-South Wharf/Wurundjeri Way",
+        "stop_id": 2872
+    },
+    {
+        "stop_name": "D6-Flinders Street West/Flinders St",
+        "stop_id": 2874
+    },
+    {
+        "stop_name": "D6-Victoria Police Centre/Flinders St",
+        "stop_id": 2875
+    },
+    {
+        "stop_name": "Daly St/Dawson St #33",
+        "stop_id": 3089
+    },
+    {
+        "stop_name": "Dandenong Rd/Chapel St #42",
+        "stop_id": 2459
+    },
+    {
+        "stop_name": "Dandenong Rd/Chapel St #42",
+        "stop_id": 2345
+    },
+    {
+        "stop_name": "Dandenong Rd/Derby Rd #58",
+        "stop_id": 2298
+    },
+    {
+        "stop_name": "Dandenong Rd/Glenferrie Rd #52",
+        "stop_id": 2892
+    },
+    {
+        "stop_name": "Dandenong Rd/Waverley Rd #59",
+        "stop_id": 2296
+    },
+    {
+        "stop_name": "Dandenong Rd/Waverley Rd #59",
+        "stop_id": 2295
+    },
+    {
+        "stop_name": "Danks St/Mills St #136",
+        "stop_id": 2566
+    },
+    {
+        "stop_name": "Darebin Rd/High St #36",
+        "stop_id": 2024
+    },
+    {
+        "stop_name": "Darling Rd/Waverley Rd #64",
+        "stop_id": 2684
+    },
+    {
+        "stop_name": "Davey Ave/Hawthorn Rd #65",
+        "stop_id": 2746
+    },
+    {
+        "stop_name": "David St/Plenty Rd #47",
+        "stop_id": 2025
+    },
+    {
+        "stop_name": "Dawson St/Grantham St #31",
+        "stop_id": 3091
+    },
+    {
+        "stop_name": "De Carle St/Moreland Rd #131",
+        "stop_id": 2235
+    },
+    {
+        "stop_name": "De La Salle College/High St #45",
+        "stop_id": 2626
+    },
+    {
+        "stop_name": "Deakin St/Park St #141",
+        "stop_id": 2574
+    },
+    {
+        "stop_name": "Deakin University/Burwood Hwy #63",
+        "stop_id": 3049
+    },
+    {
+        "stop_name": "Deepdene Park/Whitehorse Rd #44",
+        "stop_id": 2427
+    },
+    {
+        "stop_name": "Deepdene Shopping Centre/Whitehorse Rd #43",
+        "stop_id": 2429
+    },
+    {
+        "stop_name": "Dennis St/High St #35",
+        "stop_id": 2026
+    },
+    {
+        "stop_name": "Densham Rd/Malvern Rd #39",
+        "stop_id": 3234
+    },
+    {
+        "stop_name": "Derby St/Riversdale Rd #44",
+        "stop_id": 2116
+    },
+    {
+        "stop_name": "Devon St/Miller St #36",
+        "stop_id": 2522
+    },
+    {
+        "stop_name": "Dight Ave/Doncaster Rd #50",
+        "stop_id": 2831
+    },
+    {
+        "stop_name": "Dixon St/High St #47",
+        "stop_id": 2624
+    },
+    {
+        "stop_name": "Dixon St/Wattletree Rd #48",
+        "stop_id": 2583
+    },
+    {
+        "stop_name": "Djerring Flemington Hub/Mt Alexander Rd #23",
+        "stop_id": 2702
+    },
+    {
+        "stop_name": "Dorcas St/Clarendon St #128",
+        "stop_id": 2554
+    },
+    {
+        "stop_name": "Dorcas St/Eastern Rd #22",
+        "stop_id": 2271
+    },
+    {
+        "stop_name": "Dover St/Hawthorn Rd #60",
+        "stop_id": 2753
+    },
+    {
+        "stop_name": "Droop St/Ballarat Rd #59",
+        "stop_id": 2360
+    },
+    {
+        "stop_name": "Duke St/Chapel St #44",
+        "stop_id": 2455
+    },
+    {
+        "stop_name": "Duke St/Chapel St #44",
+        "stop_id": 2343
+    },
+    {
+        "stop_name": "Duncraig Ave/Wattletree Rd #44",
+        "stop_id": 2588
+    },
+    {
+        "stop_name": "Dundas St/Plenty Rd #42",
+        "stop_id": 2028
+    },
+    {
+        "stop_name": "Earl St/Matthews Ave #56",
+        "stop_id": 2652
+    },
+    {
+        "stop_name": "East Brighton/Hawthorn Rd #68",
+        "stop_id": 2742
+    },
+    {
+        "stop_name": "East Richmond Railway Station/Church St #56",
+        "stop_id": 3347
+    },
+    {
+        "stop_name": "Edgar St/Malvern Rd #48",
+        "stop_id": 3248
+    },
+    {
+        "stop_name": "Edgar St/Malvern Rd #48",
+        "stop_id": 3298
+    },
+    {
+        "stop_name": "Edgewater Square/Gordon St #56",
+        "stop_id": 2364
+    },
+    {
+        "stop_name": "Edinburgh St/Swan St #13",
+        "stop_id": 2121
+    },
+    {
+        "stop_name": "Edinburgh St/Swan St #13",
+        "stop_id": 2120
+    },
+    {
+        "stop_name": "Edsall St/Glenferrie Rd #55",
+        "stop_id": 2896
+    },
+    {
+        "stop_name": "Edward St/Sydney Rd #31",
+        "stop_id": 2632
+    },
+    {
+        "stop_name": "Egerton Rd/Dandenong Rd #43",
+        "stop_id": 2769
+    },
+    {
+        "stop_name": "Egerton Rd/Wattletree Rd #43",
+        "stop_id": 2589
+    },
+    {
+        "stop_name": "Elgar Rd/Burwood Hwy #62",
+        "stop_id": 3032
+    },
+    {
+        "stop_name": "Elgar Rd/Riversdale Rd #61",
+        "stop_id": 2686
+    },
+    {
+        "stop_name": "Elgar Rd/Whitehorse Rd #56",
+        "stop_id": 2411
+    },
+    {
+        "stop_name": "Elizabeth St/Bourke St #5",
+        "stop_id": 2029
+    },
+    {
+        "stop_name": "Elizabeth St/Church St #64",
+        "stop_id": 2317
+    },
+    {
+        "stop_name": "Elizabeth St/Collins St #5",
+        "stop_id": 2492
+    },
+    {
+        "stop_name": "Elizabeth St/Flinders St #4",
+        "stop_id": 2095
+    },
+    {
+        "stop_name": "Elizabeth St/Malvern Rd #45",
+        "stop_id": 3243
+    },
+    {
+        "stop_name": "Elliott Ave/Royal Park #24",
+        "stop_id": 2556
+    },
+    {
+        "stop_name": "Elmhurst Rd/Balaclava Rd #47",
+        "stop_id": 2247
+    },
+    {
+        "stop_name": "Elsternwick Railway Station/Glenhuntly Rd #44",
+        "stop_id": 3179
+    },
+    {
+        "stop_name": "Elsternwick Shopping Centre/Glenhuntly Rd #45",
+        "stop_id": 3180
+    },
+    {
+        "stop_name": "Empress Rd/Balaclava Rd #41",
+        "stop_id": 2733
+    },
+    {
+        "stop_name": "Epsom Rd/Maribyrnong Rd #40",
+        "stop_id": 2386
+    },
+    {
+        "stop_name": "Epsom Rd/Maribyrnong Rd #40",
+        "stop_id": 2385
+    },
+    {
+        "stop_name": "Epworth Hospital/Bridge Rd #15",
+        "stop_id": 3001
+    },
+    {
+        "stop_name": "Erica Ave/Wattletree Rd #51",
+        "stop_id": 2579
+    },
+    {
+        "stop_name": "Errol St/Victoria St #11",
+        "stop_id": 3163
+    },
+    {
+        "stop_name": "Essendon North PS/Keilor Rd #49",
+        "stop_id": 2443
+    },
+    {
+        "stop_name": "Essendon North Primary School/Keilor Rd #49",
+        "stop_id": 2662
+    },
+    {
+        "stop_name": "Essendon Tram Depot/Mt Alexander Rd #27",
+        "stop_id": 2689
+    },
+    {
+        "stop_name": "Essex Rd/Riversdale Rd #53",
+        "stop_id": 2124
+    },
+    {
+        "stop_name": "Essex Rd/Riversdale Rd #53",
+        "stop_id": 2123
+    },
+    {
+        "stop_name": "Ethel Gr/Plenty Rd #53",
+        "stop_id": 2030
+    },
+    {
+        "stop_name": "Exhibition St/Collins St #7",
+        "stop_id": 2174
+    },
+    {
+        "stop_name": "Exhibition St/La Trobe St #8",
+        "stop_id": 2861
+    },
+    {
+        "stop_name": "Fairview Ave/Toorak Rd #57",
+        "stop_id": 3025
+    },
+    {
+        "stop_name": "Fallon St/Glenhuntly Rd #55",
+        "stop_id": 3193
+    },
+    {
+        "stop_name": "Fawkner Park/Toorak Rd #123",
+        "stop_id": 2253
+    },
+    {
+        "stop_name": "Federation Square/Swanston St #13",
+        "stop_id": 2204
+    },
+    {
+        "stop_name": "Fenwick St/Lygon St #116",
+        "stop_id": 2220
+    },
+    {
+        "stop_name": "Ferguson St/Maribyrnong Rd #38",
+        "stop_id": 2389
+    },
+    {
+        "stop_name": "Fermanagh Rd/Riversdale Rd #42",
+        "stop_id": 2125
+    },
+    {
+        "stop_name": "Ferndale St/Riversdale Rd #60",
+        "stop_id": 2127
+    },
+    {
+        "stop_name": "Ferrars St/Park St #26",
+        "stop_id": 2275
+    },
+    {
+        "stop_name": "Findon Cres/Barkers Rd #27",
+        "stop_id": 2454
+    },
+    {
+        "stop_name": "Findon St/Barkers Rd #27",
+        "stop_id": 2473
+    },
+    {
+        "stop_name": "Fitzroy Bowls Club/Brunswick St #20",
+        "stop_id": 2541
+    },
+    {
+        "stop_name": "Fitzroy St/Park St #143",
+        "stop_id": 2576
+    },
+    {
+        "stop_name": "Fitzwilliam St/Glenferrie Rd #78",
+        "stop_id": 2929
+    },
+    {
+        "stop_name": "Flagstaff Railway Station/William St #7",
+        "stop_id": 3104
+    },
+    {
+        "stop_name": "Flagstaff Station/La Trobe St #3",
+        "stop_id": 3325
+    },
+    {
+        "stop_name": "Flemington Bridge Station/Flemington Rd #22",
+        "stop_id": 2281
+    },
+    {
+        "stop_name": "Flemington Racecourse/Epsom Rd #30",
+        "stop_id": 3138
+    },
+    {
+        "stop_name": "Flemington Racecourse/Epsom Rd #30",
+        "stop_id": 3137
+    },
+    {
+        "stop_name": "Flemington Racecourse/Racecourse Rd #29",
+        "stop_id": 3139
+    },
+    {
+        "stop_name": "Flemington Rd/Peel St #12",
+        "stop_id": 3328
+    },
+    {
+        "stop_name": "Fletcher St/Napier St #41",
+        "stop_id": 2674
+    },
+    {
+        "stop_name": "Fletcher St/Pascoe Vale Rd #38",
+        "stop_id": 2678
+    },
+    {
+        "stop_name": "Flinders St/Queens Bridge St #1",
+        "stop_id": 3111
+    },
+    {
+        "stop_name": "Flinders Street Railway Station/Elizabeth St #1",
+        "stop_id": 2722
+    },
+    {
+        "stop_name": "Flockhart St/Victoria St #23",
+        "stop_id": 2463
+    },
+    {
+        "stop_name": "Florence Ave/Cotham Rd #39",
+        "stop_id": 2241
+    },
+    {
+        "stop_name": "Footscray Market/Leeds St #63",
+        "stop_id": 2354
+    },
+    {
+        "stop_name": "Footscray Station/Leeds St #64",
+        "stop_id": 2353
+    },
+    {
+        "stop_name": "Fordham Gardens/Camberwell Rd #50",
+        "stop_id": 2248
+    },
+    {
+        "stop_name": "Fordholm Rd/Riversdale Rd #31",
+        "stop_id": 2128
+    },
+    {
+        "stop_name": "Francis St/Malvern Rd #33",
+        "stop_id": 3225
+    },
+    {
+        "stop_name": "Fraser St/High St #46",
+        "stop_id": 2625
+    },
+    {
+        "stop_name": "Fraser St/Light Rail #131",
+        "stop_id": 2964
+    },
+    {
+        "stop_name": "Fraser St/Park St #140",
+        "stop_id": 2572
+    },
+    {
+        "stop_name": "Fraser St/Patterson St #140",
+        "stop_id": 2571
+    },
+    {
+        "stop_name": "Freeman St/Nicholson St #16",
+        "stop_id": 2948
+    },
+    {
+        "stop_name": "Fullarton Rd/Matthews Ave #54",
+        "stop_id": 2655
+    },
+    {
+        "stop_name": "Fullarton Rd/Matthews Ave #54",
+        "stop_id": 2656
+    },
+    {
+        "stop_name": "Gadd St/St Georges Rd #31",
+        "stop_id": 2527
+    },
+    {
+        "stop_name": "Gaffney St/Sydney Rd #37",
+        "stop_id": 2790
+    },
+    {
+        "stop_name": "Gaffney St/Sydney Rd #37",
+        "stop_id": 2984
+    },
+    {
+        "stop_name": "Gardenvale Rd/Hawthorn Rd #62",
+        "stop_id": 2668
+    },
+    {
+        "stop_name": "Gardiner Railway Station/Burke Rd #51",
+        "stop_id": 3253
+    },
+    {
+        "stop_name": "Gardiner Rd/Glenferrie Rd #67",
+        "stop_id": 2915
+    },
+    {
+        "stop_name": "Gardiner Station/Burke Rd #51",
+        "stop_id": 3252
+    },
+    {
+        "stop_name": "Gatehouse St/Royal Pde #13",
+        "stop_id": 2819
+    },
+    {
+        "stop_name": "Geelong Rd/Droop St #61",
+        "stop_id": 2358
+    },
+    {
+        "stop_name": "Gertrude St/Brunswick St #13",
+        "stop_id": 2551
+    },
+    {
+        "stop_name": "Gertrude St/Smith St #15",
+        "stop_id": 2074
+    },
+    {
+        "stop_name": "Gibbons St/Church St #55",
+        "stop_id": 2326
+    },
+    {
+        "stop_name": "Gilmour St/Burwood Hwy #59",
+        "stop_id": 3070
+    },
+    {
+        "stop_name": "Gipps St/Church St #58",
+        "stop_id": 2324
+    },
+    {
+        "stop_name": "Gladstone Ave/St Georges Rd #30",
+        "stop_id": 2529
+    },
+    {
+        "stop_name": "Gladstone St/High St #36",
+        "stop_id": 2852
+    },
+    {
+        "stop_name": "Glass St/Mt Alexander Rd #45",
+        "stop_id": 2667
+    },
+    {
+        "stop_name": "Glen Eira Rd/Brighton Rd #39",
+        "stop_id": 3171
+    },
+    {
+        "stop_name": "Glen Eira Rd/Brighton Rd #39",
+        "stop_id": 3172
+    },
+    {
+        "stop_name": "Glen Eira Rd/Hawthorn Rd #54",
+        "stop_id": 2982
+    },
+    {
+        "stop_name": "Glen Eira Rd/Hawthorn Rd #54",
+        "stop_id": 2761
+    },
+    {
+        "stop_name": "Glen Huntly Railway Station/Glen Huntly Rd #61",
+        "stop_id": 3202
+    },
+    {
+        "stop_name": "Glen Huntly Railway Station/Glen Huntly Rd #61",
+        "stop_id": 3203
+    },
+    {
+        "stop_name": "Glen Iris Rd/Camberwell Rd #48",
+        "stop_id": 3018
+    },
+    {
+        "stop_name": "Glenarm Rd/Malvern Rd #50",
+        "stop_id": 3251
+    },
+    {
+        "stop_name": "Glenbervie Rd/Toorak Rd #139",
+        "stop_id": 2142
+    },
+    {
+        "stop_name": "Glendale St/Riversdale Rd #57",
+        "stop_id": 2130
+    },
+    {
+        "stop_name": "Glenferrie Railway Station/Glenferrie Rd #74",
+        "stop_id": 2923
+    },
+    {
+        "stop_name": "Glenferrie Rd/Cotham Rd #36",
+        "stop_id": 2440
+    },
+    {
+        "stop_name": "Glenferrie Rd/High St #44",
+        "stop_id": 2627
+    },
+    {
+        "stop_name": "Glenferrie Rd/Malvern Rd #43",
+        "stop_id": 3295
+    },
+    {
+        "stop_name": "Glenferrie Rd/Malvern Rd #43",
+        "stop_id": 3296
+    },
+    {
+        "stop_name": "Glenferrie Rd/Riversdale Rd #32",
+        "stop_id": 2131
+    },
+    {
+        "stop_name": "Glenferrie Rd/Toorak Rd #139",
+        "stop_id": 2056
+    },
+    {
+        "stop_name": "Glenferrie Rd/Wattletree Rd #45",
+        "stop_id": 2587
+    },
+    {
+        "stop_name": "Glenferrie Station/Glenferrie Rd #74",
+        "stop_id": 2924
+    },
+    {
+        "stop_name": "Glenhuntly Rd/Hawthorn Rd #57",
+        "stop_id": 2981
+    },
+    {
+        "stop_name": "Glenhuntly Rd/Hawthorn Rd #57",
+        "stop_id": 2757
+    },
+    {
+        "stop_name": "Glenhuntly Rd/Truganini Rd #66",
+        "stop_id": 3208
+    },
+    {
+        "stop_name": "Glenhuntly Shops/Glenhuntly Rd #60",
+        "stop_id": 3200
+    },
+    {
+        "stop_name": "Glenhuntly Shops/Glenhuntly Rd #60",
+        "stop_id": 3201
+    },
+    {
+        "stop_name": "Glenhuntly Tram Depot/Glenhuntly Rd #53",
+        "stop_id": 3190
+    },
+    {
+        "stop_name": "Glenlyon Rd/Lygon St #122",
+        "stop_id": 2226
+    },
+    {
+        "stop_name": "Glenlyon Rd/Nicholson St #21",
+        "stop_id": 2938
+    },
+    {
+        "stop_name": "Glenlyon Rd/Nicholson St #21",
+        "stop_id": 2937
+    },
+    {
+        "stop_name": "Glenlyon Rd/Sydney Rd #21",
+        "stop_id": 2809
+    },
+    {
+        "stop_name": "Glyndon Rd/Riversdale Rd #49",
+        "stop_id": 2132
+    },
+    {
+        "stop_name": "Gold St/Queens Pde #24",
+        "stop_id": 2060
+    },
+    {
+        "stop_name": "Gooch St/High St #39",
+        "stop_id": 2007
+    },
+    {
+        "stop_name": "Gordon St/River St #54",
+        "stop_id": 2368
+    },
+    {
+        "stop_name": "Gower St/Plenty Rd #48",
+        "stop_id": 2036
+    },
+    {
+        "stop_name": "Graham St/Light Rail #128",
+        "stop_id": 2509
+    },
+    {
+        "stop_name": "Graham St/Victoria Ave #31",
+        "stop_id": 2283
+    },
+    {
+        "stop_name": "Grandview Ave/Toorak Rd #54",
+        "stop_id": 3066
+    },
+    {
+        "stop_name": "Grange Rd/Glenhuntly Rd #62",
+        "stop_id": 3204
+    },
+    {
+        "stop_name": "Grange Rd/Glenhuntly Rd #62",
+        "stop_id": 3305
+    },
+    {
+        "stop_name": "Grange Rd/Toorak Rd #133",
+        "stop_id": 2183
+    },
+    {
+        "stop_name": "Grant St-Police Memorial/St Kilda Rd #17",
+        "stop_id": 2200
+    },
+    {
+        "stop_name": "Grant St/Sturt St #18",
+        "stop_id": 2268
+    },
+    {
+        "stop_name": "Grantham St/Dawson St #31",
+        "stop_id": 3092
+    },
+    {
+        "stop_name": "Grattan St/Church St #24",
+        "stop_id": 2881
+    },
+    {
+        "stop_name": "Greenhills Rd/Plenty Rd #68",
+        "stop_id": 2037
+    },
+    {
+        "stop_name": "Greenwood Dr/Plenty Rd #63",
+        "stop_id": 2038
+    },
+    {
+        "stop_name": "Greeves St/Carlisle St #34",
+        "stop_id": 2740
+    },
+    {
+        "stop_name": "Grice Cres/Mt Alexander Rd #42",
+        "stop_id": 2478
+    },
+    {
+        "stop_name": "Grimshaw St/Plenty Rd #65",
+        "stop_id": 2040
+    },
+    {
+        "stop_name": "Haines St/Abbotsford St #16",
+        "stop_id": 3155
+    },
+    {
+        "stop_name": "Halstead St/Hawthorn Rd #52",
+        "stop_id": 2764
+    },
+    {
+        "stop_name": "Hanover St/Brunswick St #14",
+        "stop_id": 2550
+    },
+    {
+        "stop_name": "Harding St/Nicholson St #133",
+        "stop_id": 2261
+    },
+    {
+        "stop_name": "Harding St/Sydney Rd #32",
+        "stop_id": 2796
+    },
+    {
+        "stop_name": "Hardwicke St/Whitehorse Rd #45",
+        "stop_id": 2426
+    },
+    {
+        "stop_name": "Harold Holt Swim Centre/High St #49",
+        "stop_id": 2620
+    },
+    {
+        "stop_name": "Harold St/Danks St #137",
+        "stop_id": 2568
+    },
+    {
+        "stop_name": "Harp Rd/High St #39",
+        "stop_id": 2849
+    },
+    {
+        "stop_name": "Harp Rd/High St #39",
+        "stop_id": 2848
+    },
+    {
+        "stop_name": "Harp Village/High St #40",
+        "stop_id": 2847
+    },
+    {
+        "stop_name": "Harris Ave/Burke Rd #52",
+        "stop_id": 3256
+    },
+    {
+        "stop_name": "Hastings Rd/Riversdale Rd #38",
+        "stop_id": 2134
+    },
+    {
+        "stop_name": "Havelock St/Carlisle St #32",
+        "stop_id": 2741
+    },
+    {
+        "stop_name": "Hawker St/Matthews Ave #57",
+        "stop_id": 2651
+    },
+    {
+        "stop_name": "Hawksburn Rd/Toorak Rd #130",
+        "stop_id": 2186
+    },
+    {
+        "stop_name": "Hawthorn Bridge/Bridge Rd #23",
+        "stop_id": 2416
+    },
+    {
+        "stop_name": "Hawthorn Railway Station/Burwood Rd #26",
+        "stop_id": 3008
+    },
+    {
+        "stop_name": "Hawthorn Rd/Balaclava Rd #51",
+        "stop_id": 2308
+    },
+    {
+        "stop_name": "Hawthorn Rd/Dandenong Rd #48",
+        "stop_id": 2998
+    },
+    {
+        "stop_name": "Hawthorn Rd/Dandenong Rd #48",
+        "stop_id": 2464
+    },
+    {
+        "stop_name": "Hawthorn Rd/Glenhuntly Rd #51",
+        "stop_id": 3188
+    },
+    {
+        "stop_name": "Heller St/Grantham St #29",
+        "stop_id": 3324
+    },
+    {
+        "stop_name": "High St/Barkers Rd #29",
+        "stop_id": 2451
+    },
+    {
+        "stop_name": "High St/Chapel St #45",
+        "stop_id": 2342
+    },
+    {
+        "stop_name": "High St/Cotham Rd #34",
+        "stop_id": 2615
+    },
+    {
+        "stop_name": "High St/Glenferrie Rd #57",
+        "stop_id": 2900
+    },
+    {
+        "stop_name": "High St/St Kilda Rd #27",
+        "stop_id": 2406
+    },
+    {
+        "stop_name": "Highett St/Church St #62",
+        "stop_id": 2320
+    },
+    {
+        "stop_name": "Highfield Rd/Riversdale Rd #51",
+        "stop_id": 2135
+    },
+    {
+        "stop_name": "Highfield Rd/Riversdale Rd #51",
+        "stop_id": 2136
+    },
+    {
+        "stop_name": "Highfield Rd/Toorak Rd #53",
+        "stop_id": 3021
+    },
+    {
+        "stop_name": "Highpoint Shopping Centre/Wests Rd #49",
+        "stop_id": 2374
+    },
+    {
+        "stop_name": "Highview Gr/Burwood Hwy #69",
+        "stop_id": 3037
+    },
+    {
+        "stop_name": "Hill Rd/Doncaster Rd #50",
+        "stop_id": 2832
+    },
+    {
+        "stop_name": "Hill St/Church St #24",
+        "stop_id": 2880
+    },
+    {
+        "stop_name": "Hobson St/Malvern Rd #33",
+        "stop_id": 3226
+    },
+    {
+        "stop_name": "Hoddle St/Fletcher St #39",
+        "stop_id": 2676
+    },
+    {
+        "stop_name": "Hoddle St/Victoria Pde #18",
+        "stop_id": 2471
+    },
+    {
+        "stop_name": "Hodgson St/Smith St #18",
+        "stop_id": 2043
+    },
+    {
+        "stop_name": "Hoffmans Rd/Keilor Rd #52",
+        "stop_id": 2785
+    },
+    {
+        "stop_name": "Holden St/Nicholson St #19",
+        "stop_id": 2941
+    },
+    {
+        "stop_name": "Holden St/St Georges Rd #24",
+        "stop_id": 2535
+    },
+    {
+        "stop_name": "Hood St/Whitehorse Rd #55",
+        "stop_id": 2412
+    },
+    {
+        "stop_name": "Hope St/Melville Rd #36",
+        "stop_id": 3086
+    },
+    {
+        "stop_name": "Hornby St/Dandenong Rd #33",
+        "stop_id": 2603
+    },
+    {
+        "stop_name": "Hornby St/High St #32",
+        "stop_id": 2642
+    },
+    {
+        "stop_name": "Hotham St/Balaclava Rd #40",
+        "stop_id": 2777
+    },
+    {
+        "stop_name": "Hotham St/Brighton Rd #42",
+        "stop_id": 3177
+    },
+    {
+        "stop_name": "Hotham St/Brighton Rd #42",
+        "stop_id": 3366
+    },
+    {
+        "stop_name": "Hotham St/Carlisle St #40",
+        "stop_id": 2734
+    },
+    {
+        "stop_name": "Hotham St/Maribyrnong Rd #38",
+        "stop_id": 2388
+    },
+    {
+        "stop_name": "Howard St/Church St #53",
+        "stop_id": 2330
+    },
+    {
+        "stop_name": "Howard St/Victoria St #9",
+        "stop_id": 3121
+    },
+    {
+        "stop_name": "Howell St/Hawthorn Rd #67",
+        "stop_id": 2743
+    },
+    {
+        "stop_name": "Hughes St/Waverley Rd #63",
+        "stop_id": 2289
+    },
+    {
+        "stop_name": "Huntingtower Rd/High St #42",
+        "stop_id": 2629
+    },
+    {
+        "stop_name": "Hutton St/St Georges Rd #33",
+        "stop_id": 2525
+    },
+    {
+        "stop_name": "Ievers St/Royal Pde #17",
+        "stop_id": 2814
+    },
+    {
+        "stop_name": "Inglisby Rd/Whitehorse Rd #54",
+        "stop_id": 2413
+    },
+    {
+        "stop_name": "Inkerman Rd/Hawthorn Rd #50",
+        "stop_id": 2726
+    },
+    {
+        "stop_name": "Inkerman St/Chapel St #38",
+        "stop_id": 2350
+    },
+    {
+        "stop_name": "Inkerman St/St Kilda Rd #34",
+        "stop_id": 2398
+    },
+    {
+        "stop_name": "Irving Rd/Malvern Rd #39",
+        "stop_id": 3235
+    },
+    {
+        "stop_name": "Irving Rd/Toorak Rd #136",
+        "stop_id": 2180
+    },
+    {
+        "stop_name": "Irymple Ave/High St #42",
+        "stop_id": 2845
+    },
+    {
+        "stop_name": "Jacka Bvd/Fitzroy St #135",
+        "stop_id": 2888
+    },
+    {
+        "stop_name": "Jacka St/Gilbert Rd #45",
+        "stop_id": 2512
+    },
+    {
+        "stop_name": "Jacobs Reserve/Melville Rd #38",
+        "stop_id": 3084
+    },
+    {
+        "stop_name": "Janefield Dr/Plenty Rd #70",
+        "stop_id": 2022
+    },
+    {
+        "stop_name": "Jasmine St/Glenhuntly Rd #52",
+        "stop_id": 3189
+    },
+    {
+        "stop_name": "Johnson St/Glenferrie Rd #76",
+        "stop_id": 2927
+    },
+    {
+        "stop_name": "Johnston St/Brunswick St #16",
+        "stop_id": 2546
+    },
+    {
+        "stop_name": "Johnston St/Nicholson St #13",
+        "stop_id": 2955
+    },
+    {
+        "stop_name": "Johnston St/Nicholson St #13",
+        "stop_id": 2954
+    },
+    {
+        "stop_name": "Johnston St/Smith St #19",
+        "stop_id": 2045
+    },
+    {
+        "stop_name": "Jolimont Rd/Wellington Pde #10",
+        "stop_id": 2823
+    },
+    {
+        "stop_name": "Jolimont Station-MCG/Wellington Pde #11",
+        "stop_id": 2825
+    },
+    {
+        "stop_name": "Kambrook Rd/Balaclava Rd #54",
+        "stop_id": 2304
+    },
+    {
+        "stop_name": "Kambrook Rd/Balaclava Rd #54",
+        "stop_id": 2402
+    },
+    {
+        "stop_name": "Kambrook Rd/Glenhuntly Rd #56",
+        "stop_id": 3195
+    },
+    {
+        "stop_name": "Kean St/Glenhuntly Rd #56",
+        "stop_id": 3196
+    },
+    {
+        "stop_name": "Keats St/Burwood Hwy #69",
+        "stop_id": 2476
+    },
+    {
+        "stop_name": "Keele St/Smith St #20",
+        "stop_id": 2070
+    },
+    {
+        "stop_name": "Keilor Rd/Matthews Ave #53",
+        "stop_id": 2657
+    },
+    {
+        "stop_name": "Kenilworth Gr/Malvern Rd #49",
+        "stop_id": 3250
+    },
+    {
+        "stop_name": "Kent Gr/Balaclava Rd #45",
+        "stop_id": 2773
+    },
+    {
+        "stop_name": "Kent St/Church St #63",
+        "stop_id": 2318
+    },
+    {
+        "stop_name": "Kerferd Rd/Canterbury Rd #132",
+        "stop_id": 2562
+    },
+    {
+        "stop_name": "Kew Cemetery/High St #37",
+        "stop_id": 2259
+    },
+    {
+        "stop_name": "Kew High School/High St #43",
+        "stop_id": 2843
+    },
+    {
+        "stop_name": "Kew Junction/High St #32",
+        "stop_id": 2444
+    },
+    {
+        "stop_name": "Kew Shopping Centre/High St #33",
+        "stop_id": 2445
+    },
+    {
+        "stop_name": "Kew Traffic School/Cotham Rd #41",
+        "stop_id": 2433
+    },
+    {
+        "stop_name": "King William St/Brunswick St #14",
+        "stop_id": 2549
+    },
+    {
+        "stop_name": "Kings Way/Sturt St #20",
+        "stop_id": 2270
+    },
+    {
+        "stop_name": "Kooyong Railway Station/Glenferrie Rd #65",
+        "stop_id": 2911
+    },
+    {
+        "stop_name": "Kooyong Rd/Balaclava Rd #46",
+        "stop_id": 2728
+    },
+    {
+        "stop_name": "Kooyong Rd/Dandenong Rd #42",
+        "stop_id": 2770
+    },
+    {
+        "stop_name": "Kooyong Rd/Glenhuntly Rd #49",
+        "stop_id": 3186
+    },
+    {
+        "stop_name": "Kooyong Rd/High St #41",
+        "stop_id": 2630
+    },
+    {
+        "stop_name": "Kooyong Rd/Malvern Rd #40",
+        "stop_id": 3236
+    },
+    {
+        "stop_name": "Kooyong Rd/Toorak Rd #137",
+        "stop_id": 2179
+    },
+    {
+        "stop_name": "Kooyong Rd/Wattletree Rd #42",
+        "stop_id": 2590
+    },
+    {
+        "stop_name": "Kooyong Tennis Centre/Glenferrie Rd #66",
+        "stop_id": 2914
+    },
+    {
+        "stop_name": "Kooyongkoot Rd/Riversdale Rd #34",
+        "stop_id": 2137
+    },
+    {
+        "stop_name": "La Trobe St/Spencer St #119",
+        "stop_id": 2050
+    },
+    {
+        "stop_name": "La Trobe St/Victoria St #9",
+        "stop_id": 2859
+    },
+    {
+        "stop_name": "La Trobe University/Plenty Rd #60",
+        "stop_id": 2048
+    },
+    {
+        "stop_name": "Lakeside Dr/Burwood Hwy #72",
+        "stop_id": 3046
+    },
+    {
+        "stop_name": "Langridge St/Patterson St #139",
+        "stop_id": 2570
+    },
+    {
+        "stop_name": "Lansdowne Rd/Dandenong Rd #37",
+        "stop_id": 2621
+    },
+    {
+        "stop_name": "Lansdowne Rd/Dandenong Rd #37",
+        "stop_id": 2596
+    },
+    {
+        "stop_name": "Lansdowne St/Victoria Pde #13",
+        "stop_id": 2481
+    },
+    {
+        "stop_name": "Lansdowne St/Victoria Pde #13",
+        "stop_id": 2167
+    },
+    {
+        "stop_name": "Lansdowne St/Wellington Pde #9",
+        "stop_id": 3041
+    },
+    {
+        "stop_name": "Lansdowne St/Wellington Pde #9",
+        "stop_id": 3123
+    },
+    {
+        "stop_name": "Latona Ave/Gilbert Rd #39",
+        "stop_id": 2519
+    },
+    {
+        "stop_name": "Laura St/Glenhuntly Rd #57",
+        "stop_id": 3198
+    },
+    {
+        "stop_name": "Lauriston Girls School/Malvern Rd #42",
+        "stop_id": 3240
+    },
+    {
+        "stop_name": "Lauriston Girls School/Malvern Rd #42",
+        "stop_id": 3239
+    },
+    {
+        "stop_name": "Leake St/Mt Alexander Rd #45",
+        "stop_id": 2750
+    },
+    {
+        "stop_name": "Leeds St/Hopkins St #63",
+        "stop_id": 2355
+    },
+    {
+        "stop_name": "Leicester St/Brunswick St #17",
+        "stop_id": 2545
+    },
+    {
+        "stop_name": "Lennox St/Swan St #9",
+        "stop_id": 2138
+    },
+    {
+        "stop_name": "Lennox St/Victoria St #20",
+        "stop_id": 2469
+    },
+    {
+        "stop_name": "Lennox St/Victoria St #20",
+        "stop_id": 2466
+    },
+    {
+        "stop_name": "Leonard St/Royal Pde #15",
+        "stop_id": 2816
+    },
+    {
+        "stop_name": "Leopold St/St Kilda Rd #24",
+        "stop_id": 2608
+    },
+    {
+        "stop_name": "Leopold St/St Kilda Rd #24",
+        "stop_id": 2609
+    },
+    {
+        "stop_name": "Leslie St/Victoria St #23",
+        "stop_id": 2462
+    },
+    {
+        "stop_name": "Leura Gr/Burke Rd #58",
+        "stop_id": 3265
+    },
+    {
+        "stop_name": "Lewisham Rd/High St #34",
+        "stop_id": 2639
+    },
+    {
+        "stop_name": "Liddiard St/Glenferrie Rd #75",
+        "stop_id": 2926
+    },
+    {
+        "stop_name": "Lincoln Rd/Mt Alexander Rd #46",
+        "stop_id": 2666
+    },
+    {
+        "stop_name": "Lincoln Square/Swanston St #3",
+        "stop_id": 2212
+    },
+    {
+        "stop_name": "Lithgow St/Toorak Rd #53",
+        "stop_id": 3065
+    },
+    {
+        "stop_name": "Llaneast St/Glenferrie Rd #55",
+        "stop_id": 2897
+    },
+    {
+        "stop_name": "Lockhart St/Hawthorn Rd #56",
+        "stop_id": 2758
+    },
+    {
+        "stop_name": "Lockhart St/Riversdale Rd #52",
+        "stop_id": 2139
+    },
+    {
+        "stop_name": "Loddon Ave/Plenty Rd #56",
+        "stop_id": 2052
+    },
+    {
+        "stop_name": "Lonsdale St/Spencer St #120",
+        "stop_id": 2053
+    },
+    {
+        "stop_name": "Lorne Rd/Malvern Rd #35",
+        "stop_id": 3228
+    },
+    {
+        "stop_name": "Lorne St/St Kilda Rd #27",
+        "stop_id": 2405
+    },
+    {
+        "stop_name": "Luna Park/The Esplanade #138",
+        "stop_id": 2968
+    },
+    {
+        "stop_name": "Lygon St/Elgin St #112",
+        "stop_id": 2216
+    },
+    {
+        "stop_name": "Lyric St/Gordon St #55",
+        "stop_id": 2366
+    },
+    {
+        "stop_name": "Lytton St/Lygon St #113",
+        "stop_id": 2217
+    },
+    {
+        "stop_name": "Macarthur Rd/Royal Pde #14",
+        "stop_id": 2818
+    },
+    {
+        "stop_name": "Macgregor St/Waverley Rd #62",
+        "stop_id": 2291
+    },
+    {
+        "stop_name": "Madden Gr/Swan St #17",
+        "stop_id": 2141
+    },
+    {
+        "stop_name": "Malcolm St/Chapel St #51",
+        "stop_id": 2332
+    },
+    {
+        "stop_name": "Malvern Railway Station/Glenferrie Rd #53",
+        "stop_id": 2893
+    },
+    {
+        "stop_name": "Malvern Rd/Chapel St #47",
+        "stop_id": 2338
+    },
+    {
+        "stop_name": "Malvern Rd/Glenferrie Rd #59",
+        "stop_id": 2903
+    },
+    {
+        "stop_name": "Malvern Rd/High St #53",
+        "stop_id": 2300
+    },
+    {
+        "stop_name": "Malvern Tram Depot/Glenferrie Rd #56",
+        "stop_id": 2446
+    },
+    {
+        "stop_name": "Manningtree Rd/Glenferrie Rd #72",
+        "stop_id": 2920
+    },
+    {
+        "stop_name": "Mansfield St/High St #40",
+        "stop_id": 2055
+    },
+    {
+        "stop_name": "Maple Cres/Camberwell Rd #47",
+        "stop_id": 2172
+    },
+    {
+        "stop_name": "Maribyrnong College/River St #53",
+        "stop_id": 2369
+    },
+    {
+        "stop_name": "Maribyrnong Community Centre/Raleigh Rd #45",
+        "stop_id": 2378
+    },
+    {
+        "stop_name": "Maribyrnong Park/Maribyrnong Rd #41",
+        "stop_id": 2383
+    },
+    {
+        "stop_name": "Maribyrnong Rd/Ascot Vale Rd #34",
+        "stop_id": 2394
+    },
+    {
+        "stop_name": "Maribyrnong Rd/Mt Alexander Rd #30",
+        "stop_id": 2691
+    },
+    {
+        "stop_name": "Maribyrnong Rd/Union Rd #37",
+        "stop_id": 3125
+    },
+    {
+        "stop_name": "Market St/Flinders St #3",
+        "stop_id": 2092
+    },
+    {
+        "stop_name": "Maroona Rd/Glenhuntly Rd #63",
+        "stop_id": 2486
+    },
+    {
+        "stop_name": "Marshall Ave/Cotham Rd #38",
+        "stop_id": 2438
+    },
+    {
+        "stop_name": "Marshall Rd/Matthews Ave #58",
+        "stop_id": 2650
+    },
+    {
+        "stop_name": "Mary St/Park St #142",
+        "stop_id": 2575
+    },
+    {
+        "stop_name": "Mathoura Rd/Malvern Rd #35",
+        "stop_id": 3229
+    },
+    {
+        "stop_name": "Matlock Ct/Dandenong Rd #43",
+        "stop_id": 2768
+    },
+    {
+        "stop_name": "Mayfield Ave/Glenferrie Rd #62",
+        "stop_id": 2907
+    },
+    {
+        "stop_name": "McCutcheon St/High St #34",
+        "stop_id": 2009
+    },
+    {
+        "stop_name": "McKay St/Victoria St #22",
+        "stop_id": 2465
+    },
+    {
+        "stop_name": "McNamara St/Gilbert Rd #46",
+        "stop_id": 2513
+    },
+    {
+        "stop_name": "Melbourne Aquarium/Flinders St #2",
+        "stop_id": 3317
+    },
+    {
+        "stop_name": "Melbourne Cemetery/Lygon St #115",
+        "stop_id": 2219
+    },
+    {
+        "stop_name": "Melbourne Central & State Library stations/La Trobe St #6",
+        "stop_id": 2863
+    },
+    {
+        "stop_name": "Melbourne Central Station/Elizabeth St #5",
+        "stop_id": 2718
+    },
+    {
+        "stop_name": "Melbourne Central Station/La Trobe St #5",
+        "stop_id": 3114
+    },
+    {
+        "stop_name": "Melbourne Central Station/Swanston St #8",
+        "stop_id": 2208
+    },
+    {
+        "stop_name": "Melbourne Museum/Nicholson St #11",
+        "stop_id": 2032
+    },
+    {
+        "stop_name": "Melbourne Showgrounds/Union Rd #33",
+        "stop_id": 3132
+    },
+    {
+        "stop_name": "Melbourne Sports & Aquatic Centre/Albert Rd #131",
+        "stop_id": 2560
+    },
+    {
+        "stop_name": "Melbourne Sports and Aquatic Centre/Light Rail #129",
+        "stop_id": 2800
+    },
+    {
+        "stop_name": "Melbourne Town Hall/Collins St #6",
+        "stop_id": 2491
+    },
+    {
+        "stop_name": "Melbourne University/Swanston St #1",
+        "stop_id": 2214
+    },
+    {
+        "stop_name": "Melbourne Zoo/Royal Park #26",
+        "stop_id": 2697
+    },
+    {
+        "stop_name": "Melrose St/Flemington Rd #20",
+        "stop_id": 2706
+    },
+    {
+        "stop_name": "Mercer Rd/High St #43",
+        "stop_id": 2628
+    },
+    {
+        "stop_name": "Mercy College/Sydney Rd #39",
+        "stop_id": 2670
+    },
+    {
+        "stop_name": "Meredith St/Malvern Rd #46",
+        "stop_id": 3245
+    },
+    {
+        "stop_name": "Mernda Ave/Glenhuntly Rd #64",
+        "stop_id": 2653
+    },
+    {
+        "stop_name": "Mernda Rd/Glenferrie Rd #64",
+        "stop_id": 2910
+    },
+    {
+        "stop_name": "Merribell Ave/Nicholson St #134",
+        "stop_id": 2260
+    },
+    {
+        "stop_name": "Metropolitan Fire Brigade/Plenty Rd #62",
+        "stop_id": 2017
+    },
+    {
+        "stop_name": "Michael St/Queens Pde #24",
+        "stop_id": 2034
+    },
+    {
+        "stop_name": "Middle Park Station/Light Rail #130",
+        "stop_id": 2963
+    },
+    {
+        "stop_name": "Middle Rd/Burke Rd #55",
+        "stop_id": 3260
+    },
+    {
+        "stop_name": "Middle Rd/Burke Rd #55",
+        "stop_id": 3301
+    },
+    {
+        "stop_name": "Middle St/Mt Alexander Rd #28",
+        "stop_id": 2694
+    },
+    {
+        "stop_name": "Middleborough Rd/Burwood Hwy #66",
+        "stop_id": 3034
+    },
+    {
+        "stop_name": "Miles St/Sturt St #19",
+        "stop_id": 2269
+    },
+    {
+        "stop_name": "Miller St/Gilbert Rd #37",
+        "stop_id": 2521
+    },
+    {
+        "stop_name": "Miller St/High St #42",
+        "stop_id": 2027
+    },
+    {
+        "stop_name": "Miller St/Nicholson St #20",
+        "stop_id": 2940
+    },
+    {
+        "stop_name": "Miller St/Nicholson St #20",
+        "stop_id": 2939
+    },
+    {
+        "stop_name": "Miller St/St Georges Rd #25",
+        "stop_id": 2534
+    },
+    {
+        "stop_name": "Miller St/St Georges Rd #34",
+        "stop_id": 2524
+    },
+    {
+        "stop_name": "Millicent St/Burwood Hwy #60",
+        "stop_id": 3071
+    },
+    {
+        "stop_name": "Mills St/Danks St #136",
+        "stop_id": 2567
+    },
+    {
+        "stop_name": "Mimosa Rd/Glenhuntly Rd #65",
+        "stop_id": 2665
+    },
+    {
+        "stop_name": "Mitchell St/Carlisle St #34",
+        "stop_id": 2738
+    },
+    {
+        "stop_name": "Mitchell St/High St #32",
+        "stop_id": 2061
+    },
+    {
+        "stop_name": "Mitchell St/Holmes St #128",
+        "stop_id": 2232
+    },
+    {
+        "stop_name": "Mont Albert Rd/Burke Rd #68",
+        "stop_id": 3283
+    },
+    {
+        "stop_name": "Mont Albert Rd/Burke Rd #68",
+        "stop_id": 3284
+    },
+    {
+        "stop_name": "Montague St/Bridport St #28",
+        "stop_id": 2279
+    },
+    {
+        "stop_name": "Montague St/Light Rail #126",
+        "stop_id": 2507
+    },
+    {
+        "stop_name": "Montague St/Park St #27",
+        "stop_id": 2276
+    },
+    {
+        "stop_name": "Montgomery St/Mt Alexander Rd #31",
+        "stop_id": 2688
+    },
+    {
+        "stop_name": "Mooltan St/Mt Alexander Rd #24",
+        "stop_id": 2700
+    },
+    {
+        "stop_name": "Moonee Ponds Junction/Pascoe Vale Rd #32",
+        "stop_id": 2685
+    },
+    {
+        "stop_name": "Moonee Valley Civic Centre/Pascoe Vale Rd #34",
+        "stop_id": 2683
+    },
+    {
+        "stop_name": "Moonga Rd/Toorak Rd #138",
+        "stop_id": 2178
+    },
+    {
+        "stop_name": "Moor St/Nicholson St #12",
+        "stop_id": 2958
+    },
+    {
+        "stop_name": "Moorakyne Ave/Glenferrie Rd #61",
+        "stop_id": 2906
+    },
+    {
+        "stop_name": "Moore St/Maribyrnong Rd #35",
+        "stop_id": 2392
+    },
+    {
+        "stop_name": "Moore St/Sydney Rd #29",
+        "stop_id": 2801
+    },
+    {
+        "stop_name": "Moray St/Park St #23",
+        "stop_id": 2272
+    },
+    {
+        "stop_name": "Moreland Rd/Holmes St #129",
+        "stop_id": 2233
+    },
+    {
+        "stop_name": "Moreland Rd/Melville Rd #40",
+        "stop_id": 3081
+    },
+    {
+        "stop_name": "Moreland Rd/Nicholson St #129",
+        "stop_id": 2265
+    },
+    {
+        "stop_name": "Moreland Rd/Sydney Rd #28",
+        "stop_id": 2985
+    },
+    {
+        "stop_name": "Moreland Rd/Sydney Rd #28",
+        "stop_id": 2802
+    },
+    {
+        "stop_name": "Moreland Station/Cameron St #133",
+        "stop_id": 2781
+    },
+    {
+        "stop_name": "Moreland Station/Moreland Rd #133",
+        "stop_id": 2237
+    },
+    {
+        "stop_name": "Morrah St/Royal Pde #12",
+        "stop_id": 2820
+    },
+    {
+        "stop_name": "Moubray St/St Kilda Rd #26",
+        "stop_id": 2408
+    },
+    {
+        "stop_name": "Mount Alexander College/Mt Alexander Rd #25",
+        "stop_id": 2699
+    },
+    {
+        "stop_name": "Mount Alexander College/Mt Alexander Rd #25",
+        "stop_id": 3390
+    },
+    {
+        "stop_name": "Mount Cooper Dr/Plenty Rd #64",
+        "stop_id": 2062
+    },
+    {
+        "stop_name": "Mt Alexander Rd/Keilor Rd #47",
+        "stop_id": 2664
+    },
+    {
+        "stop_name": "Munro St/Sydney Rd #32",
+        "stop_id": 2797
+    },
+    {
+        "stop_name": "Munro St/Union Rd #35",
+        "stop_id": 3128
+    },
+    {
+        "stop_name": "Murphy St/Flemington Rd #15",
+        "stop_id": 3311
+    },
+    {
+        "stop_name": "Murray Rd/Gilbert Rd #43",
+        "stop_id": 2515
+    },
+    {
+        "stop_name": "Murray Rd/Plenty Rd #49",
+        "stop_id": 2063
+    },
+    {
+        "stop_name": "Murray St/Malvern Rd #41",
+        "stop_id": 3238
+    },
+    {
+        "stop_name": "Murray St/Pascoe Vale Rd #36",
+        "stop_id": 2681
+    },
+    {
+        "stop_name": "Napier St/Gertrude St #14",
+        "stop_id": 2064
+    },
+    {
+        "stop_name": "Narrak Rd/Whitehorse Rd #51",
+        "stop_id": 2419
+    },
+    {
+        "stop_name": "Narrak Rd/Whitehorse Rd #51",
+        "stop_id": 2418
+    },
+    {
+        "stop_name": "Nelson Rd/Whitehorse Rd #57",
+        "stop_id": 2410
+    },
+    {
+        "stop_name": "Newmarket Plaza/Racecourse Rd #26",
+        "stop_id": 3143
+    },
+    {
+        "stop_name": "Newmarket Plaza/Racecourse Rd #26",
+        "stop_id": 3142
+    },
+    {
+        "stop_name": "Newry St/Brunswick St #19",
+        "stop_id": 2543
+    },
+    {
+        "stop_name": "Nicholls St/Wattletree Rd #46",
+        "stop_id": 2586
+    },
+    {
+        "stop_name": "Nicholson St/Droop St #62",
+        "stop_id": 2357
+    },
+    {
+        "stop_name": "Nicholson St/Fletcher St #40",
+        "stop_id": 2675
+    },
+    {
+        "stop_name": "Nicholson St/Hopkins St #62",
+        "stop_id": 2356
+    },
+    {
+        "stop_name": "Nicholson St/Victoria Pde #10",
+        "stop_id": 2858
+    },
+    {
+        "stop_name": "Nicholson St/Victoria Pde #10",
+        "stop_id": 2988
+    },
+    {
+        "stop_name": "Normanby Ave/High St #38",
+        "stop_id": 3353
+    },
+    {
+        "stop_name": "Normanby Ave/St Georges Rd #32",
+        "stop_id": 2526
+    },
+    {
+        "stop_name": "Normanby Rd/Balaclava Rd #55",
+        "stop_id": 2303
+    },
+    {
+        "stop_name": "North Balwyn Shopping Centre/Doncaster Rd #47",
+        "stop_id": 2837
+    },
+    {
+        "stop_name": "North Coburg Terminus/Sydney Rd #40",
+        "stop_id": 2786
+    },
+    {
+        "stop_name": "North Melbourne Town Hall/Errol St #12",
+        "stop_id": 3160
+    },
+    {
+        "stop_name": "North Melbourne Town Hall/Queensberry St #12",
+        "stop_id": 3161
+    },
+    {
+        "stop_name": "North Port Station/Light Rail #127",
+        "stop_id": 2508
+    },
+    {
+        "stop_name": "North Rd/Hawthorn Rd #63",
+        "stop_id": 2749
+    },
+    {
+        "stop_name": "North Richmond Railway Station/Victoria St #19",
+        "stop_id": 2468
+    },
+    {
+        "stop_name": "North Richmond Railway Station/Victoria St #19",
+        "stop_id": 2470
+    },
+    {
+        "stop_name": "Northcote Ave/Hawthorn Rd #53",
+        "stop_id": 2763
+    },
+    {
+        "stop_name": "Northcote Ave/Whitehorse Rd #49",
+        "stop_id": 2421
+    },
+    {
+        "stop_name": "Northcote Town Hall/High St #31",
+        "stop_id": 2090
+    },
+    {
+        "stop_name": "Nott St/Wattletree Rd #51",
+        "stop_id": 2578
+    },
+    {
+        "stop_name": "Oak Gr/Waverley Rd #63",
+        "stop_id": 2290
+    },
+    {
+        "stop_name": "Oakover Rd/Gilbert Rd #38",
+        "stop_id": 2520
+    },
+    {
+        "stop_name": "Oberwyl Rd/Toorak Rd #54",
+        "stop_id": 3022
+    },
+    {
+        "stop_name": "Old Burwood Rd/Burwood Hwy #67",
+        "stop_id": 2423
+    },
+    {
+        "stop_name": "Ontario St/Balaclava Rd #44",
+        "stop_id": 2730
+    },
+    {
+        "stop_name": "Orange Gr/Camberwell Rd #47",
+        "stop_id": 3017
+    },
+    {
+        "stop_name": "Orange Gr/Carlisle St #39",
+        "stop_id": 2735
+    },
+    {
+        "stop_name": "Ormond Rd/Mt Alexander Rd #30",
+        "stop_id": 2690
+    },
+    {
+        "stop_name": "Orrong Cres/Camberwell Rd #48",
+        "stop_id": 2417
+    },
+    {
+        "stop_name": "Orrong Rd/Balaclava Rd #43",
+        "stop_id": 2731
+    },
+    {
+        "stop_name": "Orrong Rd/Dandenong Rd #38",
+        "stop_id": 2595
+    },
+    {
+        "stop_name": "Orrong Rd/Dandenong Rd #38",
+        "stop_id": 2623
+    },
+    {
+        "stop_name": "Orrong Rd/Glenhuntly Rd #46",
+        "stop_id": 3181
+    },
+    {
+        "stop_name": "Orrong Rd/High St #38",
+        "stop_id": 2976
+    },
+    {
+        "stop_name": "Orrong Rd/High St #38",
+        "stop_id": 2634
+    },
+    {
+        "stop_name": "Orrong Rd/Malvern Rd #37",
+        "stop_id": 2341
+    },
+    {
+        "stop_name": "Orrong Rd/Toorak Rd #134",
+        "stop_id": 2182
+    },
+    {
+        "stop_name": "Osborne Gr/Plenty Rd #44",
+        "stop_id": 2065
+    },
+    {
+        "stop_name": "Osburn Ave/Doncaster Rd #48",
+        "stop_id": 2835
+    },
+    {
+        "stop_name": "Otira Rd/Balaclava Rd #44",
+        "stop_id": 2774
+    },
+    {
+        "stop_name": "Pakington St/High St #34",
+        "stop_id": 2857
+    },
+    {
+        "stop_name": "Palermo St/Chapel St #49",
+        "stop_id": 2335
+    },
+    {
+        "stop_name": "Park Gr/Swan St #16",
+        "stop_id": 2145
+    },
+    {
+        "stop_name": "Park St/Clarendon St #129",
+        "stop_id": 2555
+    },
+    {
+        "stop_name": "Park St/Fitzroy St #134",
+        "stop_id": 2886
+    },
+    {
+        "stop_name": "Park St/Montague St #27",
+        "stop_id": 2277
+    },
+    {
+        "stop_name": "Park St/Royal Park #28",
+        "stop_id": 2170
+    },
+    {
+        "stop_name": "Park St/St Georges Rd #23",
+        "stop_id": 2536
+    },
+    {
+        "stop_name": "Parkhill Rd/High St #36",
+        "stop_id": 2853
+    },
+    {
+        "stop_name": "Parkside St/Glenhuntly Rd #48",
+        "stop_id": 3184
+    },
+    {
+        "stop_name": "Parliament Railway Station/Macarthur St #10",
+        "stop_id": 2487
+    },
+    {
+        "stop_name": "Pascoe Vale Rd/Fletcher St #38",
+        "stop_id": 2677
+    },
+    {
+        "stop_name": "Peel St/Smith St #16",
+        "stop_id": 2066
+    },
+    {
+        "stop_name": "Peel St/Victoria St #8",
+        "stop_id": 3122
+    },
+    {
+        "stop_name": "Pelham St/Elizabeth St #9",
+        "stop_id": 2714
+    },
+    {
+        "stop_name": "Perth St/High St #29",
+        "stop_id": 2977
+    },
+    {
+        "stop_name": "Perth St/High St #29",
+        "stop_id": 2647
+    },
+    {
+        "stop_name": "Peverill St/Burke Rd #69",
+        "stop_id": 3285
+    },
+    {
+        "stop_name": "Pigdon St/Lygon St #118",
+        "stop_id": 2222
+    },
+    {
+        "stop_name": "Pine Ave/Burke Rd #57",
+        "stop_id": 3263
+    },
+    {
+        "stop_name": "Pine Ave/Burke Rd #57",
+        "stop_id": 3262
+    },
+    {
+        "stop_name": "Plant St/Malvern Rd #44",
+        "stop_id": 3241
+    },
+    {
+        "stop_name": "Pleasant Rd/Burke Rd #59",
+        "stop_id": 3266
+    },
+    {
+        "stop_name": "Port Junction/79 Whiteman St #125",
+        "stop_id": 2504
+    },
+    {
+        "stop_name": "Porter St/Commercial Rd #29",
+        "stop_id": 3218
+    },
+    {
+        "stop_name": "Porter St/Commercial Rd #29",
+        "stop_id": 3217
+    },
+    {
+        "stop_name": "Power St/Burwood Rd #27",
+        "stop_id": 3009
+    },
+    {
+        "stop_name": "Power St/Glenferrie Rd #64",
+        "stop_id": 2909
+    },
+    {
+        "stop_name": "Power St/Riversdale Rd #29",
+        "stop_id": 2147
+    },
+    {
+        "stop_name": "Prahran Market/Commercial Rd #30",
+        "stop_id": 3219
+    },
+    {
+        "stop_name": "Prahran Market/Commercial Rd #30",
+        "stop_id": 3292
+    },
+    {
+        "stop_name": "Prahran RSL/High St #33",
+        "stop_id": 2640
+    },
+    {
+        "stop_name": "Prahran Station/High St #30",
+        "stop_id": 2646
+    },
+    {
+        "stop_name": "Prahran Station/High St #30",
+        "stop_id": 2645
+    },
+    {
+        "stop_name": "Presbyterian Ladies College/Burwood Hwy #61",
+        "stop_id": 3031
+    },
+    {
+        "stop_name": "Preston Cemetery/Plenty Rd #59",
+        "stop_id": 2014
+    },
+    {
+        "stop_name": "Princes Park/Hawthorn Rd #59",
+        "stop_id": 2754
+    },
+    {
+        "stop_name": "Princes St/Fitzroy St #132",
+        "stop_id": 2126
+    },
+    {
+        "stop_name": "Princes St/Lygon St #114",
+        "stop_id": 2218
+    },
+    {
+        "stop_name": "Princes Tce/Melville Rd #43",
+        "stop_id": 3077
+    },
+    {
+        "stop_name": "Prospect Hill Rd/Burke Rd #63",
+        "stop_id": 3275
+    },
+    {
+        "stop_name": "Prospect Hill Rd/Burke Rd #63",
+        "stop_id": 3274
+    },
+    {
+        "stop_name": "Punt Rd/Bridge Rd #14",
+        "stop_id": 2827
+    },
+    {
+        "stop_name": "Punt Rd/Commercial Rd #27",
+        "stop_id": 3214
+    },
+    {
+        "stop_name": "Punt Rd/Commercial Rd #27",
+        "stop_id": 3291
+    },
+    {
+        "stop_name": "Punt Rd/High St #28",
+        "stop_id": 2978
+    },
+    {
+        "stop_name": "Punt Rd/High St #28",
+        "stop_id": 2648
+    },
+    {
+        "stop_name": "Punt Rd/Toorak Rd #125",
+        "stop_id": 2191
+    },
+    {
+        "stop_name": "Punt Rd/Wellington Pde #14",
+        "stop_id": 3000
+    },
+    {
+        "stop_name": "QPO/Cotham Rd #34",
+        "stop_id": 2442
+    },
+    {
+        "stop_name": "Queen St/Bourke St #4",
+        "stop_id": 2067
+    },
+    {
+        "stop_name": "Queen Victoria Market/39 Peel St #9",
+        "stop_id": 3101
+    },
+    {
+        "stop_name": "Queen Victoria Market/Elizabeth St #7",
+        "stop_id": 2258
+    },
+    {
+        "stop_name": "Queen Victoria Market/Peel St #9",
+        "stop_id": 2267
+    },
+    {
+        "stop_name": "Queens Park/Pascoe Vale Rd #35",
+        "stop_id": 2682
+    },
+    {
+        "stop_name": "Queens Pde/Toorak Rd #57",
+        "stop_id": 3069
+    },
+    {
+        "stop_name": "Queens Way/Queens Way #31",
+        "stop_id": 2605
+    },
+    {
+        "stop_name": "Queens Way/Queens Way #31",
+        "stop_id": 2975
+    },
+    {
+        "stop_name": "Queensberry St/Abbotsford St #14",
+        "stop_id": 3157
+    },
+    {
+        "stop_name": "Queensberry St/Peel St #11",
+        "stop_id": 3329
+    },
+    {
+        "stop_name": "Queensberry St/Swanston St #4",
+        "stop_id": 2211
+    },
+    {
+        "stop_name": "RMIT University/Swanston St #7",
+        "stop_id": 2209
+    },
+    {
+        "stop_name": "RMIT/Plenty Rd #71",
+        "stop_id": 2058
+    },
+    {
+        "stop_name": "Racing Victoria/161 Epsom Rd #31",
+        "stop_id": 3136
+    },
+    {
+        "stop_name": "Racing Victoria/400 Epsom Rd #31",
+        "stop_id": 3135
+    },
+    {
+        "stop_name": "Raglan St/Plenty Rd #43",
+        "stop_id": 2068
+    },
+    {
+        "stop_name": "Raleigh Rd/Wests Rd #48",
+        "stop_id": 2375
+    },
+    {
+        "stop_name": "Randall St/Raleigh Rd #45",
+        "stop_id": 2001
+    },
+    {
+        "stop_name": "Rathmines Rd/Burke Rd #66",
+        "stop_id": 3280
+    },
+    {
+        "stop_name": "Raynes St/Hawthorn Rd #61",
+        "stop_id": 2751
+    },
+    {
+        "stop_name": "Reid St/Nicholson St #17",
+        "stop_id": 2946
+    },
+    {
+        "stop_name": "Reid St/Nicholson St #17",
+        "stop_id": 2945
+    },
+    {
+        "stop_name": "Rennie St/Nicholson St #131",
+        "stop_id": 2263
+    },
+    {
+        "stop_name": "Renown St/Sydney Rd #38",
+        "stop_id": 2789
+    },
+    {
+        "stop_name": "Reservoir District Secondary College/Plenty Rd #57",
+        "stop_id": 2039
+    },
+    {
+        "stop_name": "Reynard St/Melville Rd #42",
+        "stop_id": 3078
+    },
+    {
+        "stop_name": "Reynard St/Sydney Rd #31",
+        "stop_id": 2798
+    },
+    {
+        "stop_name": "Richardson St/Lygon St #117",
+        "stop_id": 2221
+    },
+    {
+        "stop_name": "Richardson St/Mills St #135",
+        "stop_id": 2565
+    },
+    {
+        "stop_name": "Richardson St/Victoria Ave #30",
+        "stop_id": 2282
+    },
+    {
+        "stop_name": "Richmond Station/Swan St #8",
+        "stop_id": 2115
+    },
+    {
+        "stop_name": "Richmond Station/Swan St #8",
+        "stop_id": 3381
+    },
+    {
+        "stop_name": "Richmond Town Hall/Bridge Rd #19",
+        "stop_id": 3003
+    },
+    {
+        "stop_name": "River Bvd/Victoria St #25",
+        "stop_id": 2458
+    },
+    {
+        "stop_name": "River St/Rosamond Rd #52",
+        "stop_id": 2542
+    },
+    {
+        "stop_name": "Riversdale Rd/Burke Rd #61",
+        "stop_id": 3272
+    },
+    {
+        "stop_name": "Riversdale Rd/Glenferrie Rd #70",
+        "stop_id": 2918
+    },
+    {
+        "stop_name": "Riversdale Station/Riversdale Rd #46",
+        "stop_id": 2151
+    },
+    {
+        "stop_name": "Robinson Rd/Riversdale Rd #35",
+        "stop_id": 2149
+    },
+    {
+        "stop_name": "Rogers Ave/Hawthorn Rd #67",
+        "stop_id": 2744
+    },
+    {
+        "stop_name": "Rogers St/Sydney Rd #36",
+        "stop_id": 2791
+    },
+    {
+        "stop_name": "Rosamond Rd/Raleigh Rd #46",
+        "stop_id": 2377
+    },
+    {
+        "stop_name": "Rosamond Rd/River St #52",
+        "stop_id": 2370
+    },
+    {
+        "stop_name": "Rose St/Nicholson St #14",
+        "stop_id": 2953
+    },
+    {
+        "stop_name": "Rose St/Nicholson St #14",
+        "stop_id": 2952
+    },
+    {
+        "stop_name": "Rose St/Smith St #20",
+        "stop_id": 2046
+    },
+    {
+        "stop_name": "Roslyn St/Burwood Hwy #60",
+        "stop_id": 3030
+    },
+    {
+        "stop_name": "Royal Childrens Hospital/Flemington Rd #19",
+        "stop_id": 2707
+    },
+    {
+        "stop_name": "Royal Melbourne Hospital-Parkville Station/Royal Pde #10",
+        "stop_id": 2822
+    },
+    {
+        "stop_name": "Royal Melbourne Hospital-Parkville Station/Royal Pde #10",
+        "stop_id": 2986
+    },
+    {
+        "stop_name": "Royal Melbourne Hospital/Flemington Rd #14",
+        "stop_id": 2712
+    },
+    {
+        "stop_name": "Royal Melbourne Hospital/Flemington Rd #14",
+        "stop_id": 2711
+    },
+    {
+        "stop_name": "Royal Park Station/Royal Park #27",
+        "stop_id": 2146
+    },
+    {
+        "stop_name": "Royal Pde/Glenhuntly Rd #50",
+        "stop_id": 3187
+    },
+    {
+        "stop_name": "Russell St/Bourke St #7",
+        "stop_id": 2071
+    },
+    {
+        "stop_name": "Russell St/Flinders St #6",
+        "stop_id": 2097
+    },
+    {
+        "stop_name": "Sackville St/Burke Rd #69",
+        "stop_id": 3286
+    },
+    {
+        "stop_name": "Salisbury St/Pascoe Vale Rd #36",
+        "stop_id": 2680
+    },
+    {
+        "stop_name": "Sandown Rd/Epsom Rd #32",
+        "stop_id": 3133
+    },
+    {
+        "stop_name": "Scotchmer St/Nicholson St #18",
+        "stop_id": 2944
+    },
+    {
+        "stop_name": "Scotchmer St/Nicholson St #18",
+        "stop_id": 2943
+    },
+    {
+        "stop_name": "Scotchmer St/St Georges Rd #22",
+        "stop_id": 2538
+    },
+    {
+        "stop_name": "Scott St/Brighton Rd #40",
+        "stop_id": 3173
+    },
+    {
+        "stop_name": "Scott St/Brighton Rd #40",
+        "stop_id": 3174
+    },
+    {
+        "stop_name": "Separation St/High St #33",
+        "stop_id": 3418
+    },
+    {
+        "stop_name": "Service St/Keilor Rd #48",
+        "stop_id": 2663
+    },
+    {
+        "stop_name": "Service St/Keilor Rd #48",
+        "stop_id": 2980
+    },
+    {
+        "stop_name": "Settlement Rd/Plenty Rd #66",
+        "stop_id": 2073
+    },
+    {
+        "stop_name": "Sevenoaks Rd/Burwood Hwy #71",
+        "stop_id": 3047
+    },
+    {
+        "stop_name": "Seymour Gr/Burke Rd #59",
+        "stop_id": 3267
+    },
+    {
+        "stop_name": "Seymour St/Plenty Rd #44",
+        "stop_id": 2692
+    },
+    {
+        "stop_name": "Shaftesbury Ave/Malvern Rd #46",
+        "stop_id": 3246
+    },
+    {
+        "stop_name": "Shamrock St/Mt Alexander Rd #42",
+        "stop_id": 2673
+    },
+    {
+        "stop_name": "Shoobra Rd/Glenhuntly Rd #47",
+        "stop_id": 3182
+    },
+    {
+        "stop_name": "Shrine of Remembrance/St Kilda Rd #19",
+        "stop_id": 2198
+    },
+    {
+        "stop_name": "Sidwell Ave/Balaclava Rd #42",
+        "stop_id": 2732
+    },
+    {
+        "stop_name": "Simpson St/Wellington Pde #13",
+        "stop_id": 2826
+    },
+    {
+        "stop_name": "Smith Rd/Camberwell Rd #50",
+        "stop_id": 3043
+    },
+    {
+        "stop_name": "Smith St/Gertrude St #15",
+        "stop_id": 2033
+    },
+    {
+        "stop_name": "Smith St/Melville Rd #34",
+        "stop_id": 3165
+    },
+    {
+        "stop_name": "Smith St/Melville Rd #34",
+        "stop_id": 3088
+    },
+    {
+        "stop_name": "Smith St/Queens Pde #22",
+        "stop_id": 2075
+    },
+    {
+        "stop_name": "Smith St/Victoria Pde #15",
+        "stop_id": 2246
+    },
+    {
+        "stop_name": "Smith St/Victoria Pde #15",
+        "stop_id": 2477
+    },
+    {
+        "stop_name": "Smithfield Rd/Racecourse Rd #28",
+        "stop_id": 3141
+    },
+    {
+        "stop_name": "Somers St/Burwood Hwy #59",
+        "stop_id": 3028
+    },
+    {
+        "stop_name": "Sorrett Ave/Glenferrie Rd #58",
+        "stop_id": 2902
+    },
+    {
+        "stop_name": "Soudan St/Wattletree Rd #46",
+        "stop_id": 2585
+    },
+    {
+        "stop_name": "South Daly St/Dawson St #33",
+        "stop_id": 3194
+    },
+    {
+        "stop_name": "South Melbourne Station/Light Rail #127",
+        "stop_id": 2960
+    },
+    {
+        "stop_name": "South St/Glenferrie Rd #69",
+        "stop_id": 2917
+    },
+    {
+        "stop_name": "South Yarra Railway Station/Toorak Rd #127",
+        "stop_id": 2189
+    },
+    {
+        "stop_name": "Southern Cross Railway Station/Spencer St #122",
+        "stop_id": 2497
+    },
+    {
+        "stop_name": "Spencer St/Bourke St #1",
+        "stop_id": 2091
+    },
+    {
+        "stop_name": "Spencer St/Collins St #1",
+        "stop_id": 2496
+    },
+    {
+        "stop_name": "Spencer St/Flinders St #1",
+        "stop_id": 3318
+    },
+    {
+        "stop_name": "Spencer St/La Trobe St #1",
+        "stop_id": 3271
+    },
+    {
+        "stop_name": "Spring St/Bourke St #9",
+        "stop_id": 2076
+    },
+    {
+        "stop_name": "Spring St/Collins St #8",
+        "stop_id": 2488
+    },
+    {
+        "stop_name": "Spring St/Flinders St #8",
+        "stop_id": 2877
+    },
+    {
+        "stop_name": "Springvale Rd/Burwood Hwy #73",
+        "stop_id": 3039
+    },
+    {
+        "stop_name": "Springvale Rd/Burwood Hwy #73",
+        "stop_id": 3115
+    },
+    {
+        "stop_name": "St David St/Brunswick St #15",
+        "stop_id": 2547
+    },
+    {
+        "stop_name": "St George's Hospital/Cotham Rd #40",
+        "stop_id": 2435
+    },
+    {
+        "stop_name": "St Georges Rd/Miller St #35",
+        "stop_id": 3343
+    },
+    {
+        "stop_name": "St Ignatius Church/Church St #59",
+        "stop_id": 2323
+    },
+    {
+        "stop_name": "St James Park/Burwood Rd #25",
+        "stop_id": 2166
+    },
+    {
+        "stop_name": "St Kilda Junction/St Kilda Rd #30",
+        "stop_id": 2401
+    },
+    {
+        "stop_name": "St Kilda Primary School/Brighton Rd #36",
+        "stop_id": 3365
+    },
+    {
+        "stop_name": "St Kilda Primary School/Brighton Rd #36",
+        "stop_id": 3166
+    },
+    {
+        "stop_name": "St Kilda Rd/Carlisle St #35",
+        "stop_id": 3345
+    },
+    {
+        "stop_name": "St Kilda Rd/Fitzroy St #131",
+        "stop_id": 2113
+    },
+    {
+        "stop_name": "St Kilda Station/Fitzroy St #132",
+        "stop_id": 2883
+    },
+    {
+        "stop_name": "St Kilda Town Hall/Carlisle St #36",
+        "stop_id": 2310
+    },
+    {
+        "stop_name": "St Leonards Rd/Union Rd #36",
+        "stop_id": 3127
+    },
+    {
+        "stop_name": "St Michaels Grammar School/Chapel St #41",
+        "stop_id": 2346
+    },
+    {
+        "stop_name": "St Michaels Grammar School/Chapel St #41",
+        "stop_id": 2347
+    },
+    {
+        "stop_name": "St Pauls Catholic Church/Sydney Rd #35",
+        "stop_id": 2792
+    },
+    {
+        "stop_name": "St Vincent Plaza/Victoria St #12",
+        "stop_id": 3326
+    },
+    {
+        "stop_name": "St Vincents Plaza/Victoria Pde #12",
+        "stop_id": 2483
+    },
+    {
+        "stop_name": "St Vincents Plaza/Victoria Pde #12",
+        "stop_id": 2484
+    },
+    {
+        "stop_name": "Stanley Rd/Burwood Hwy #74",
+        "stop_id": 3045
+    },
+    {
+        "stop_name": "Starling St/Burwood Hwy #65",
+        "stop_id": 3048
+    },
+    {
+        "stop_name": "State Netball Hockey Centre/Royal Park #25",
+        "stop_id": 3097
+    },
+    {
+        "stop_name": "Station St/Burwood Hwy #64",
+        "stop_id": 3033
+    },
+    {
+        "stop_name": "Station St/High St #41",
+        "stop_id": 2846
+    },
+    {
+        "stop_name": "Stawell St/Swan St #15",
+        "stop_id": 2154
+    },
+    {
+        "stop_name": "Stawell St/Swan St #15",
+        "stop_id": 2153
+    },
+    {
+        "stop_name": "Stevenson St/High St #31",
+        "stop_id": 2447
+    },
+    {
+        "stop_name": "Stewart St/Lygon St #126",
+        "stop_id": 2230
+    },
+    {
+        "stop_name": "Stewart St/Sydney Rd #25",
+        "stop_id": 2805
+    },
+    {
+        "stop_name": "Stone St/Hawthorn Rd #61",
+        "stop_id": 2752
+    },
+    {
+        "stop_name": "Stonnington Pl/Glenferrie Rd #60",
+        "stop_id": 2904
+    },
+    {
+        "stop_name": "Stubbs St/Racecourse Rd #23",
+        "stop_id": 3147
+    },
+    {
+        "stop_name": "Sturt St/Kings Way #118",
+        "stop_id": 3118
+    },
+    {
+        "stop_name": "Summerhill Rd/Toorak Rd #52",
+        "stop_id": 3044
+    },
+    {
+        "stop_name": "Sumner Ave/St Georges Rd #28",
+        "stop_id": 2531
+    },
+    {
+        "stop_name": "Sunburst Ave/Doncaster Rd #48",
+        "stop_id": 2836
+    },
+    {
+        "stop_name": "Surrey Rd/Malvern Rd #32",
+        "stop_id": 3224
+    },
+    {
+        "stop_name": "Swan St/Church St #57",
+        "stop_id": 2325
+    },
+    {
+        "stop_name": "Swan Street Shopping Centre/Swan St #10",
+        "stop_id": 2111
+    },
+    {
+        "stop_name": "Swanston St/Bourke St #6",
+        "stop_id": 2077
+    },
+    {
+        "stop_name": "Swanston St/Flinders St #5",
+        "stop_id": 2096
+    },
+    {
+        "stop_name": "Sycamore St/Hawthorn Rd #58",
+        "stop_id": 2756
+    },
+    {
+        "stop_name": "Sydney Rd/Moreland Rd #132",
+        "stop_id": 2236
+    },
+    {
+        "stop_name": "Sylverly Gr/Hawthorn Rd #55",
+        "stop_id": 2760
+    },
+    {
+        "stop_name": "Sylverly Gr/Hawthorn Rd #55",
+        "stop_id": 3331
+    },
+    {
+        "stop_name": "Sylvester Gr/Plenty Rd #50",
+        "stop_id": 2078
+    },
+    {
+        "stop_name": "Taunton Dr/Plenty Rd #69",
+        "stop_id": 2079
+    },
+    {
+        "stop_name": "Taylor St/Hawthorn Rd #64",
+        "stop_id": 2748
+    },
+    {
+        "stop_name": "Tennyson St/Waverley Rd #61",
+        "stop_id": 2293
+    },
+    {
+        "stop_name": "The Avenue/Dandenong Rd #34",
+        "stop_id": 2602
+    },
+    {
+        "stop_name": "The Avenue/Nicholson St #130",
+        "stop_id": 2264
+    },
+    {
+        "stop_name": "The Avenue/Sydney Rd #30",
+        "stop_id": 2002
+    },
+    {
+        "stop_name": "The Avenue/Waverley Rd #62",
+        "stop_id": 2292
+    },
+    {
+        "stop_name": "Thistle St/Mt Alexander Rd #43",
+        "stop_id": 2672
+    },
+    {
+        "stop_name": "Thomas St/Cotham Rd #39",
+        "stop_id": 2437
+    },
+    {
+        "stop_name": "Thorn St/Mt Alexander Rd #44",
+        "stop_id": 2669
+    },
+    {
+        "stop_name": "Through Rd/Riversdale Rd #54",
+        "stop_id": 2156
+    },
+    {
+        "stop_name": "Through Rd/Riversdale Rd #54",
+        "stop_id": 2155
+    },
+    {
+        "stop_name": "Through Rd/Toorak Rd #55",
+        "stop_id": 3023
+    },
+    {
+        "stop_name": "Through St/Riversdale Rd #30",
+        "stop_id": 2157
+    },
+    {
+        "stop_name": "Tiernan St/Droop St #60",
+        "stop_id": 2359
+    },
+    {
+        "stop_name": "Titch St/Gordon St #57",
+        "stop_id": 2363
+    },
+    {
+        "stop_name": "Tivoli Rd/Toorak Rd #129",
+        "stop_id": 2187
+    },
+    {
+        "stop_name": "Toorak Rd/Burke Rd #54",
+        "stop_id": 3259
+    },
+    {
+        "stop_name": "Toorak Rd/Burke Rd #54",
+        "stop_id": 3300
+    },
+    {
+        "stop_name": "Toorak Rd/Camberwell Rd #51",
+        "stop_id": 3020
+    },
+    {
+        "stop_name": "Toorak Rd/Chapel St #50",
+        "stop_id": 2333
+    },
+    {
+        "stop_name": "Toorak Rd/Glenferrie Rd #63",
+        "stop_id": 2989
+    },
+    {
+        "stop_name": "Toorak Rd/Glenferrie Rd #63",
+        "stop_id": 2908
+    },
+    {
+        "stop_name": "Toorak Rd/St Kilda Rd #22",
+        "stop_id": 2612
+    },
+    {
+        "stop_name": "Toorak Village/Toorak Rd #132",
+        "stop_id": 2184
+    },
+    {
+        "stop_name": "Tooronga Rd/High St #48",
+        "stop_id": 2622
+    },
+    {
+        "stop_name": "Tooronga Rd/Malvern Rd #47",
+        "stop_id": 3247
+    },
+    {
+        "stop_name": "Tooronga Rd/Malvern Rd #47",
+        "stop_id": 3297
+    },
+    {
+        "stop_name": "Tooronga Rd/Riversdale Rd #37",
+        "stop_id": 2158
+    },
+    {
+        "stop_name": "Tooronga Rd/Wattletree Rd #49",
+        "stop_id": 2582
+    },
+    {
+        "stop_name": "Trafalgar Rd/Camberwell Rd #44",
+        "stop_id": 3015
+    },
+    {
+        "stop_name": "Trafalgar Rd/Riversdale Rd #43",
+        "stop_id": 2159
+    },
+    {
+        "stop_name": "Treadwell Rd/Keilor Rd #52",
+        "stop_id": 2788
+    },
+    {
+        "stop_name": "Truganini Rd/Glenhuntly Rd #66",
+        "stop_id": 3209
+    },
+    {
+        "stop_name": "Tweedie Pl/Church St #63",
+        "stop_id": 2319
+    },
+    {
+        "stop_name": "Tyler St/Plenty Rd #52",
+        "stop_id": 2080
+    },
+    {
+        "stop_name": "Tyrone St/Camberwell Rd #49",
+        "stop_id": 3019
+    },
+    {
+        "stop_name": "Union Rd/Maribyrnong Rd #37",
+        "stop_id": 2390
+    },
+    {
+        "stop_name": "Union Rd/Riversdale Rd #55",
+        "stop_id": 2162
+    },
+    {
+        "stop_name": "Union Rd/Riversdale Rd #55",
+        "stop_id": 2161
+    },
+    {
+        "stop_name": "Union Rd/Whitehorse Rd #53",
+        "stop_id": 2415
+    },
+    {
+        "stop_name": "Union Rd/Whitehorse Rd #53",
+        "stop_id": 2460
+    },
+    {
+        "stop_name": "Union Square Shopping Centre/Grantham St #30",
+        "stop_id": 3093
+    },
+    {
+        "stop_name": "Union St/Hawthorn Rd #66",
+        "stop_id": 2745
+    },
+    {
+        "stop_name": "Union St/High St #34",
+        "stop_id": 2856
+    },
+    {
+        "stop_name": "Union St/St Kilda Rd #29",
+        "stop_id": 2403
+    },
+    {
+        "stop_name": "Urquhart St/Glenferrie Rd #71",
+        "stop_id": 2919
+    },
+    {
+        "stop_name": "Vadlure Ave/Balaclava Rd #41",
+        "stop_id": 2776
+    },
+    {
+        "stop_name": "Van Ness Ave/Raleigh Rd #43",
+        "stop_id": 2381
+    },
+    {
+        "stop_name": "Vermont South Shopping Centre/Burwood Hwy #75",
+        "stop_id": 3040
+    },
+    {
+        "stop_name": "Victoria Park/High St #38",
+        "stop_id": 2850
+    },
+    {
+        "stop_name": "Victoria Park/High St #38",
+        "stop_id": 2987
+    },
+    {
+        "stop_name": "Victoria Pde/Nicholson St #11",
+        "stop_id": 2082
+    },
+    {
+        "stop_name": "Victoria Rd/Burke Rd #65",
+        "stop_id": 3289
+    },
+    {
+        "stop_name": "Victoria Rd/Burke Rd #65",
+        "stop_id": 3278
+    },
+    {
+        "stop_name": "Victoria St/Church St #65",
+        "stop_id": 2315
+    },
+    {
+        "stop_name": "Victoria St/Errol St #11",
+        "stop_id": 3162
+    },
+    {
+        "stop_name": "Victoria St/La Trobe St #9",
+        "stop_id": 2860
+    },
+    {
+        "stop_name": "Victoria St/Lygon St #124",
+        "stop_id": 2228
+    },
+    {
+        "stop_name": "Victoria St/Melville Rd #35",
+        "stop_id": 3087
+    },
+    {
+        "stop_name": "Victoria St/Peel St #10",
+        "stop_id": 3100
+    },
+    {
+        "stop_name": "Victoria St/Racecourse Rd #24",
+        "stop_id": 3145
+    },
+    {
+        "stop_name": "Victoria St/Sydney Rd #23",
+        "stop_id": 2117
+    },
+    {
+        "stop_name": "Vincent St/Wattletree Rd #50",
+        "stop_id": 2581
+    },
+    {
+        "stop_name": "Vision Australia/Glenferrie Rd #66",
+        "stop_id": 2913
+    },
+    {
+        "stop_name": "Visy Park/Royal Pde #16",
+        "stop_id": 2815
+    },
+    {
+        "stop_name": "Walker St/High St #26",
+        "stop_id": 2083
+    },
+    {
+        "stop_name": "Walker St/Royal Pde #16",
+        "stop_id": 2244
+    },
+    {
+        "stop_name": "Walsh St/Toorak Rd #124",
+        "stop_id": 2192
+    },
+    {
+        "stop_name": "Waltham St/Bridge Rd #17",
+        "stop_id": 3315
+    },
+    {
+        "stop_name": "Wanda Rd/Hawthorn Rd #49",
+        "stop_id": 2724
+    },
+    {
+        "stop_name": "Warra St/Glenferrie Rd #65",
+        "stop_id": 2912
+    },
+    {
+        "stop_name": "Warrick St/Mt Alexander Rd #29",
+        "stop_id": 2480
+    },
+    {
+        "stop_name": "Warrigal Rd/Burwood Hwy #58",
+        "stop_id": 3312
+    },
+    {
+        "stop_name": "Warrigal Rd/Burwood Hwy #58",
+        "stop_id": 3027
+    },
+    {
+        "stop_name": "Warrigal Rd/Riversdale Rd #56",
+        "stop_id": 2164
+    },
+    {
+        "stop_name": "Warrs Rd/Raleigh Rd #44",
+        "stop_id": 2380
+    },
+    {
+        "stop_name": "Wattle Ave/Doncaster Rd #46",
+        "stop_id": 2839
+    },
+    {
+        "stop_name": "Wattle Park/1013 Riversdale Rd #58",
+        "stop_id": 2143
+    },
+    {
+        "stop_name": "Wattle Park/Riversdale Rd #58",
+        "stop_id": 2239
+    },
+    {
+        "stop_name": "Wattle Rd/Power St #28",
+        "stop_id": 3010
+    },
+    {
+        "stop_name": "Wattle Valley Rd/Riversdale Rd #50",
+        "stop_id": 2165
+    },
+    {
+        "stop_name": "Wattletree Rd/Dandenong Rd #40",
+        "stop_id": 2593
+    },
+    {
+        "stop_name": "Wattletree Rd/Glenferrie Rd #54",
+        "stop_id": 2895
+    },
+    {
+        "stop_name": "Wellington St/Glenferrie Rd #79",
+        "stop_id": 2930
+    },
+    {
+        "stop_name": "Wellington St/Mt Alexander Rd #26",
+        "stop_id": 2698
+    },
+    {
+        "stop_name": "Wellington St/Queens Pde #23",
+        "stop_id": 2084
+    },
+    {
+        "stop_name": "Wellington St/Racecourse Rd #25",
+        "stop_id": 3144
+    },
+    {
+        "stop_name": "Wellington St/Victoria Pde #16",
+        "stop_id": 2540
+    },
+    {
+        "stop_name": "Wellington St/Victoria Pde #16",
+        "stop_id": 2475
+    },
+    {
+        "stop_name": "Wells St/Park St #119",
+        "stop_id": 3119
+    },
+    {
+        "stop_name": "West Preston/Gilbert Rd #47",
+        "stop_id": 2511
+    },
+    {
+        "stop_name": "Westbourne Gr/St Georges Rd #27",
+        "stop_id": 2532
+    },
+    {
+        "stop_name": "Westbury St/Dandenong Rd #34",
+        "stop_id": 2601
+    },
+    {
+        "stop_name": "Westgarth St/High St #27",
+        "stop_id": 2086
+    },
+    {
+        "stop_name": "Weston St/Lygon St #121",
+        "stop_id": 2225
+    },
+    {
+        "stop_name": "Wests Rd/Cordite Ave #48",
+        "stop_id": 2396
+    },
+    {
+        "stop_name": "Wests Rd/Raleigh Rd #48",
+        "stop_id": 2376
+    },
+    {
+        "stop_name": "Wests Rd/Williamson Rd #50",
+        "stop_id": 2372
+    },
+    {
+        "stop_name": "Wharton St/Whitehorse Rd #50",
+        "stop_id": 2420
+    },
+    {
+        "stop_name": "Wilkinson St/Plenty Rd #54",
+        "stop_id": 2018
+    },
+    {
+        "stop_name": "William St/Bourke St #3",
+        "stop_id": 2087
+    },
+    {
+        "stop_name": "William St/Collins St #3",
+        "stop_id": 2494
+    },
+    {
+        "stop_name": "William St/Victoria St #9",
+        "stop_id": 3120
+    },
+    {
+        "stop_name": "Williams Rd/Dandenong Rd #35",
+        "stop_id": 2599
+    },
+    {
+        "stop_name": "Williams Rd/High St #35",
+        "stop_id": 2638
+    },
+    {
+        "stop_name": "Williams Rd/Malvern Rd #34",
+        "stop_id": 3293
+    },
+    {
+        "stop_name": "Williams Rd/Malvern Rd #34",
+        "stop_id": 3227
+    },
+    {
+        "stop_name": "Williams Rd/Toorak Rd #131",
+        "stop_id": 2242
+    },
+    {
+        "stop_name": "Williams Rd/Toorak Rd #131",
+        "stop_id": 2185
+    },
+    {
+        "stop_name": "Williamson Rd/Rosamond Rd #51",
+        "stop_id": 2371
+    },
+    {
+        "stop_name": "Williamson Rd/Wests Rd #50",
+        "stop_id": 2373
+    },
+    {
+        "stop_name": "Willow Gr/Riversdale Rd #47",
+        "stop_id": 2169
+    },
+    {
+        "stop_name": "Willow Gr/Riversdale Rd #47",
+        "stop_id": 2168
+    },
+    {
+        "stop_name": "Wilson Gr/Camberwell Rd #49",
+        "stop_id": 2384
+    },
+    {
+        "stop_name": "Wilson St/Chapel St #48",
+        "stop_id": 2336
+    },
+    {
+        "stop_name": "Wimbledon Ave/Brighton Rd #38",
+        "stop_id": 3170
+    },
+    {
+        "stop_name": "Windsor Railway Station/Chapel St #43",
+        "stop_id": 2456
+    },
+    {
+        "stop_name": "Windsor Railway Station/Chapel St #43",
+        "stop_id": 2344
+    },
+    {
+        "stop_name": "Wood St/Plenty Rd #51",
+        "stop_id": 2088
+    },
+    {
+        "stop_name": "Woodlands Ave/High St #42",
+        "stop_id": 2844
+    },
+    {
+        "stop_name": "Woodlands Ave/Melville Rd #41",
+        "stop_id": 3079
+    },
+    {
+        "stop_name": "Woolton Ave/High St #37",
+        "stop_id": 2089
+    },
+    {
+        "stop_name": "Woorigoleen Rd/Toorak Rd #135",
+        "stop_id": 2181
+    },
+    {
+        "stop_name": "Yarra Bvd/Bridge Rd #22",
+        "stop_id": 3005
+    },
+    {
+        "stop_name": "Yarra Bvd/Swan St #18",
+        "stop_id": 2118
+    },
+    {
+        "stop_name": "York St/Clarendon St #127",
+        "stop_id": 2553
+    },
+    {
+        "stop_name": "York St/Kings Way #117",
+        "stop_id": 3117
+    }
 ]

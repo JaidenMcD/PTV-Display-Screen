@@ -11,6 +11,7 @@ app = Flask(__name__, template_folder='templates', static_folder='static', stati
 # Global State - shared with display process
 display_state = {
     'stop': False,
+    'stop_id': None,
     'transit-type': False,
     'display-type': 'default_display',
     'train_platforms': [],
@@ -37,14 +38,15 @@ def api_stops():
 def send_to_display():
     data = request.json
     transit_type = data.get('transitType')
-    stop = data.get('stop')
+    stop = data.get('stopName')       # match JS
+    stop_id = data.get('stopId')      # match JS
     display_type = data.get('displayType')
 
     display_state['transit_type'] = transit_type
     display_state['stop'] = stop
+    display_state['stop_id'] = stop_id
     display_state['display_type'] = display_type
 
     display_state['version'] += 1
 
-    
     return jsonify({'message': f'Sent {stop} ({display_type}) to display'})

@@ -40,6 +40,7 @@ def get_display_config():
     """
     display_state = {
         'stop': False,
+        'stop_id': None,
         'transit_type': False,
         'display_type': 'default_display',
         'train_platforms': [],
