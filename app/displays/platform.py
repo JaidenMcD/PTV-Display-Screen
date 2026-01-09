@@ -3,6 +3,8 @@ from pathlib import Path
 from datetime import datetime
 from .base import Display
 from .components.trainUI import TrainUI
+from .components.basicComponents import BasicComponents
+from .components.serviceHeaders import ServiceHeaders
 import utils
 from fonts import FontManager as Fonts
 
@@ -105,32 +107,23 @@ class PlatformDisplay(Display):
 
         departure = self.departures[0]
         colour = self._to_rgb(colourMap.get(departure["route_gtfs_id"]))
-        pygame.draw.rect(screen, colour, (0, 0, config.SCREEN_RES[0], 10))
+
+        # Header Bar
+        header_bar = BasicComponents.headerBar(config.SCREEN_RES[0], 10, colour)
+        screen.blit(header_bar, (0,0))
 
         if self.platform is None and departure.get('platform'):
             platform = departure['platform']
         else:
             platform = None
-        TrainUI.metro_departure_header(config, screen, 
-                                   colour, 
-                                   x=0, 
-                                   y=0, 
-                                   w=480, 
-                                   h= 0, 
-                                   ttd_y = 15, 
-                                   ttdw = 91, 
-                                   ttd_h = 31, 
-                                   dep_time_font = Fonts.get("regular", 21), 
-                                   dep_time = departure.get("departure_time", "--:--"), 
-                                   time_to_dep_font = Fonts.get("regular", 23), 
-                                   time_to_dep = departure.get("time_to_departure", "-"), 
-                                   dest_font = Fonts.get("bold", 27), 
-                                   dest = departure["destination"], 
-                                   dep_note_font = Fonts.get("regular", 12), 
-                                   dep_note = f"{departure['express_note']} {departure['departure_note']}", 
-                                   platform = platform, 
-                                   platform_font = Fonts.get("bold", 25)
-        )
+        metro_dep_header = ServiceHeaders.metro_departure_header(config, colour, 
+                                            time_to_dep = departure.get("time_to_departure", "-"),
+                                            dep_time = departure.get("departure_time", "--:--"), 
+                                            dest = departure["destination"], 
+                                            dep_note = f"{departure['express_note']} {departure['departure_note']}",
+                                            platform = platform
+                                              )
+        screen.blit(metro_dep_header, (0,0))
        
         pygame.draw.rect(screen, config.BLACK, (11,77, config.SCREEN_RES[0] - 11*2, 1))
 

@@ -277,43 +277,6 @@ class TrainUI:
                             pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 5, bar_width, 2))
                             pygame.draw.rect(screen, colour, (container.x, base_y + v_padding - 2, bar_width, 2))
                 stop_index = stop_index + 1
-    
-    @staticmethod
-    def metro_departure_header(config, screen, colour, x, y, w, h, ttd_y, ttdw, ttd_h, dep_time_font, dep_time, time_to_dep_font, time_to_dep, dest_font, dest, dep_note_font, dep_note, platform = None, platform_font = None):
-        """ Top Section """
-        # hardcoded values
-        ttd_pad_right = 2 #px
-        platform_pad_right = 4 #px
-        ttd_x = x + w - ttd_pad_right - ttdw
-        platform_x = ttd_x - platform_pad_right - ttd_h
-        # Destination
-        coords = (x+100, y+12)
-        text = dest_font.render(dest, True, config.BLACK)
-        screen.blit(text, coords)
-        baseline_y = coords[1] + dest_font.get_ascent()
-
-        # Departure Time
-        time_y = baseline_y - dep_time_font.get_ascent()
-        text = dep_time_font.render(dep_time, True, config.BLACK)
-        screen.blit(text, (x+11, time_y))
-
-        # Time to departure
-        TrainUI.time_to_departure(screen, config, ttd_x, y+ttd_y, ttdw, ttd_h, time_to_dep_font, time_to_dep, bg_color=config.BLACK)
-
-        # Draw platform number only if multiple platforms
-        if platform is not None:
-            platform_rect = pygame.draw.rect(
-                screen, colour,
-                (platform_x, y + ttd_y, ttd_h, ttd_h)
-            )
-            text = platform_font.render(str(platform), True, config.WHITE)
-            text_rect = text.get_rect()
-            text_rect.center = platform_rect.center
-            screen.blit(text, text_rect.topleft)
-
-        # Dep note
-        t = dep_note_font.render(dep_note, True, config.BLACK)
-        screen.blit(t, (x+10,y+51))
 
 
     @staticmethod

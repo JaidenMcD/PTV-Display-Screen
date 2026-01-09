@@ -40,7 +40,7 @@ function get_display_types(transit_type) {
         displays = ['platform']
     }
     else if (transit_type == 'Tram') {
-        displays = ['tram_display']
+        displays = ['tram_display', 'platform']
     }
     else {
         console.log('Not a valid transit type')
