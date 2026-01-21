@@ -5,6 +5,7 @@ from .base import Display
 from .components.trainUI import TrainUI
 from .components.basicComponents import BasicComponents
 from .components.serviceHeaders import ServiceHeaders
+from .components.stopListings import StopListings
 import utils
 from fonts import FontManager as Fonts
 
@@ -126,8 +127,8 @@ class PlatformDisplay(Display):
         screen.blit(metro_dep_header, (0,0))
        
         pygame.draw.rect(screen, config.BLACK, (11,77, config.SCREEN_RES[0] - 11*2, 1))
-
-        TrainUI.draw_stop_list(screen, config, self.stops, colour, x=11, y=78, stop_h=15, stop_w=116, bar_width=4, v_padding=7, font=Fonts.get("regular", 12), tick=(3,2), text_offset=9)
+        stop_listings = StopListings.metro_stop_listing_large(config, self.stops, colour)
+        screen.blit(stop_listings, (11,78))
 
 
     
